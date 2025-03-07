@@ -22,7 +22,7 @@ repository               : "ramtin-tabatabaei/ramtin-tabatabaei.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "images/bio-photo-3.jpg"
+  avatar           : "bio-photo.jpg"
   name             : "Ramtin Tabatabaei"
   pronouns         : # example: "she/her"  
   bio              : "I am a Ph.D. candidate at the University of Melbourne, researching human-robot interaction, focusing on gaze behavior in robot failures."

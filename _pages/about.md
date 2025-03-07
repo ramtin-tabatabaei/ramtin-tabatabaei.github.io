@@ -6,13 +6,14 @@ redirect_from:
   - /about/
   - /about.html
 ---
-
+Biography
+======
 I am a Ph.D. candidate at the School of Computing and Information Systems, University of Melbourne, supervised by A/Prof. Wafa Johal and Prof. Vassilis Kostakos from the Human-Computer Interaction Group and the  [Human-Robot Interaction Lab](https://chri-lab.github.io/).
 I hold a Master’s degree in Applied Design from Sharif University of Technology and a Bachelor’s degree in Mechanical Engineering from the University of Tehran.
 
 
 Current Research
-======
+=====
 My research focuses on human social reactions to robot failures. Specifically, I study human gaze behaviour when a robot makes a mistake or fails to complete a task. I aim to identify a distinct gaze pattern that differentiates correct robot performance from failure scenarios.
 
 Additionally, I investigate how gaze patterns and human trust relate to factors such as:

@@ -22,12 +22,12 @@ repository               : "ramtin-tabatabaei/ramtin-tabatabaei.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "bio-photo-3.jpg"
+  avatar           : "bio-photo-3.png"
   name             : "Ramtin Tabatabaei"
   pronouns         : # example: "she/her"  
   bio              : "Short biography for the left-hand sidebar"
   # location         : "Earth"
-  employer         : "Red Brick University"
+  employer         : "University of Melbourne"
   uri              : # URL
   email            : "stabatabaeim@student.unimelb.edu.au" 
 

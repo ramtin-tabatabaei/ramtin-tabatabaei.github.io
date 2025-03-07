@@ -7,8 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Biograph
-======
+
 I am a Ph.D. candidate at the School of Computing and Information Systems, University of Melbourne, supervised by [A/Prof. Wafa Johal](https://wafa.johal.org/) and Prof. Vassilis Kostakos from the Human-Computer Interaction Group and the  [Human-Robot Interaction Lab](https://chri-lab.github.io/).
 I hold a Master’s degree in Applied Design from Sharif University of Technology and a Bachelor’s degree in Mechanical Engineering from the University of Tehran.
 

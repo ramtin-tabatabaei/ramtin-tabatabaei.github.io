@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "My Personal Website"
+title                    : "Ramtin Tabatabaei | Personal Website"
 title_separator          : "-"
 name                     : &name "Ramtin Tabatabaei"
 description              : &description "personal description"
@@ -22,7 +22,7 @@ repository               : "ramtin-tabatabaei/ramtin-tabatabaei.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "bio-photo-3.png"
+  avatar           : "/images/bio-photo-3.jpg"
   name             : "Ramtin Tabatabaei"
   pronouns         : # example: "she/her"  
   bio              : "I am a Ph.D. candidate at the University of Melbourne, researching human-robot interaction, focusing on gaze behavior in robot failures."

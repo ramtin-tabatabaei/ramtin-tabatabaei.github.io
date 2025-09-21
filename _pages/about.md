@@ -16,7 +16,7 @@ Current Research
 =====
 My research focuses on human social reactions to robot failures. Specifically, I study human gaze behaviour when a robot makes a mistake or fails to complete a task. I aim to identify a distinct gaze pattern that differentiates correct robot performance from failure scenarios.
 
-Additionally, I investigate how gaze patterns and human trust relate to factors such as:
+Additionally, I investigate how gazee patterns and human trust relate to factors such as:
 * Types of failure
 * Failure timing
 * Robot acknowledgments

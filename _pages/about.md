@@ -6,8 +6,6 @@ redirect_from:
   - /about.html
 ---
 
-## Bio
-
 I am a Ph.D. candidate at the School of Computing and Information Systems, University of Melbourne, supervised by [A/Prof. Wafa Johal](https://wafa.johal.org/) and Prof. Vassilis Kostakos. I am part of the Human-Computer Interaction Group and the [Human-Robot Interaction Lab](https://chri-lab.github.io/).
 
 During my Master’s degree, my research focused on identifying gaze patterns that help robots determine the optimal person to look at during multi-party interactions. I analysed various social cues—such as distance, speech, and other behavioural signals—to improve robotic attention mechanisms in group settings.
@@ -26,8 +24,6 @@ There are several important characteristics of failures that influence users dif
 It is crucial for robots to recover effectively from their failures. My research aims to design and evaluate interaction strategies that help robots maintain user trust and improve recovery after failure.
 
 ---
-
-## Main Research
 
 ### Research 1 — Detecting Robot Failures via Human Gaze
 
@@ -48,9 +44,8 @@ This study highlights how human gaze can serve as a real-time indicator for robo
 Robot failures can occur multiple times during interaction, and their effects on user trust can accumulate over time.  
 This project investigates:
 - How **sequences of failures** influence user trust  
-- How much **robot awareness** and **adaptation** are needed to recover trust after repeated failures  
+- How much **robot awareness** are needed to recover trust after repeated failures  
 
-The findings contribute to designing robots that can better manage and restore trust through adaptive recovery strategies.
 
 ---
 
@@ -67,5 +62,5 @@ The findings contribute to designing robots that can better manage and restore t
 ## Education
 
 - **Ph.D. (Ongoing)** — School of Computing and Information Systems, University of Melbourne  
-- **M.Sc. in Applied Design** — Sharif University of Technology  
-- **B.Sc. in Mechanical Engineering** — University of Tehran
+- **M.Sc. in Applied Design** — Sharif University of Technology, 2021-2023
+- **B.Sc. in Mechanical Engineering** — University of Tehran, 2017- 2021

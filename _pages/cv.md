@@ -71,13 +71,13 @@ PhD candidate in human-robot interaction with hands-on experience building and d
 
 ## Awards & Honors
 
-- Winners, HRI24 Robot Challenge - Office Assistant on Tiago (Team Melbourne) \| Mar 2024  
-- Top 0.2% National Entrance Exam (Master's)  &#124; Aug 2021  
-- Top 15% of graduating class | Jun 2021  
-- Top 1% National Entrance Exam (Bachelor's) | Jul 2017
+- Winner, HRI24 Robot Challenge — Office Assistant on Tiago (Team Melbourne), Mar 2024  
+- Top 0.2% National Entrance Exam (Master's), Aug 2021  
+- Top 15% of graduating class, Jun 2021  
+- Top 1% National Entrance Exam (Bachelor's), Jul 2017
 
 ## Languages
 
-English (IELTS 7.0; L 7.0, R 7.5, W 6.5, S 6.5); Persian (Native)
+English (IELTS 7.0; L 7.0, R 7.5, W 6.5, S 6.5), Persian (Native)
 
 *Last updated: September 18, 2025*

@@ -1,18 +1,11 @@
 ---
-layout: archive
+layout: single
 title: "CV"
 permalink: /cv/
 author_profile: true
 redirect_from:
   - /resume
 ---
-
-{% include base_path %}
-
-## Ramtin Tabatabaei
-
-PhD Candidate, Computing & Information Systems | University of Melbourne  
-[stabatabaeim@student.unimelb.edu.au](mailto:stabatabaeim@student.unimelb.edu.au) | [LinkedIn: ramtin-tabatabaei](https://www.linkedin.com/in/ramtin-tabatabaei/)
 
 ## Professional Summary
 

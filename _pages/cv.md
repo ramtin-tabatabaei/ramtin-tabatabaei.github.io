@@ -21,28 +21,28 @@ PhD candidate in human-robot interaction with hands-on experience building and d
 
 ## Education
 
-**University of Melbourne** | PhD, Computing & Information Systems | Dec 2023 - Present  
+**University of Melbourne** - PhD, Computing & Information Systems (Dec 2023 - Present)  
 - Thesis: *Exploring and Exploiting Human Behavioural Responses to Robot Failures in Human-Robot Interaction*  
 - Supervisors: Dr. Wafa Johal & Prof. Vassilis Kostakos
 
-**Sharif University of Technology** | MSc, Mechanical Engineering | Sep 2021 - Jun 2023  
+**Sharif University of Technology** - MSc, Mechanical Engineering (Sep 2021 - Jun 2023)  
 - GPA: 18.10/20 (=3.87/4.00)  
 - Thesis: *Empirical motion-time pattern for human gaze behaviour in social situations using DNNs*  
 - Supervisors: Dr. Alireza Taheri & Prof. Ali Meghdari
 
-**University of Tehran** | BSc, Mechanical Engineering | Sep 2017 - Sep 2021  
+**University of Tehran** - BSc, Mechanical Engineering (Sep 2017 - Sep 2021)  
 - GPA: 17.45/20 (=3.80/4.00)  
 - Thesis: *Controller design for a refrigerator using Peltier modules*  
 - Supervisor: Dr. Ehsan Hosseinian
 
 ## Experience
 
-**Researcher** | Interactive Technologies Lab (IXT), University of Melbourne | Melbourne, Australia | Dec 2023 - Present  
+**Researcher** - Interactive Technologies Lab (IXT), University of Melbourne, Melbourne, Australia (Dec 2023 - Present)  
 - Built ROS-based collaborative tasks on Tiago with failure cases; ran controlled user studies (50+ participants) capturing gaze, behavior, and task outcomes; produced two HRI 2025 publications.  
 - Developed pipelines for eye tracking (Pupil Labs/Tobii) and ROS synchronization; implemented real-time gaze feature extraction for failure detection.  
 - Co-developed award-winning office assistant robot behaviors (navigation, interaction, task orchestration) on Tiago; contributed to demos and public showcases.
 
-**Research Assistant** | CEDRA, Sharif University of Technology | Tehran, Iran | Sep 2021 - Sep 2023  
+**Research Assistant** - CEDRA, Sharif University of Technology, Tehran, Iran (Sep 2021 - Sep 2023)  
 - Programmed and ran HRI experiments with Nao and Opo robots to study gaze behavior in children and young adults.  
 - Built deep models for lip-reading (word level) and facial emotion recognition from video.
 
@@ -57,10 +57,10 @@ PhD candidate in human-robot interaction with hands-on experience building and d
 
 ## Teaching & Supervision
 
-- **Tutor, Elements of Data Processing** | Jul 2025 - Present  
-- **Tutor, Social Cognitive Robotics** | Jan 2023 - Jun 2023  
-- **Tutor, Advanced Math 1** | Sep 2022 - Dec 2022  
-- **Supervisor, Master Project** (Developed a web app tool for annotating Rosbag data) | Mar 2024 - Jul 2024
+- **Tutor, Elements of Data Processing** (Jul 2025 - Present)  
+- **Tutor, Social Cognitive Robotics** (Jan 2023 - Jun 2023)  
+- **Tutor, Advanced Math 1** (Sep 2022 - Dec 2022)  
+- **Supervisor, Master Project** - Developed a web app tool for annotating Rosbag data (Mar 2024 - Jul 2024)
 
 ## Publications
 
@@ -78,7 +78,6 @@ PhD candidate in human-robot interaction with hands-on experience building and d
 
 ## Languages
 
-English: IELTS 7.0 (L 7.0, R 7.5, W 6.5, S 6.5) | Persian: Native
+English (IELTS 7.0; L 7.0, R 7.5, W 6.5, S 6.5); Persian (Native)
 
 *Last updated: September 18, 2025*
-

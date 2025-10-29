@@ -36,6 +36,10 @@ We found that:
 
 This study highlights how human gaze can serve as a real-time indicator for robot performance monitoring.
 
+<div class="video-embed">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Research video placeholder" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
 ---
 
 ### Research 2 — Trust Dynamics Across Multiple Robot Failures
@@ -46,6 +50,10 @@ We found that:
 - User trust is influenced not only by the current failure but also by previous failures the user has experienced.
 - When different types of failures with similar severity occur, user trust and perceived robot intelligence change differently across the sequence of failures.
 - For less severe or barely noticeable failures, displaying awareness of the failure can reduce user trust; however, for more severe failures, showing awareness helps the robot regain user trust.
+
+<div class="video-embed">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/oHg5SJYRHA0" title="Research video placeholder" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
 
 ---

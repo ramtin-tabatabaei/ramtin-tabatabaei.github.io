@@ -71,8 +71,8 @@ PhD candidate in human-robot interaction with hands-on experience building and d
 
 ## Awards & Honors
 
-- Winners, HRI24 Robot Challenge - Office Assistant on Tiago (Team Melbourne) | Mar 2024  
-- Top 0.2% National Entrance Exam (Master's) | Aug 2021  
+- Winners, HRI24 Robot Challenge - Office Assistant on Tiago (Team Melbourne) \| Mar 2024  
+- Top 0.2% National Entrance Exam (Master's)  &#124; Aug 2021  
 - Top 15% of graduating class | Jun 2021  
 - Top 1% National Entrance Exam (Bachelor's) | Jul 2017
 

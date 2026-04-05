@@ -9,7 +9,25 @@ redirect_from:
 
 ## Professional Summary
 
-PhD candidate in human-robot interaction with hands-on experience building and deploying collaborative robot systems. Skilled in ROS (navigation, perception, HRI), computer vision, and data analysis. Published at ACM/IEEE HRI (2025). Delivered public demos on the Tiago and Furhat platforms, integrated eye tracking for real-time behavioral analysis, and mentored students. Seeking an applied robotics, HRI, or computer-vision role that bridges research and production.
+PhD candidate in human-robot interaction with hands-on experience building and deploying collaborative robot systems. Skilled in ROS, perception, computer vision, machine learning, and behavioral data analysis. Published at ACM/IEEE HRI, built experimental systems on Tiago and Furhat, and delivered public robotics demos. Seeking a role in robotics, embodied AI, HRI, or computer vision that connects research with real-world systems.
+
+## Job Search Details
+
+- **Target roles:** 
+- **Preferred industries / teams:** 
+- **Preferred locations:** 
+- **Work authorization / visa status:** 
+- **Available from:** 
+
+<!-- Fill this section in first before sharing the site widely. -->
+
+## Portfolio Links
+
+- **Projects page:** /projects/
+- **GitHub:** 
+- **Demo videos:** 
+- **Technical write-ups:** 
+- **Personal website / portfolio:** 
 
 ## Core Skills
 
@@ -80,4 +98,4 @@ PhD candidate in human-robot interaction with hands-on experience building and d
 
 English (IELTS 7.0; L 7.0, R 7.5, W 6.5, S 6.5), Persian (Native)
 
-*Last updated: September 18, 2025*
+*Last updated: April 6, 2026*

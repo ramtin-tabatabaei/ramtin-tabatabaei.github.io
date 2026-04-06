@@ -12,6 +12,7 @@ The script:
 from __future__ import annotations
 
 import argparse
+from html import escape
 import json
 import os
 import re
@@ -175,6 +176,11 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--slug", default=None, help="URL slug for the generated page.")
     parser.add_argument(
+        "--permalink",
+        default=None,
+        help="Custom permalink for a new generated page, such as /publication/CHI2026-RobotFailure/.",
+    )
+    parser.add_argument(
         "--model",
         default="gpt-4o",
         help="OpenAI model for extraction. Defaults to gpt-4o.",
@@ -294,6 +300,13 @@ def normalize_publication_locator(value: str) -> str:
 def permalink_slug(permalink: str) -> str:
     stem = permalink.strip("/").split("/")[-1]
     return slugify(stem)
+
+
+def normalize_permalink(value: str) -> str:
+    candidate = value.strip()
+    if not candidate:
+        raise RuntimeError("Permalink cannot be empty.")
+    return "/" + candidate.strip("/") + "/"
 
 
 def resolve_existing_publication(value: str) -> tuple[Path, str, str]:
@@ -574,46 +587,165 @@ def build_front_matter(data: dict[str, Any]) -> str:
 
 
 def build_gallery_section(slug: str, gallery_images: list[Path], teaser_name: str | None) -> str:
-    figure_lines: list[str] = []
+    figure_blocks: list[str] = []
     for image_path in gallery_images:
         if teaser_name and image_path.name == teaser_name:
             continue
         rel = f"/images/papers/{slug}/{image_path.name}"
-        figure_lines.append(f'![{humanize_stem(image_path)}]({rel})')
-    if not figure_lines:
+        label = escape(humanize_stem(image_path))
+        figure_blocks.append(
+            "\n".join(
+                [
+                    '  <figure class="paper-showcase__figure-card">',
+                    f'    <img src="{rel}" alt="{label}">',
+                    f"    <figcaption>{label}</figcaption>",
+                    "  </figure>",
+                ]
+            )
+        )
+    if not figure_blocks:
         return ""
-    joined = "\n\n".join(figure_lines)
-    return f"## Figure Highlights\n\n{joined}\n"
+    joined = "\n".join(figure_blocks)
+    return "\n".join(
+        [
+            '<section class="paper-showcase__panel paper-showcase__panel--gallery">',
+            "  <h2>Figure Highlights</h2>",
+            '  <div class="paper-showcase__figure-row">',
+            joined,
+            "  </div>",
+            "</section>",
+            "",
+        ]
+    )
+
+
+def text_to_paragraphs_html(text: str, fallback: str) -> str:
+    content = text.strip() or fallback
+    paragraphs = [segment.strip() for segment in re.split(r"\n\s*\n", content) if segment.strip()]
+    if not paragraphs:
+        paragraphs = [fallback]
+    return "\n".join(f"<p>{escape(paragraph)}</p>" for paragraph in paragraphs)
+
+
+def items_to_list_html(items: list[str], fallback: list[str]) -> str:
+    values = items or fallback
+    list_items = "\n".join(f"    <li>{escape(item)}</li>" for item in values)
+    return "\n".join(["  <ul>", list_items, "  </ul>"])
+
+
+def build_content_section(title: str, body_html: str, modifier: str = "") -> str:
+    classes = "paper-showcase__panel"
+    if modifier:
+        classes += f" {modifier}"
+    return "\n".join(
+        [
+            f'<section class="{classes}">',
+            f"  <h2>{escape(title)}</h2>",
+            body_html,
+            "</section>",
+            "",
+        ]
+    )
 
 
 def build_markdown_body(page: dict[str, Any], slug: str, gallery_images: list[Path], teaser_name: str | None) -> str:
     sections: list[str] = []
 
-    overview = page.get("overview") or "Add an overview of the paper here."
-    sections.append(f"## Overview\n\n{overview}\n")
+    overview = page.get("overview") or ""
+    sections.append(
+        build_content_section(
+            "Overview",
+            text_to_paragraphs_html(overview, "Add an overview of the paper here."),
+            "paper-showcase__panel--overview",
+        )
+    )
 
     contributions = page.get("key_contributions") or []
-    if contributions:
-        contribution_lines = "\n".join(f"- {item}" for item in contributions)
-    else:
-        contribution_lines = "- Add contribution 1.\n- Add contribution 2.\n- Add contribution 3."
-    sections.append(f"## Key Contributions\n\n{contribution_lines}\n")
+    sections.append(
+        build_content_section(
+            "Key Contributions",
+            items_to_list_html(
+                contributions,
+                ["Add contribution 1.", "Add contribution 2.", "Add contribution 3."],
+            ),
+            "paper-showcase__panel--contributions",
+        )
+    )
 
-    method = page.get("method") or "Add a short explanation of the system, method, or study design here."
-    sections.append(f"## Method and System\n\n{method}\n")
+    method = page.get("method") or ""
+    sections.append(
+        build_content_section(
+            "Method and System",
+            text_to_paragraphs_html(
+                method,
+                "Add a short explanation of the system, method, or study design here.",
+            ),
+            "paper-showcase__panel--method",
+        )
+    )
 
-    findings = page.get("findings") or "Add the main findings, evaluation results, or takeaways here."
-    sections.append(f"## Findings\n\n{findings}\n")
+    findings = page.get("findings") or ""
+    sections.append(
+        build_content_section(
+            "Results Overview",
+            text_to_paragraphs_html(
+                findings,
+                "Add the main findings, evaluation results, or takeaways here.",
+            ),
+            "paper-showcase__panel--results",
+        )
+    )
+
+    sections.append(
+        build_content_section(
+            "Quantitative Results",
+            text_to_paragraphs_html(
+                "",
+                "Add quantitative results here, such as participant counts, statistical tests, effect sizes, or comparisons between conditions.",
+            ),
+            "paper-showcase__panel--results-alt",
+        )
+    )
+
+    sections.append(
+        build_content_section(
+            "Qualitative Insights",
+            text_to_paragraphs_html(
+                "",
+                "Add qualitative observations here, such as participant feedback, notable behaviors, or themes that explain the quantitative results.",
+            ),
+            "paper-showcase__panel--results-soft",
+        )
+    )
 
     limitations = page.get("limitations", "").strip()
     future_work = page.get("future_work", "").strip()
     if limitations or future_work:
-        body = []
+        body: list[str] = []
         if limitations:
-            body.append(limitations)
+            body.append("<h3>Limitations</h3>")
+            body.append(text_to_paragraphs_html(limitations, ""))
         if future_work:
-            body.append(future_work)
-        sections.append("## Limitations and Future Work\n\n" + "\n\n".join(body) + "\n")
+            body.append("<h3>Future Work</h3>")
+            body.append(text_to_paragraphs_html(future_work, ""))
+        sections.append(
+            build_content_section(
+                "Discussion",
+                "\n".join(body),
+                "paper-showcase__panel--discussion",
+            )
+        )
+    else:
+        sections.append(
+            build_content_section(
+                "Discussion",
+                text_to_paragraphs_html(
+                    "",
+                    "Add design implications, limitations, and future directions here.",
+                ),
+                "paper-showcase__panel--discussion",
+            )
+        )
 
     gallery = build_gallery_section(slug, gallery_images, teaser_name)
     if gallery:
@@ -757,7 +889,7 @@ def main() -> int:
     else:
         raw_slug = args.slug or extracted.get("title") or paper_dir.name
         slug = slugify(raw_slug)
-        permalink = f"/publication/{slug}/"
+        permalink = normalize_permalink(args.permalink) if args.permalink else f"/publication/{slug}/"
         output_path = PUBLICATIONS_DIR / f"{slug}.md"
 
     teaser_image_url = (

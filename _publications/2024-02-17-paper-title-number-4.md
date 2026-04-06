@@ -38,34 +38,62 @@ hero_links:
 paperurl: "/files/papers/gazing-at-failure/chi26-73 (2).pdf"
 ---
 
-## Overview
+<section class="paper-showcase__panel paper-showcase__panel--overview">
+  <h2>Overview</h2>
+  <p>Robot failures, particularly in real-world environments, pose significant challenges to human-robot collaboration. This research explores the effects of repeated robot failures and the robot's level of awareness on user trust and perceived intelligence. Using a Tangram puzzle task, various failure types were tested with different levels of robot awareness.</p>
+</section>
 
-Robot failures, particularly in real-world environments, pose significant challenges to human-robot collaboration. This research explores the effects of repeated robot failures and the robot's level of awareness on user trust and perceived intelligence. Using a Tangram puzzle task, various failure types were tested with different levels of robot awareness.
+<section class="paper-showcase__panel paper-showcase__panel--contributions">
+  <h2>Key Contributions</h2>
+  <ul>
+    <li>Identified the influence of failure sequence patterns (homogeneous vs. heterogeneous) on trust and perceived intelligence.</li>
+    <li>Demonstrated the benefits of robot awareness in mitigating trust decline following failures.</li>
+    <li>Provided insights into designing effective robot behaviors for trust repair in collaborative settings.</li>
+  </ul>
+</section>
 
-## Key Contributions
+<section class="paper-showcase__panel paper-showcase__panel--method">
+  <h2>Method and System</h2>
+  <p>The study employed a collaborative Tangram puzzle task involving 54 participants. The methodology included manipulating failure sequence types (homogeneous vs. heterogeneous) and robot awareness levels (none, partial, full) to assess their impact on user trust and perceived intelligence.</p>
+</section>
 
-- Identified the influence of failure sequence patterns (homogeneous vs. heterogeneous) on trust and perceived intelligence.
-- Demonstrated the benefits of robot awareness in mitigating trust decline following failures.
-- Provided insights into designing effective robot behaviors for trust repair in collaborative settings.
+<section class="paper-showcase__panel paper-showcase__panel--results">
+  <h2>Results Overview</h2>
+  <p>The experiment revealed that homogeneous failure sequences result in smaller reductions in trust and perceived intelligence compared to heterogeneous sequences. Robots demonstrating awareness were consistently rated higher in trust and perceived intelligence, particularly for grasping and planning failures.</p>
+</section>
 
-## Method and System
+<section class="paper-showcase__panel paper-showcase__panel--results-alt">
+  <h2>Quantitative Results</h2>
+  <p>Add quantitative results here, such as condition-level metrics, trust score changes, statistical significance tests, or effect sizes.</p>
+</section>
 
-The study employed a collaborative Tangram puzzle task involving 54 participants. The methodology included manipulating failure sequence types (homogeneous vs. heterogeneous) and robot awareness levels (none, partial, full) to assess their impact on user trust and perceived intelligence.
+<section class="paper-showcase__panel paper-showcase__panel--results-soft">
+  <h2>Qualitative Insights</h2>
+  <p>Add qualitative observations here, such as participant feedback, recovery behaviors, or themes that explain how awareness shaped perception.</p>
+</section>
 
-## Findings
+<section class="paper-showcase__panel paper-showcase__panel--discussion">
+  <h2>Discussion</h2>
+  <h3>Limitations</h3>
+  <p>The study was conducted in a controlled laboratory setting, which may limit generalizability to other real-world contexts. The robot's awareness behaviors were pre-scripted, lacking flexibility of real-time autonomous responses.</p>
+  <h3>Future Work</h3>
+  <p>Future research could explore more diverse and severe failure scenarios in real environments. Investigating longer-term user interactions and adaptive repair strategies could significantly advance the field.</p>
+</section>
 
-The experiment revealed that homogeneous failure sequences result in smaller reductions in trust and perceived intelligence compared to heterogeneous sequences. Robots demonstrating awareness were consistently rated higher in trust and perceived intelligence, particularly for grasping and planning failures.
-
-## Limitations and Future Work
-
-The study was conducted in a controlled laboratory setting, which may limit generalizability to other real-world contexts. The robot's awareness behaviors were pre-scripted, lacking flexibility of real-time autonomous responses.
-
-Future research could explore more diverse and severe failure scenarios in real environments. Investigating longer-term user interactions and adaptive repair strategies could significantly advance the field.
-
-## Figure Highlights
-
-![Grasping Failure](/images/papers/gazing-at-failure/Grasping_Failure.png)
-
-![Planning Failure](/images/papers/gazing-at-failure/Planning_Failure.png)
-
-![Freezing Failure 2](/images/papers/gazing-at-failure/Freezing_Failure_2.png)
+<section class="paper-showcase__panel paper-showcase__panel--gallery">
+  <h2>Figure Highlights</h2>
+  <div class="paper-showcase__figure-row">
+    <figure class="paper-showcase__figure-card">
+      <img src="/images/papers/gazing-at-failure/Grasping_Failure.png" alt="Grasping Failure">
+      <figcaption>Grasping Failure</figcaption>
+    </figure>
+    <figure class="paper-showcase__figure-card">
+      <img src="/images/papers/gazing-at-failure/Planning_Failure.png" alt="Planning Failure">
+      <figcaption>Planning Failure</figcaption>
+    </figure>
+    <figure class="paper-showcase__figure-card">
+      <img src="/images/papers/gazing-at-failure/Freezing_Failure_2.png" alt="Freezing Failure 2">
+      <figcaption>Freezing Failure 2</figcaption>
+    </figure>
+  </div>
+</section>

@@ -22,6 +22,16 @@ python3 markdown_generator/generate_paper_showcase.py \
   --featured
 ```
 
+To create a new page with an explicit website path:
+
+```bash
+python3 markdown_generator/generate_paper_showcase.py \
+  /absolute/path/to/paper.pdf \
+  --slug chi2026-robotfailure \
+  --permalink /publication/CHI2026-RobotFailure/ \
+  --featured
+```
+
 To update an existing publication page instead of creating a new `_publications/*.md`
 file, point the script at the existing page by permalink, slug, or markdown path:
 
@@ -44,4 +54,3 @@ The script will:
 5. write a paper page into `_publications/`
 
 If you want to preview the generated Markdown without writing files, use `--dry-run`.
-

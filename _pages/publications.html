@@ -5,56 +5,87 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can find my papers on my <a href="{{site.author.googlescholar}}">Google Scholar</a>.</div>
-{% endif %}
-
 {% include base_path %}
 
-{% if site.publication_category %}
-  <p class="archive__subtitle">
+{% assign featured_publications = site.publications | where: "featured", true %}
+
+<div class="publications-page">
+  <section class="publications-page__intro">
+    <p class="publications-page__eyebrow">Research Output</p>
+    <p class="publications-page__lead">This page is structured as a publications landing page. Each paper title opens a dedicated page where you can add the abstract, figures, videos, links, and notes for that specific paper.</p>
+    {% if site.author.googlescholar %}
+      <p class="publications-page__external">You can also browse the full list on my <a href="{{site.author.googlescholar}}">Google Scholar</a>.</p>
+    {% endif %}
+  </section>
+
+  <p class="archive__subtitle publications-page__jump">
     Jump to:
-    {% for category in site.publication_category %}
-      <a href="#{{ category[0] }}">{{ category[1].title }}</a>{% unless forloop.last %} | {% endunless %}
-    {% endfor %}
+    {% if featured_publications.size > 0 %}
+      <a href="#main-papers">Main Papers</a>{% if site.publication_category or site.publications.size > featured_publications.size %} | {% endif %}
+    {% endif %}
+    {% if site.publication_category %}
+      {% for category in site.publication_category %}
+        <a href="#{{ category[0] }}">{{ category[1].title }}</a>{% unless forloop.last %} | {% endunless %}
+      {% endfor %}
+    {% endif %}
   </p>
 
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
+  {% if featured_publications.size > 0 %}
+    <section class="publications-page__section">
+      <h2 id="main-papers">Main Papers</h2>
+      <p class="publications-page__section-note">Highlighted papers that open into dedicated paper pages.</p>
+      <hr />
+      {% for post in featured_publications reversed %}
+        {% include archive-single.html %}
+      {% endfor %}
+    </section>
+  {% endif %}
+
+  {% if site.publication_category %}
+    {% for category in site.publication_category %}
+      {% assign title_shown = false %}
+      {% for post in site.publications reversed %}
+        {% if post.featured == true %}
+          {% continue %}
+        {% endif %}
+        {% if post.category != category[0] %}
+          {% continue %}
+        {% endif %}
+        {% unless title_shown %}
+          <h2 id="{{ category[0] }}">{{ category[1].title }}</h2>
+          <hr />
+          {% assign title_shown = true %}
+        {% endunless %}
+        {% include archive-single.html %}
+      {% endfor %}
+    {% endfor %}
+
+    {% assign other_publications_shown = false %}
     {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
+      {% if post.featured == true %}
         {% continue %}
       {% endif %}
-      {% unless title_shown %}
-        <h2 id="{{ category[0] }}">{{ category[1].title }}</h2>
-        <hr />
-        {% assign title_shown = true %}
+
+      {% assign category_defined = false %}
+      {% for category in site.publication_category %}
+        {% if post.category == category[0] %}
+          {% assign category_defined = true %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+
+      {% unless category_defined %}
+        {% unless other_publications_shown %}
+          <h2 id="other-publications">Other Publications</h2>
+          <hr />
+          {% assign other_publications_shown = true %}
+        {% endunless %}
+        {% include archive-single.html %}
       {% endunless %}
+    {% endfor %}
+  {% else %}
+    {% for post in site.publications reversed %}
       {% include archive-single.html %}
     {% endfor %}
-  {% endfor %}
-
-  {% assign other_publications_shown = false %}
-  {% for post in site.publications reversed %}
-    {% assign category_defined = false %}
-    {% for category in site.publication_category %}
-      {% if post.category == category[0] %}
-        {% assign category_defined = true %}
-        {% break %}
-      {% endif %}
-    {% endfor %}
-
-    {% unless category_defined %}
-      {% unless other_publications_shown %}
-        <h2 id="other-publications">Other Publications</h2>
-        <hr />
-        {% assign other_publications_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endunless %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+  {% endif %}
+</div>

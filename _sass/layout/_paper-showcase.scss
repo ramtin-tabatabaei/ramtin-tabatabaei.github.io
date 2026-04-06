@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .paper-showcase {
-  max-width: 980px;
+  max-width: 840px;
   margin: 0 auto;
   padding: 1rem 1rem 4rem;
 }
@@ -183,9 +183,8 @@
 
 .paper-showcase__media {
   overflow: hidden;
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
+  width: min(100%, 720px);
+  margin: 0 auto;
   padding: 0.35rem;
   border-radius: 20px;
   background: #0f172a;
@@ -253,12 +252,25 @@
 .paper-showcase__figure-row {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: start;
+  justify-content: start;
 }
 
 .paper-showcase__figure-card {
   margin: 0;
+}
+
+.paper-showcase__figure-row--single {
+  grid-template-columns: minmax(0, 50%);
+}
+
+.paper-showcase__figure-row--double {
+  grid-template-columns: repeat(2, minmax(0, 50%));
+}
+
+.paper-showcase__figure-row--triple {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .paper-showcase__figure-card img {
@@ -270,6 +282,15 @@
   border-radius: 14px;
   border: 1px solid rgba(15, 23, 42, 0.08);
   background: rgba(248, 250, 252, 0.78);
+}
+
+@include breakpoint(max-width $medium) {
+  .paper-showcase__figure-row,
+  .paper-showcase__figure-row--single,
+  .paper-showcase__figure-row--double,
+  .paper-showcase__figure-row--triple {
+    grid-template-columns: 1fr;
+  }
 }
 
 .paper-showcase__figure-card figcaption {

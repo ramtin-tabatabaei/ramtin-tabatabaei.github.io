@@ -795,11 +795,18 @@ def build_gallery_section(
     if not figure_blocks:
         return ""
     joined = "\n".join(figure_blocks)
+    count = len(figure_blocks)
+    if count <= 1:
+        row_class = "paper-showcase__figure-row paper-showcase__figure-row--single"
+    elif count == 2:
+        row_class = "paper-showcase__figure-row paper-showcase__figure-row--double"
+    else:
+        row_class = "paper-showcase__figure-row paper-showcase__figure-row--triple"
     return "\n".join(
         [
             '<section class="paper-showcase__panel paper-showcase__panel--gallery">',
             "  <h2>Figure Highlights</h2>",
-            '  <div class="paper-showcase__figure-row">',
+            f'  <div class="{row_class}">',
             joined,
             "  </div>",
             "</section>",

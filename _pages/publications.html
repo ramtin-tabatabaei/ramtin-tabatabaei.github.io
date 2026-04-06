@@ -9,6 +9,8 @@ author_profile: true
 
 {% assign visible_publications = site.publications | where_exp: "post", "post.hidden != true" %}
 {% assign featured_publications = visible_publications | where: "featured", true %}
+{% assign featured_manual = featured_publications | where_exp: "post", "post.main_order != nil" | sort: "main_order" %}
+{% assign featured_auto = featured_publications | where_exp: "post", "post.main_order == nil" | sort: "paper_year" | reverse %}
 
 <div class="publications-page">
   <section class="publications-page__intro">
@@ -24,57 +26,12 @@ author_profile: true
       <h2 id="main-papers">Main Papers</h2>
       <p class="publications-page__section-note">Highlighted papers that open into dedicated paper pages.</p>
       <hr />
-      {% for post in featured_publications reversed %}
+      {% for post in featured_manual %}
+        {% include archive-single.html %}
+      {% endfor %}
+      {% for post in featured_auto %}
         {% include archive-single.html %}
       {% endfor %}
     </section>
-  {% endif %}
-
-  {% if site.publication_category %}
-    {% for category in site.publication_category %}
-      {% assign title_shown = false %}
-      {% for post in visible_publications reversed %}
-        {% if post.featured == true %}
-          {% continue %}
-        {% endif %}
-        {% if post.category != category[0] %}
-          {% continue %}
-        {% endif %}
-        {% unless title_shown %}
-          <h2 id="{{ category[0] }}">{{ category[1].title }}</h2>
-          <hr />
-          {% assign title_shown = true %}
-        {% endunless %}
-        {% include archive-single.html %}
-      {% endfor %}
-    {% endfor %}
-
-    {% assign other_publications_shown = false %}
-    {% for post in visible_publications reversed %}
-      {% if post.featured == true %}
-        {% continue %}
-      {% endif %}
-
-      {% assign category_defined = false %}
-      {% for category in site.publication_category %}
-        {% if post.category == category[0] %}
-          {% assign category_defined = true %}
-          {% break %}
-        {% endif %}
-      {% endfor %}
-
-      {% unless category_defined %}
-        {% unless other_publications_shown %}
-          <h2 id="other-publications">Other Publications</h2>
-          <hr />
-          {% assign other_publications_shown = true %}
-        {% endunless %}
-        {% include archive-single.html %}
-      {% endunless %}
-    {% endfor %}
-  {% else %}
-    {% for post in visible_publications reversed %}
-      {% include archive-single.html %}
-    {% endfor %}
   {% endif %}
 </div>

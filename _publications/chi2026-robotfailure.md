@@ -5,6 +5,7 @@ collection: "publications"
 category: "conferences"
 permalink: "/publication/CHI2026-RobotFailure/"
 featured: true
+paper_year: 2026
 excerpt: "Investigating how different robot failure types and awareness levels affect user trust in collaborative tasks using a Tangram puzzle experiment."
 venue: "CHI Conference on Human Factors in Computing Systems (CHI ’26)"
 date: "2026-04-13"

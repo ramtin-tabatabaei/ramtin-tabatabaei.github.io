@@ -5,6 +5,7 @@ collection: "publications"
 category: "conferences"
 permalink: "/publication/HRI2025-RobotFailure/"
 featured: true
+paper_year: 2025
 excerpt: "This study investigates how human gaze dynamics can indicate robot failures and affect perceptions in collaborative tasks."
 venue: "International Conference on Human-Robot Interaction (HRI) 2025"
 subtitle: "Exploring Human Gaze Dynamics During Robot Failures in Collaborative Environments"

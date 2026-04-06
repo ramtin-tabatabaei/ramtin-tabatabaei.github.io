@@ -688,6 +688,7 @@ def build_front_matter(data: dict[str, Any]) -> str:
         "category": data.get("category", "conferences"),
         "permalink": data.get("permalink", ""),
         "featured": data.get("featured", False),
+        "paper_year": data.get("paper_year", ""),
         "excerpt": data.get("excerpt", ""),
         "venue": data.get("venue", ""),
         "date": data.get("date", ""),
@@ -1071,6 +1072,7 @@ def normalize_page_data(
         extracted=extracted,
         publication_date=publication_date,
     )
+    paper_year = infer_year(extracted, publication_date)
 
     return {
         "title": title,
@@ -1078,6 +1080,7 @@ def normalize_page_data(
         "category": category,
         "permalink": permalink,
         "featured": featured,
+        "paper_year": paper_year,
         "excerpt": excerpt,
         "venue": extracted.get("venue", "").strip(),
         "date": publication_date,

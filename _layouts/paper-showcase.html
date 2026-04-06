@@ -1,0 +1,141 @@
+---
+layout: default
+---
+
+{% include base_path %}
+
+{% assign teaser_image = page.teaser_image %}
+{% if teaser_image and teaser_image contains "://" %}
+  {% assign teaser_image_url = teaser_image %}
+{% elsif teaser_image %}
+  {% assign teaser_image_url = teaser_image | prepend: base_path %}
+{% endif %}
+
+{% assign demo_video = page.demo_video %}
+{% if demo_video and demo_video contains "://" %}
+  {% assign demo_video_url = demo_video %}
+{% elsif demo_video %}
+  {% assign demo_video_url = demo_video | prepend: base_path %}
+{% endif %}
+
+<div id="main" role="main">
+  <article class="paper-showcase" itemscope itemtype="http://schema.org/ScholarlyArticle">
+    {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">{% endif %}
+
+    <header class="paper-showcase__hero">
+      <div class="paper-showcase__hero-copy">
+        {% if page.venue %}
+          <p class="paper-showcase__venue">{{ page.venue }}</p>
+        {% endif %}
+
+        <h1 class="paper-showcase__title">{{ page.title }}</h1>
+
+        {% if page.subtitle %}
+          <p class="paper-showcase__subtitle">{{ page.subtitle }}</p>
+        {% endif %}
+
+        {% if page.awards %}
+          <ul class="paper-showcase__awards">
+            {% for award in page.awards %}
+              <li>{{ award }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% if page.authors %}
+          <div class="paper-showcase__authors">
+            {% for author in page.authors %}
+              <article class="paper-showcase__author">
+                {% if author.image %}
+                  {% if author.image contains "://" %}
+                    {% assign author_image_url = author.image %}
+                  {% else %}
+                    {% assign author_image_url = author.image | prepend: base_path %}
+                  {% endif %}
+                  <img class="paper-showcase__author-image" src="{{ author_image_url }}" alt="{{ author.name }}">
+                {% endif %}
+                <div>
+                  <h2 class="paper-showcase__author-name">
+                    {% if author.url %}
+                      <a href="{{ author.url }}">{{ author.name }}</a>
+                    {% else %}
+                      {{ author.name }}
+                    {% endif %}
+                  </h2>
+                  {% if author.affiliation %}
+                    <p class="paper-showcase__author-affiliation">{{ author.affiliation }}</p>
+                  {% endif %}
+                </div>
+              </article>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% if page.hero_links %}
+          <div class="paper-showcase__links">
+            {% for link in page.hero_links %}
+              {% if link.url contains "://" %}
+                {% assign hero_link_url = link.url %}
+              {% else %}
+                {% assign hero_link_url = link.url | prepend: base_path %}
+              {% endif %}
+              <a class="btn paper-showcase__link" href="{{ hero_link_url }}">{{ link.label }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      {% if teaser_image_url %}
+        <figure class="paper-showcase__teaser">
+          <img src="{{ teaser_image_url }}" alt="{{ page.teaser_alt | default: page.title }}">
+          {% if page.teaser_caption %}
+            <figcaption>{{ page.teaser_caption }}</figcaption>
+          {% endif %}
+        </figure>
+      {% endif %}
+    </header>
+
+    <section class="paper-showcase__content" itemprop="text">
+      {% if page.abstract %}
+        <section class="paper-showcase__section">
+          <h2>Abstract</h2>
+          <p>{{ page.abstract }}</p>
+        </section>
+      {% endif %}
+
+      {% if demo_video_url %}
+        <section class="paper-showcase__section">
+          <h2>Project Demo</h2>
+          <div class="paper-showcase__media">
+            {% if demo_video_url contains ".mp4" or demo_video_url contains ".webm" or demo_video_url contains ".ogg" %}
+              <video controls preload="metadata">
+                <source src="{{ demo_video_url }}">
+                Your browser does not support the video tag.
+              </video>
+            {% else %}
+              <iframe src="{{ demo_video_url }}" title="{{ page.title }} demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            {% endif %}
+          </div>
+        </section>
+      {% endif %}
+
+      <div class="paper-showcase__body">
+        {{ content }}
+      </div>
+
+      {% if page.citation_bibtex %}
+        <section class="paper-showcase__section">
+          <h2>Citation</h2>
+          <pre><code>{{ page.citation_bibtex | escape }}</code></pre>
+        </section>
+      {% elsif page.citation %}
+        <section class="paper-showcase__section">
+          <h2>Citation</h2>
+          <p>{{ page.citation }}</p>
+        </section>
+      {% endif %}
+    </section>
+  </article>
+</div>

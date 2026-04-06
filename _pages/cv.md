@@ -11,104 +11,86 @@ redirect_from:
 <div class="cv-page">
   <section class="cv-hero">
     <div class="cv-hero__content">
-      <p class="cv-hero__eyebrow">Human-Robot Interaction · Robotics Systems · Behavioral Sensing</p>
-      <h1 class="cv-hero__title">PhD researcher in human-robot interaction and robotics systems</h1>
+      <div class="cv-hero__tags" aria-label="Research areas">
+        <span class="cv-hero__tag">Human-Robot Interaction</span>
+        <span class="cv-hero__tag">anomaly detection</span>
+        <span class="cv-hero__tag">Human Behavioral Sensing</span>
+      </div>
+      <h1 class="cv-hero__title">Ph.D. Researcher in Human-Robot Interaction</h1>
       <p class="cv-hero__lead">
-        I design and evaluate <strong>human-robot interaction systems</strong> with a focus on
-        <strong>robot failure, trust, and recovery</strong>. My work combines <strong>real robot deployment,
-        eye tracking, computer vision, ROS-based workflows, and quantitative analysis</strong> to study how people
-        understand and respond to robots in collaborative tasks.
+        I design and evaluate <strong>collaborative human–robot systems</strong>, focusing on
+        <strong>robot failure, trust, and recovery</strong>. My work studies how people respond when robots make
+        mistakes and develops external reasoning systems that enable robots to detect and respond to their own errors.
+        I use <strong>real-robot experiments, eye tracking, computer vision, ROS workflows, and quantitative
+        analysis</strong> to investigate human–robot interaction in shared tasks.
       </p>
       <div class="cv-hero__actions">
         <a class="btn" href="/publications/">View Publications</a>
-        <a class="btn btn--light-outline" href="https://www.linkedin.com/in/ramtin-tabatabaei">LinkedIn</a>
       </div>
     </div>
 
     <aside class="cv-hero__panel">
       <p class="cv-panel__label">Current Role</p>
-      <h2 class="cv-panel__title">PhD Candidate, Computing & Information Systems</h2>
-      <p class="cv-panel__meta">School of Computing and Information Systems<br>University of Melbourne</p>
+      <h2 class="cv-panel__title">Ph.D. Candidate</h2>
+      <p class="cv-panel__meta">Computing & Information Systems<br>School of Computing and Information Systems<br>University of Melbourne</p>
       <ul class="cv-panel__list">
         <li>Researching robot failure, trust, and recovery in collaborative HRI</li>
+        <li>Developing external reasoning frameworks that support failure detection and the selection of appropriate recovery strategies in robotic systems.</li>
         <li>Building studies and interaction systems on Tiago and Furhat with ROS-based workflows</li>
         <li>Teaching data processing and machine learning while supporting student projects</li>
       </ul>
     </aside>
   </section>
 
-  <section class="cv-section">
+  <section class="cv-section cv-section--profile">
     <div class="cv-section__header">
       <p class="cv-section__eyebrow">Profile</p>
       <h2 class="cv-section__title">Professional Summary</h2>
     </div>
-    <div class="cv-grid cv-grid--2">
-      <article class="cv-card cv-card--emphasis">
-        <p>
-          I work at the intersection of <strong>human-robot interaction, computer vision, and deployable robotic systems</strong>.
-          My research examines how people respond when robots fail, how trust evolves across repeated interactions,
-          and how robotic systems should communicate and recover in ways that remain legible to users.
-        </p>
-        <ul class="cv-list">
-          <li><strong>Research plus execution:</strong> peer-reviewed HRI publications supported by end-to-end system development and real robot studies.</li>
-          <li><strong>Technical range:</strong> ROS, computer vision, gaze processing, machine learning, Python tooling, experimental pipelines, and statistical analysis.</li>
-          <li><strong>Human-centered evaluation:</strong> multimodal behavioral data, user studies, trust measurement, and mixed-method analysis for HRI.</li>
-        </ul>
-      </article>
-      <article class="cv-card cv-card--compact">
-        <div class="cv-section__header cv-section__header--tight">
-          <p class="cv-section__eyebrow">Links</p>
-          <h2 class="cv-section__title">Professional Presence</h2>
-        </div>
-        <div class="cv-link-grid">
-          <a class="cv-link-card" href="/publications/">
-            <strong>Publications</strong>
-            <span>Selected papers, abstracts, media, and project pages</span>
-          </a>
-          <a class="cv-link-card" href="https://scholar.google.com.au/citations?user=5YHIHDAAAAAJ&hl=en&oi=sra">
-            <strong>Google Scholar</strong>
-            <span>Citations and full academic publication record</span>
-          </a>
-          <a class="cv-link-card" href="https://www.linkedin.com/in/ramtin-tabatabaei">
-            <strong>LinkedIn</strong>
-            <span>Professional profile and current academic affiliation</span>
-          </a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="cv-stat-grid">
-    <article class="cv-stat-card">
-      <p class="cv-stat-card__label">Focus</p>
-      <h2>Research areas</h2>
-      <ul class="cv-list">
-        <li>Human-robot interaction and trust</li>
-        <li>Robot failure detection and recovery</li>
-        <li>Gaze and behavioral sensing</li>
-      </ul>
-    </article>
-    <article class="cv-stat-card">
-      <p class="cv-stat-card__label">Robots & Tools</p>
-      <h2>Systems I build with</h2>
-      <ul class="cv-list">
-        <li>Tiago and Furhat robots</li>
-        <li>ROS-based experimental pipelines</li>
-        <li>Python, machine learning, and computer vision</li>
-      </ul>
-    </article>
-    <article class="cv-stat-card">
-      <p class="cv-stat-card__label">Methods</p>
-      <h2>How I work</h2>
-      <ul class="cv-list">
-        <li>Controlled user studies</li>
-        <li>Real-robot deployment and live demos</li>
-        <li>Quantitative and mixed-method analysis</li>
-      </ul>
+    <article class="cv-card cv-card--emphasis cv-card--profile">
+      <h3>Research Profile</h3>
+      <p>
+        I work at the intersection of human–robot interaction, computer vision, deployable robotic systems, and vision–language model (VLM)-based reasoning for robot failures. My research investigates how people respond to robot failures, how trust evolves across repeated interactions, and how robotic systems can communicate and recover in ways that remain legible to users. In parallel, I develop external reasoning frameworks that enable robots to detect failures and select appropriate recovery strategies.
+      </p>
+      <div class="cv-summary-grid">
+        <section class="cv-summary-group">
+          <h4>Research Focus</h4>
+          <ul class="cv-list">
+            <li>Robot failure detection and recovery</li>
+            <li>Human–robot interaction and trust</li>
+            <li>Gaze and behavioral sensing</li>
+          </ul>
+        </section>
+        <section class="cv-summary-group">
+          <h4>Systems & Platforms</h4>
+          <ul class="cv-list">
+            <li>Tiago and Furhat robots</li>
+            <li>ROS-based experimental pipelines</li>
+          </ul>
+        </section>
+        <section class="cv-summary-group">
+          <h4>Research Approach</h4>
+          <ul class="cv-list">
+            <li><strong>Human-Centered Failure Detection:</strong> Using behavioral signals (e.g., gaze, interaction) to identify robot failures and understand their impact on trust.</li>
+            <li><strong>Model-Based Failure Detection:</strong> Developing external reasoning systems (LLMs/VLMs) for autonomous failure detection and recovery.</li>
+            <li><strong>Validation:</strong> End-to-end implementation and evaluation with real robots and user studies.</li>
+          </ul>
+        </section>
+        <section class="cv-summary-group">
+          <h4>Technical Expertise</h4>
+          <ul class="cv-list">
+            <li>ROS and deployable robotic systems</li>
+            <li>Computer vision and gaze tracking</li>
+            <li>LLM- and VLM-based reasoning via OpenAI APIs</li>
+            <li>Python-based tooling and experimental pipelines</li>
+            <li>Statistical analysis</li>
+          </ul>
+        </section>
+      </div>
     </article>
   </section>
 
-  <section class="cv-section">
+  <section class="cv-section cv-section--capabilities">
     <div class="cv-section__header">
       <p class="cv-section__eyebrow">Capabilities</p>
       <h2 class="cv-section__title">Core Strengths</h2>
@@ -125,105 +107,121 @@ redirect_from:
       <article class="cv-card">
         <h3>Perception, Programming & Analysis</h3>
         <ul class="cv-list">
-          <li><strong>Perception and data:</strong> Pupil Labs, gaze processing, annotation workflows, OpenCV, computer vision pipelines</li>
-          <li><strong>Programming:</strong> Python, TensorFlow, scikit-learn, MATLAB, C++ (basic), Kotlin (basic), API integration</li>
-          <li><strong>Modeling and simulation:</strong> Unity, SolidWorks, Abaqus, COMSOL, linear mixed-effects models, cumulative link mixed models</li>
+          <li><strong>Perception and data:</strong> Pupil Labs, gaze tracking and processing, annotation workflows, OpenCV, computer vision pipelines</li>
+          <li><strong>Programming and systems:</strong> Python, ROS, LLM- and VLM-based reasoning via OpenAI APIs, API integration</li>
+          <li><strong>Modeling and analysis:</strong> Unity, SolidWorks, statistical modeling (linear mixed-effects models, cumulative link mixed models)</li>
         </ul>
       </article>
     </div>
   </section>
 
-  <section class="cv-section">
-    <div class="cv-section__header">
-      <p class="cv-section__eyebrow">Highlights</p>
-      <h2 class="cv-section__title">Selected Highlights</h2>
-    </div>
-    <div class="cv-grid cv-grid--3">
-      <article class="cv-card">
-        <h3>Built deployable collaborative robot systems</h3>
-        <p>Implemented <strong>ROS-based collaborative tasks, failure cases, perception pipelines, and interaction flows</strong> on Tiago and Furhat for research and live demonstration contexts.</p>
-      </article>
-      <article class="cv-card">
-        <h3>Published HRI work grounded in experiments</h3>
-        <p>Produced <strong>ACM/IEEE HRI and CHI publications</strong> on gaze, robot failure, trust dynamics, and analysis tooling for human-robot studies.</p>
-      </article>
-      <article class="cv-card">
-        <h3>Delivered public robotics showcases</h3>
-        <p>Presented interactive systems at <strong>innovation events, open days, showcase programs, and live demo sessions</strong> for academic and public audiences.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="cv-section">
+  <section class="cv-section cv-section--experience">
     <div class="cv-section__header">
       <p class="cv-section__eyebrow">Career</p>
       <h2 class="cv-section__title">Experience</h2>
     </div>
-    <div class="cv-timeline">
+    <div class="cv-timeline cv-timeline--experience">
       <article class="cv-timeline__item">
-        <div class="cv-timeline__meta">Melbourne, Australia · Dec 2023 – Present</div>
-        <h3>Researcher · Interactive Technologies Lab (IXT), University of Melbourne</h3>
-        <ul class="cv-list">
-          <li>Built <strong>ROS-based collaborative tasks on Tiago</strong> with multiple failure conditions and ran controlled user studies with <strong>50+ participants</strong>.</li>
-          <li>Developed pipelines integrating <strong>eye tracking, ROS synchronization, and real-time gaze feature extraction</strong> for failure detection.</li>
-          <li>Co-developed award-winning office assistant robot behaviors spanning navigation, interaction, and task orchestration.</li>
-          <li>Contributed to live robotics showcases and demos for academic and public audiences.</li>
-        </ul>
+        <div class="cv-timeline__meta">Melbourne, Australia</div>
+        <h3>University of Melbourne</h3>
+        <div class="cv-role-stack">
+          <section class="cv-role-card">
+            <div class="cv-role-card__header">
+              <h4>Researcher</h4>
+              <span>Dec 2023 – Present</span>
+            </div>
+            <p class="cv-role-card__subhead">Interactive Technologies Lab (IXT)</p>
+            <ul class="cv-list">
+              <li><strong>Tiago Robot</strong></li>
+                <ul>
+                  <li>Built ROS-based collaborative tasks with diverse failure conditions and conducted controlled user studies with <strong>50+ participants</strong> on real robots.</li>
+                  <li>Developed pipelines integrating <strong>eye tracking, ROS synchronization, and real-time gaze feature extraction</strong> for human-centered failure detection.</li>
+                  <li>Designed a simulation-based failure detection framework in NVIDIA Isaac using <strong>behavior trees and VLM-based reasoning</strong> for autonomous detection and recovery.</li>
+                </ul>
+
+                <li><strong>Furhat Robot</strong></li>
+                <ul>
+                  <li>Developed complex emotional expressions using <strong>facial action units</strong>, with VLM- and user-based evaluation to identify appropriate responses.</li>
+                  <li>Contributed to live robotics showcases and demos for academic and public audiences.</li>
+                </ul>
+            </ul>
+          </section>
+          <section class="cv-role-card">
+            <div class="cv-role-card__header">
+              <h4>Tutor & Project Supervisor</h4>
+              <span>Mar 2024 – Present</span>
+            </div>
+            <p class="cv-role-card__subhead">Teaching and supervision</p>
+            <ul class="cv-list">
+              <li><strong>Elements of Data Processing</strong> · Tutor · Semester 2, 2025 and Semester 1, 2026</li>
+              <li><strong>Machine Learning</strong> · Tutor · Semester 1, 2026</li>
+              <li><strong>Master's Project</strong> · Supervisor · Mar 2024 – Jul 2024 · Supervised development of a web app for annotating ROSBag data.</li>
+            </ul>
+          </section>
+        </div>
       </article>
       <article class="cv-timeline__item">
-        <div class="cv-timeline__meta">Melbourne, Australia · Mar 2024 – Present</div>
-        <h3>Tutor & Project Supervisor · University of Melbourne</h3>
-        <ul class="cv-list">
-          <li><strong>Tutor, Elements of Data Processing</strong> · Semester 2, 2025</li>
-          <li><strong>Tutor, Elements of Data Processing</strong> · Semester 1, 2026</li>
-          <li><strong>Tutor, Machine Learning</strong> · Semester 1, 2026</li>
-          <li><strong>Supervisor, Master's Project</strong> · Mar 2024 – Jul 2024. Supervised development of a web app for annotating ROSBag data.</li>
-        </ul>
-      </article>
-      <article class="cv-timeline__item">
-        <div class="cv-timeline__meta">Tehran, Iran · Sep 2021 – Sep 2023</div>
-        <h3>Research Assistant · CEDRA, Sharif University of Technology</h3>
-        <ul class="cv-list">
-          <li>Programmed and ran HRI experiments with <strong>Nao and Opo robots</strong> to study gaze behavior in children and young adults.</li>
-          <li>Built deep learning models for <strong>lip reading</strong> and <strong>facial emotion recognition</strong> from video data.</li>
-        </ul>
-      </article>
-      <article class="cv-timeline__item">
-        <div class="cv-timeline__meta">Tehran, Iran · Sep 2022 – Jun 2023</div>
-        <h3>Tutor · Sharif University of Technology</h3>
-        <ul class="cv-list">
-          <li><strong>Tutor, Social Cognitive Robotics</strong> · Jan 2023 – Jun 2023</li>
-          <li><strong>Tutor, Advanced Math 1</strong> · Sep 2022 – Dec 2022</li>
-        </ul>
+        <div class="cv-timeline__meta">Tehran, Iran</div>
+        <h3>Sharif University of Technology</h3>
+        <div class="cv-role-stack">
+          <section class="cv-role-card">
+            <div class="cv-role-card__header">
+              <h4>Research Assistant</h4>
+              <span>Sep 2021 – Sep 2023</span>
+            </div>
+            <p class="cv-role-card__subhead">CEDRA</p>
+            <ul class="cv-list">
+              <li>Programmed and ran HRI experiments with <strong>Nao and Opo robots</strong> to study gaze behavior in children and young adults.</li>
+              <li>Built deep learning models for <strong>lip reading</strong> and <strong>facial emotion recognition</strong> from video data.</li>
+            </ul>
+          </section>
+          <section class="cv-role-card">
+            <div class="cv-role-card__header">
+              <h4>Tutor</h4>
+              <span>Sep 2022 – Jun 2023</span>
+            </div>
+            <p class="cv-role-card__subhead">Teaching roles</p>
+            <ul class="cv-list">
+              <li><strong>Social Cognitive Robotics</strong> · Jan 2023 – Jun 2023</li>
+              <li><strong>Advanced Math 1</strong> · Sep 2022 – Dec 2022</li>
+            </ul>
+          </section>
+        </div>
       </article>
     </div>
   </section>
 
-  <section class="cv-section">
+  <section class="cv-section cv-section--education">
     <div class="cv-section__header">
       <p class="cv-section__eyebrow">Academic Path</p>
       <h2 class="cv-section__title">Education</h2>
     </div>
     <div class="cv-timeline">
       <article class="cv-timeline__item">
-        <div class="cv-timeline__meta">Dec 2023 – Present</div>
         <h3>University of Melbourne</h3>
-        <p><strong>PhD, Computing & Information Systems</strong></p>
+        <div class="cv-role-card__header cv-role-card__header--education">
+          <h4>Ph.D., Computing & Information Systems</h4>
+          <span>Dec 2023 – Present</span>
+        </div>
         <p><strong>Thesis:</strong> <em>Exploring and Exploiting Human Behavioural Responses to Robot Failures in Human-Robot Interaction</em></p>
         <p><strong>Supervisors:</strong> Dr. Wafa Johal & Prof. Vassilis Kostakos</p>
       </article>
       <article class="cv-timeline__item">
-        <div class="cv-timeline__meta">Sep 2021 – Jun 2023</div>
         <h3>Sharif University of Technology</h3>
-        <p><strong>MSc, Mechanical Engineering</strong></p>
+        <div class="cv-role-card__header cv-role-card__header--education">
+          <h4>MSc, Mechanical Engineering</h4>
+          <span>Sep 2021 – Jun 2023</span>
+        </div>
         <p><strong>GPA:</strong> 18.10/20 (= 3.87/4.00)</p>
         <p><strong>Thesis:</strong> <em>Empirical motion-time pattern for human gaze behaviour in social situations using DNNs</em></p>
         <p><strong>Supervisors:</strong> Dr. Alireza Taheri & Prof. Ali Meghdari</p>
       </article>
       <article class="cv-timeline__item">
-        <div class="cv-timeline__meta">Sep 2017 – Sep 2021</div>
         <h3>University of Tehran</h3>
-        <p><strong>BSc, Mechanical Engineering</strong></p>
+        <div class="cv-role-card__header cv-role-card__header--education">
+          <h4>BSc, Mechanical Engineering</h4>
+          <span>Sep 2017 – Sep 2021</span>
+        </div>
         <p><strong>GPA:</strong> 17.45/20 (= 3.80/4.00)</p>
         <p><strong>Thesis:</strong> <em>Controller design for a refrigerator using Peltier modules</em></p>
         <p><strong>Supervisor:</strong> Dr. Ehsan Hosseinian</p>
@@ -231,7 +229,7 @@ redirect_from:
     </div>
   </section>
 
-  <section class="cv-section">
+  <section class="cv-section cv-section--engagement">
     <div class="cv-section__header">
       <p class="cv-section__eyebrow">Engagement</p>
       <h2 class="cv-section__title">Demos & Public Engagement</h2>
@@ -248,13 +246,14 @@ redirect_from:
     </article>
   </section>
 
-  <section class="cv-section">
+  <section class="cv-section cv-section--publications">
     <div class="cv-section__header">
       <p class="cv-section__eyebrow">Research Output</p>
       <h2 class="cv-section__title">Selected Publications</h2>
     </div>
     <article class="cv-card">
       <ol class="cv-publication-list">
+       <li><strong>Tabatabaei</strong>, Kostakos, Johal. <em>Oops, I Did It Again (But I Know It): Robot Failure Consistency and Awareness in Human-Robot Collaboration.</em> ACM CHI 2026.</li>
         <li><strong>Tabatabaei</strong>, Kostakos, Johal. <em>Gazing at Failure: Investigating Human Gaze in Response to Robot Failure in Collaborative Tasks.</em> ACM/IEEE HRI 2025.</li>
         <li><strong>Tabatabaei</strong>, Kostakos, Johal. <em>Real-Time Detection of Robot Failures Using Gaze Dynamics in Collaborative Tasks.</em> ACM/IEEE HRI 2025.</li>
         <li>Zhang, Li, <strong>Tabatabaei</strong>, Johal. <em>ROSAnnotator: A Web Application for ROSBag Data Analysis in Human-Robot Interaction.</em> ACM/IEEE HRI 2025.</li>
@@ -264,7 +263,7 @@ redirect_from:
     </article>
   </section>
 
-  <section class="cv-section">
+  <section class="cv-section cv-section--details">
     <div class="cv-grid cv-grid--2">
       <article class="cv-card">
         <div class="cv-section__header cv-section__header--tight">

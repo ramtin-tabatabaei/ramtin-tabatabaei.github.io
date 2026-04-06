@@ -261,6 +261,226 @@
   }
 }
 
+/*
+   Homepage
+   ========================================================================== */
+
+.home-page {
+  margin-top: 0.5rem;
+
+  h1,
+  h2,
+  h3 {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  a:not(.btn) {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.14em;
+  }
+}
+
+.home-hero {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  padding: 2rem 1.5rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top right, rgba(15, 118, 110, 0.18), transparent 28%),
+    radial-gradient(circle at bottom left, rgba(30, 64, 175, 0.12), transparent 34%),
+    linear-gradient(135deg, rgba(248, 250, 252, 0.98), rgba(241, 245, 249, 0.98));
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.08);
+
+  @include breakpoint($medium) {
+    padding: 2.75rem 2.5rem;
+  }
+}
+
+.home-hero__eyebrow,
+.home-section__eyebrow,
+.home-card__label,
+.home-research-card__index {
+  margin: 0;
+  color: #0f766e;
+  font-family: $sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-hero__title {
+  max-width: 12ch;
+  margin: 0.4rem 0 0.8rem;
+  font-size: 2.4rem;
+  line-height: 1.02;
+
+  @include breakpoint($medium) {
+    font-size: 3.4rem;
+  }
+}
+
+.home-hero__lead {
+  max-width: 44rem;
+  margin-bottom: 1.35rem;
+  font-size: 1.05rem;
+  color: var(--global-text-color-light);
+
+  @include breakpoint($medium) {
+    font-size: 1.12rem;
+  }
+}
+
+.home-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.2rem;
+}
+
+.home-hero__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.home-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  color: #1f2937;
+  font-family: $sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.home-summary-grid,
+.home-research-grid,
+.home-strength-grid,
+.home-two-column {
+  display: grid;
+  gap: 1rem;
+}
+
+.home-summary-grid,
+.home-strength-grid,
+.home-two-column {
+  @include breakpoint($medium) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.home-summary-grid {
+  margin-bottom: 2.4rem;
+
+  @include breakpoint($large) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.home-card,
+.home-mini-card,
+.home-panel,
+.home-research-card {
+  padding: 1.3rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.96));
+  box-shadow: 0 16px 35px rgba(15, 23, 42, 0.05);
+}
+
+.home-card h2,
+.home-mini-card h3,
+.home-panel h3,
+.home-research-card h3 {
+  margin-top: 0.45rem;
+  line-height: 1.15;
+}
+
+.home-card p:last-child,
+.home-mini-card p:last-child,
+.home-panel p:last-child,
+.home-research-card p:last-child {
+  margin-bottom: 0;
+}
+
+.home-section {
+  margin: 2.8rem 0 0;
+}
+
+.home-section--compact {
+  margin-top: 2.2rem;
+}
+
+.home-section__header {
+  margin-bottom: 1rem;
+}
+
+.home-section__title {
+  margin: 0.35rem 0 0.55rem;
+
+  @include breakpoint($medium) {
+    font-size: 2rem;
+  }
+}
+
+.home-section__intro {
+  max-width: 46rem;
+  color: var(--global-text-color-light);
+}
+
+.home-research-grid {
+  @include breakpoint($large) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.home-strength-grid {
+  @include breakpoint($large) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.home-research-card {
+  padding: 1.5rem;
+}
+
+.home-research-card__index {
+  margin-bottom: 0.35rem;
+}
+
+.home-list {
+  margin: 0.9rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.home-list li:last-child {
+  margin-bottom: 0;
+}
+
+.home-video {
+  position: relative;
+  overflow: hidden;
+  margin-top: 1.2rem;
+  padding-top: 56.25%;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  background: #0f172a;
+}
+
+.home-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .page__taxonomy-item {
   display: inline-block;
   margin-right: 5px;

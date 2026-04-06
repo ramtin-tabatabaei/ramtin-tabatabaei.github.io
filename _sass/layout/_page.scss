@@ -313,15 +313,23 @@
 }
 
 .home-hero__title {
-  max-width: 30ch;
+  max-width: 100%;
   margin: 0.4rem 0 0.8rem;
-  font-size: 2rem;
+  font-size: 1.75rem;
   line-height: 1.08;
   text-wrap: balance;
 
   @include breakpoint($medium) {
-    font-size: 3rem;
+    font-size: 2.45rem;
   }
+
+  @include breakpoint($large) {
+    font-size: 2.8rem;
+  }
+}
+
+.home-hero__title-line {
+  display: block;
 }
 
 .home-hero__copy {
@@ -345,7 +353,7 @@
 
 .home-hero__lead--secondary {
   max-width: 50rem;
-  color: var(--global-text-color);
+  color: var(--global-text-color-light);
 }
 
 .home-hero__actions {
@@ -374,15 +382,12 @@
   font-weight: 600;
 }
 
-.home-summary-grid,
-.home-research-grid,
 .home-strength-grid,
 .home-two-column {
   display: grid;
   gap: 1rem;
 }
 
-.home-summary-grid,
 .home-strength-grid,
 .home-two-column {
   @include breakpoint($medium) {
@@ -391,11 +396,13 @@
 }
 
 .home-summary-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
   margin-bottom: 2.4rem;
-
-  @include breakpoint($medium) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+  overflow-x: auto;
+  padding-bottom: 0.3rem;
+  scroll-snap-type: x proximity;
 }
 
 .home-card,
@@ -422,6 +429,12 @@
 .home-panel p:last-child,
 .home-research-card p:last-child {
   margin-bottom: 0;
+}
+
+.home-card {
+  min-width: 260px;
+  flex: 1 1 0;
+  scroll-snap-align: start;
 }
 
 .home-section {
@@ -457,6 +470,7 @@
 
 .home-research-card {
   padding: 1.5rem;
+  max-width: 100%;
 }
 
 .home-research-carousel {
@@ -532,20 +546,19 @@
 }
 
 .home-video {
-  position: relative;
   overflow: hidden;
   margin-top: 1.2rem;
-  padding-top: 56.25%;
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 18px;
   background: #0f172a;
 }
 
 .home-video iframe {
-  position: absolute;
-  inset: 0;
+  display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
 }
 
 .page__taxonomy-item {

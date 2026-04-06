@@ -12,7 +12,10 @@ redirect_from:
 <div class="home-page">
   <section class="home-hero">
     <p class="home-hero__eyebrow">Ph.D. Candidate | University of Melbourne</p>
-    <h1 class="home-hero__title">Human-Robot Interaction Researcher Building Reliable Robot Systems</h1>
+    <h1 class="home-hero__title">
+      <span class="home-hero__title-line">Human-Robot Interaction Researcher</span>
+      <span class="home-hero__title-line">Building Reliable Robot Systems</span>
+    </h1>
     <div class="home-hero__copy">
       <p class="home-hero__lead">I build and study robot behaviours that remain understandable, adaptive, and trustworthy when things go wrong. My work combines human-robot interaction, robotics engineering, perception, and behavioral data analysis.</p>
       <p class="home-hero__lead home-hero__lead--secondary">Across controlled user studies, live robotics demonstrations, and real-time perception pipelines, I investigate how people notice robot failures, how trust changes after those failures, and how robots should communicate and recover. I work with ROS-based systems, gaze and eye-tracking data, collaborative task design, and social robot platforms to turn research questions into practical robotic systems.</p>

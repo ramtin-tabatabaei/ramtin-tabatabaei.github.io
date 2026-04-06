@@ -187,7 +187,7 @@
 .publications-page__external,
 .publications-page__section-note {
   margin-bottom: 0;
-  color: var(--global-text-color-light);
+  color: var(--global-text-color);
 }
 
 .publications-page__lead {
@@ -198,8 +198,8 @@
   margin-top: 0.75rem;
 }
 
-.publications-page__jump {
-  margin-top: 0;
+.publications-page__intro a {
+  color: var(--global-text-color);
 }
 
 .publications-page__section {

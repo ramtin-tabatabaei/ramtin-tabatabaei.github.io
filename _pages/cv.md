@@ -11,54 +11,30 @@ redirect_from:
 <div class="cv-page">
   <section class="cv-hero">
     <div class="cv-hero__content">
-      <p class="cv-hero__eyebrow">Human-Robot Interaction · Robotics · Computer Vision</p>
-      <h1 class="cv-hero__title">PhD researcher and robotics engineer building collaborative robot systems that stay understandable when they fail</h1>
+      <p class="cv-hero__eyebrow">Human-Robot Interaction · Robotics Systems · Behavioral Sensing</p>
+      <h1 class="cv-hero__title">PhD researcher in human-robot interaction and robotics systems</h1>
       <p class="cv-hero__lead">
-        I design and evaluate <strong>human-robot interaction systems</strong> that combine real robot deployment,
-        behavioral sensing, and careful experimental analysis. My work spans <strong>ROS, eye tracking,
-        perception pipelines, machine learning, and live robot demonstrations</strong> across research, public showcases,
-        and collaborative task settings.
+        I design and evaluate <strong>human-robot interaction systems</strong> with a focus on
+        <strong>robot failure, trust, and recovery</strong>. My work combines <strong>real robot deployment,
+        eye tracking, computer vision, ROS-based workflows, and quantitative analysis</strong> to study how people
+        understand and respond to robots in collaborative tasks.
       </p>
       <div class="cv-hero__actions">
         <a class="btn" href="/publications/">View Publications</a>
-        <a class="btn btn--inverse" href="/projects/">View Projects</a>
         <a class="btn btn--light-outline" href="https://www.linkedin.com/in/ramtin-tabatabaei">LinkedIn</a>
       </div>
     </div>
 
     <aside class="cv-hero__panel">
-      <p class="cv-panel__label">Current Position</p>
-      <h2 class="cv-panel__title">PhD Candidate</h2>
+      <p class="cv-panel__label">Current Role</p>
+      <h2 class="cv-panel__title">PhD Candidate, Computing & Information Systems</h2>
       <p class="cv-panel__meta">School of Computing and Information Systems<br>University of Melbourne</p>
       <ul class="cv-panel__list">
-        <li>Researching trust, robot failure awareness, and failure recovery in HRI</li>
-        <li>Building and evaluating systems on Tiago and Furhat</li>
-        <li>Combining user studies with gaze and behavioral analytics</li>
+        <li>Researching robot failure, trust, and recovery in collaborative HRI</li>
+        <li>Building studies and interaction systems on Tiago and Furhat with ROS-based workflows</li>
+        <li>Teaching data processing and machine learning while supporting student projects</li>
       </ul>
     </aside>
-  </section>
-
-  <section class="cv-stat-grid">
-    <article class="cv-stat-card">
-      <p class="cv-stat-card__label">Focus</p>
-      <h2>HRI, robotics, embodied AI</h2>
-      <p>Failure detection, trust calibration, perception, behavioral data</p>
-    </article>
-    <article class="cv-stat-card">
-      <p class="cv-stat-card__label">Publications</p>
-      <h2>ACM/IEEE HRI, CHI</h2>
-      <p>Peer-reviewed work on robot failure, gaze, trust, and tooling</p>
-    </article>
-    <article class="cv-stat-card">
-      <p class="cv-stat-card__label">Platforms</p>
-      <h2>Tiago, Furhat, ROS</h2>
-      <p>Experimental systems, collaborative tasks, public demos</p>
-    </article>
-    <article class="cv-stat-card">
-      <p class="cv-stat-card__label">Methods</p>
-      <h2>User studies + real systems</h2>
-      <p>Controlled experiments, sensing pipelines, analysis, deployment</p>
-    </article>
   </section>
 
   <section class="cv-section">
@@ -89,10 +65,6 @@ redirect_from:
             <strong>Publications</strong>
             <span>Selected papers, abstracts, media, and project pages</span>
           </a>
-          <a class="cv-link-card" href="/projects/">
-            <strong>Projects</strong>
-            <span>Research systems, robotics prototypes, and technical work</span>
-          </a>
           <a class="cv-link-card" href="https://scholar.google.com.au/citations?user=5YHIHDAAAAAJ&hl=en&oi=sra">
             <strong>Google Scholar</strong>
             <span>Citations and full academic publication record</span>
@@ -104,6 +76,36 @@ redirect_from:
         </div>
       </article>
     </div>
+  </section>
+
+  <section class="cv-stat-grid">
+    <article class="cv-stat-card">
+      <p class="cv-stat-card__label">Focus</p>
+      <h2>Research areas</h2>
+      <ul class="cv-list">
+        <li>Human-robot interaction and trust</li>
+        <li>Robot failure detection and recovery</li>
+        <li>Gaze and behavioral sensing</li>
+      </ul>
+    </article>
+    <article class="cv-stat-card">
+      <p class="cv-stat-card__label">Robots & Tools</p>
+      <h2>Systems I build with</h2>
+      <ul class="cv-list">
+        <li>Tiago and Furhat robots</li>
+        <li>ROS-based experimental pipelines</li>
+        <li>Python, machine learning, and computer vision</li>
+      </ul>
+    </article>
+    <article class="cv-stat-card">
+      <p class="cv-stat-card__label">Methods</p>
+      <h2>How I work</h2>
+      <ul class="cv-list">
+        <li>Controlled user studies</li>
+        <li>Real-robot deployment and live demos</li>
+        <li>Quantitative and mixed-method analysis</li>
+      </ul>
+    </article>
   </section>
 
   <section class="cv-section">
@@ -169,11 +171,29 @@ redirect_from:
         </ul>
       </article>
       <article class="cv-timeline__item">
+        <div class="cv-timeline__meta">Melbourne, Australia · Mar 2024 – Present</div>
+        <h3>Tutor & Project Supervisor · University of Melbourne</h3>
+        <ul class="cv-list">
+          <li><strong>Tutor, Elements of Data Processing</strong> · Semester 2, 2025</li>
+          <li><strong>Tutor, Elements of Data Processing</strong> · Semester 1, 2026</li>
+          <li><strong>Tutor, Machine Learning</strong> · Semester 1, 2026</li>
+          <li><strong>Supervisor, Master's Project</strong> · Mar 2024 – Jul 2024. Supervised development of a web app for annotating ROSBag data.</li>
+        </ul>
+      </article>
+      <article class="cv-timeline__item">
         <div class="cv-timeline__meta">Tehran, Iran · Sep 2021 – Sep 2023</div>
         <h3>Research Assistant · CEDRA, Sharif University of Technology</h3>
         <ul class="cv-list">
           <li>Programmed and ran HRI experiments with <strong>Nao and Opo robots</strong> to study gaze behavior in children and young adults.</li>
           <li>Built deep learning models for <strong>lip reading</strong> and <strong>facial emotion recognition</strong> from video data.</li>
+        </ul>
+      </article>
+      <article class="cv-timeline__item">
+        <div class="cv-timeline__meta">Tehran, Iran · Sep 2022 – Jun 2023</div>
+        <h3>Tutor · Sharif University of Technology</h3>
+        <ul class="cv-list">
+          <li><strong>Tutor, Social Cognitive Robotics</strong> · Jan 2023 – Jun 2023</li>
+          <li><strong>Tutor, Advanced Math 1</strong> · Sep 2022 – Dec 2022</li>
         </ul>
       </article>
     </div>
@@ -212,34 +232,20 @@ redirect_from:
   </section>
 
   <section class="cv-section">
-    <div class="cv-grid cv-grid--2">
-      <article class="cv-card">
-        <div class="cv-section__header cv-section__header--tight">
-          <p class="cv-section__eyebrow">Engagement</p>
-          <h2 class="cv-section__title">Projects, Demos & Public Engagement</h2>
-        </div>
-        <ul class="cv-list">
-          <li><strong>Innovation Week (Sep 2025):</strong> designed and delivered a Furhat robot social interaction demo with rapid behavior scripting and multi-party interaction.</li>
-          <li><strong>University of Melbourne Showcase Event (Sep 2025):</strong> presented an interactive robotics pipeline combining real-time perception, behavior control, and HRI concepts.</li>
-          <li><strong>Post-HRI Academic Visit (Mar 2025):</strong> demonstrated an office assistant robot on Tiago with autonomous navigation and interaction.</li>
-          <li><strong>CIS Doctoral Colloquium (Oct 2024):</strong> poster presentation, <em>Gazing at Failure: Investigating Human Gaze in Response to Robot Failure in Collaborative Tasks</em>.</li>
-          <li><strong>Ubicomp 2025 Demo Session (Sep 2024):</strong> live demo, <em>Robot Failures in Human-Robot Collaboration Using the Tiago Robot</em>.</li>
-          <li><strong>University Open Day (Aug 2024):</strong> public demo, <em>Autonomous Social Robotics</em>.</li>
-        </ul>
-      </article>
-      <article class="cv-card">
-        <div class="cv-section__header cv-section__header--tight">
-          <p class="cv-section__eyebrow">Teaching</p>
-          <h2 class="cv-section__title">Teaching & Supervision</h2>
-        </div>
-        <ul class="cv-list">
-          <li><strong>Tutor, Elements of Data Processing</strong> · Jul 2025 – Present</li>
-          <li><strong>Tutor, Social Cognitive Robotics</strong> · Jan 2023 – Jun 2023</li>
-          <li><strong>Tutor, Advanced Math 1</strong> · Sep 2022 – Dec 2022</li>
-          <li><strong>Supervisor, Master Project</strong> · Mar 2024 – Jul 2024<br>Developed a web app for annotating ROSBag data.</li>
-        </ul>
-      </article>
+    <div class="cv-section__header">
+      <p class="cv-section__eyebrow">Engagement</p>
+      <h2 class="cv-section__title">Demos & Public Engagement</h2>
     </div>
+    <article class="cv-card">
+      <ul class="cv-list">
+        <li><strong>Innovation Week (Sep 2025):</strong> designed and delivered a Furhat robot social interaction demo with rapid behavior scripting and multi-party interaction.</li>
+        <li><strong>University of Melbourne Showcase Event (Sep 2025):</strong> presented an interactive robotics pipeline combining real-time perception, behavior control, and HRI concepts.</li>
+        <li><strong>Post-HRI Academic Visit (Mar 2025):</strong> demonstrated an office assistant robot on Tiago with autonomous navigation and interaction.</li>
+        <li><strong>CIS Doctoral Colloquium (Oct 2024):</strong> poster presentation, <em>Gazing at Failure: Investigating Human Gaze in Response to Robot Failure in Collaborative Tasks</em>.</li>
+        <li><strong>Ubicomp 2025 Demo Session (Sep 2024):</strong> live demo, <em>Robot Failures in Human-Robot Collaboration Using the Tiago Robot</em>.</li>
+        <li><strong>University Open Day (Aug 2024):</strong> public demo, <em>Autonomous Social Robotics</em>.</li>
+      </ul>
+    </article>
   </section>
 
   <section class="cv-section">

@@ -760,7 +760,7 @@
   }
 
   @include breakpoint($large) {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -788,6 +788,15 @@
 
 .cv-stat-card p:last-child {
   margin-bottom: 0;
+}
+
+.cv-stat-card .cv-list {
+  margin-top: 0.7rem;
+  color: var(--cv-muted);
+}
+
+.cv-stat-card .cv-list li + li {
+  margin-top: 0.35rem;
 }
 
 .cv-section {

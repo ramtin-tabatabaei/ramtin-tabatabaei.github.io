@@ -5,7 +5,7 @@ collection: "publications"
 category: "conferences"
 permalink: "/publication/HRI2025-RobotFailure/"
 featured: true
-paper_year: "2025"
+paper_year: 2025
 excerpt: "This study examines how human gaze patterns can indicate robot failures and influence perceptions in collaborative tasks."
 venue: "IEEE International Conference on Human-Robot Interaction"
 subtitle: "Understanding Human Reactions to Robot Failures Through Gaze Dynamics"

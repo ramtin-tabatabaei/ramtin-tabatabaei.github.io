@@ -80,6 +80,9 @@ layout: default
         {% if page.hero_links %}
           <div class="paper-showcase__links">
             {% for link in page.hero_links %}
+              {% if link.label == "Paper PDF" or link.url == page.paperurl %}
+                {% continue %}
+              {% endif %}
               {% if link.url contains "://" %}
                 {% assign hero_link_url = link.url %}
               {% else %}

@@ -692,6 +692,7 @@ def build_front_matter(data: dict[str, Any]) -> str:
         "venue": data.get("venue", ""),
         "date": data.get("date", ""),
         "subtitle": data.get("subtitle", ""),
+        "show_teaser": data.get("show_teaser", False),
         "teaser_image": data.get("teaser_image", ""),
         "teaser_alt": data.get("teaser_alt", ""),
         "teaser_caption": data.get("teaser_caption", ""),
@@ -773,13 +774,11 @@ def build_figure_highlights(
 def build_gallery_section(
     slug: str,
     gallery_images: list[Path],
-    teaser_name: str | None,
     page: dict[str, Any],
     figure_label_hints: dict[str, str],
 ) -> str:
     figure_blocks: list[str] = []
-    visible_images = [path for path in gallery_images if not teaser_name or path.name != teaser_name]
-    for highlight in build_figure_highlights(page, visible_images, figure_label_hints):
+    for highlight in build_figure_highlights(page, gallery_images, figure_label_hints):
         image_path = highlight.path
         rel = f"/images/papers/{slug}/{image_path.name}"
         label = escape(highlight.label)
@@ -842,7 +841,6 @@ def build_markdown_body(
     page: dict[str, Any],
     slug: str,
     gallery_images: list[Path],
-    teaser_name: str | None,
     figure_label_hints: dict[str, str],
 ) -> str:
     sections: list[str] = []
@@ -943,7 +941,7 @@ def build_markdown_body(
             )
         )
 
-    gallery = build_gallery_section(slug, gallery_images, teaser_name, page, figure_label_hints)
+    gallery = build_gallery_section(slug, gallery_images, page, figure_label_hints)
     if gallery:
         sections.append(gallery)
 
@@ -1016,6 +1014,7 @@ def normalize_page_data(
         "venue": extracted.get("venue", "").strip(),
         "date": publication_date,
         "subtitle": extracted.get("subtitle", "").strip(),
+        "show_teaser": False,
         "teaser_image": teaser_image_url,
         "teaser_alt": title,
         "teaser_caption": teaser_caption,
@@ -1092,12 +1091,8 @@ def main() -> int:
         output_path = PUBLICATIONS_DIR / f"{slug}.md"
 
     teaser_image = choose_teaser_image(extracted, assets, figure_label_hints)
-    teaser_image_url = (
-        f"/images/papers/{slug}/{teaser_image.name}" if teaser_image else ""
-    )
-    teaser_caption = (extracted.get("teaser_image_caption") or "").strip()
-    if not teaser_caption and teaser_image is not None:
-        teaser_caption = figure_label_hints.get(normalize_asset_key(teaser_image.name), "")
+    teaser_image_url = ""
+    teaser_caption = ""
     local_pdf_url = (
         f"/files/papers/{slug}/{assets.pdf.name}" if assets.pdf else ""
     )
@@ -1122,7 +1117,6 @@ def main() -> int:
         page=page,
         slug=slug,
         gallery_images=assets.gallery_images,
-        teaser_name=teaser_image.name if teaser_image else None,
         figure_label_hints=figure_label_hints,
     )
 

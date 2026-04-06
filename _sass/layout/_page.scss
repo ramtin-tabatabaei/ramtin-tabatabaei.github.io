@@ -340,7 +340,7 @@
 .home-hero__lead {
   margin-bottom: 0;
   font-size: 1.05rem;
-  color: var(--global-text-color-light);
+  color: #111827;
 
   @include breakpoint($medium) {
     font-size: 1.12rem;
@@ -353,7 +353,7 @@
 
 .home-hero__lead--secondary {
   max-width: 50rem;
-  color: var(--global-text-color-light);
+  color: #111827;
 }
 
 .home-hero__actions {
@@ -432,7 +432,7 @@
 }
 
 .home-card {
-  min-width: 260px;
+  min-width: 320px;
   flex: 1 1 0;
   scroll-snap-align: start;
 }
@@ -459,12 +459,12 @@
 
 .home-section__intro {
   max-width: 46rem;
-  color: var(--global-text-color-light);
+  color: #111827;
 }
 
 .home-strength-grid {
   @include breakpoint($large) {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
   }
 }
 
@@ -548,6 +548,9 @@
 .home-video {
   overflow: hidden;
   margin-top: 1.2rem;
+  width: min(100%, 760px);
+  margin-right: auto;
+  margin-left: auto;
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 18px;
   background: #0f172a;
@@ -556,7 +559,7 @@
 .home-video iframe {
   display: block;
   width: 100%;
-  height: auto;
+  min-height: 320px;
   aspect-ratio: 16 / 9;
   border: 0;
 }

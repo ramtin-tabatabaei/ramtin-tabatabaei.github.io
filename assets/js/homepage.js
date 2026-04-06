@@ -12,6 +12,29 @@
   var totalSlides = carousel.querySelector("[data-total-slides]");
   var currentIndex = 0;
 
+  function syncVideos() {
+    slides.forEach(function (slide, index) {
+      var iframe = slide.querySelector("iframe[data-video-src]");
+
+      if (!iframe) {
+        return;
+      }
+
+      var videoSrc = iframe.getAttribute("data-video-src");
+      if (!videoSrc) {
+        return;
+      }
+
+      if (index === currentIndex) {
+        if (iframe.getAttribute("src") !== videoSrc) {
+          iframe.setAttribute("src", videoSrc);
+        }
+      } else if (iframe.getAttribute("src")) {
+        iframe.removeAttribute("src");
+      }
+    });
+  }
+
   function renderSlide() {
     slides.forEach(function (slide, index) {
       var isActive = index === currentIndex;
@@ -22,6 +45,8 @@
     if (currentSlide) {
       currentSlide.textContent = String(currentIndex + 1);
     }
+
+    syncVideos();
   }
 
   if (totalSlides) {

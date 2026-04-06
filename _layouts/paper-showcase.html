@@ -87,7 +87,7 @@ layout: default
         {% endif %}
       </div>
 
-      {% if teaser_image_url %}
+      {% if teaser_image_url and page.show_teaser != false %}
         <figure class="paper-showcase__teaser">
           <img src="{{ teaser_image_url }}" alt="{{ page.teaser_alt | default: page.title }}">
           {% if page.teaser_caption %}

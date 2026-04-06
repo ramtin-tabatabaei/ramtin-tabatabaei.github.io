@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .paper-showcase {
-  max-width: 1180px;
+  max-width: 980px;
   margin: 0 auto;
   padding: 1rem 1rem 4rem;
 }
@@ -149,10 +149,13 @@
 .paper-showcase__content {
   display: grid;
   gap: 1.5rem;
+  width: 100%;
 }
 
 .paper-showcase__section,
 .paper-showcase__panel {
+  width: 100%;
+  box-sizing: border-box;
   padding: 1.3rem 1.35rem;
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 24px;
@@ -175,15 +178,18 @@
 .paper-showcase__body {
   display: grid;
   gap: 1.25rem;
+  width: 100%;
 }
 
 .paper-showcase__media {
   overflow: hidden;
-  width: min(100%, 860px);
-  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
   padding: 0.35rem;
   border-radius: 20px;
   background: #0f172a;
+  box-sizing: border-box;
 }
 
 .paper-showcase__media iframe,
@@ -245,40 +251,29 @@
 }
 
 .paper-showcase__figure-row {
-  display: flex;
-  gap: 0.9rem;
-  align-items: stretch;
-  overflow-x: auto;
-  padding-bottom: 0.2rem;
-
-  @include breakpoint($medium) {
-    overflow-x: visible;
-  }
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  align-items: start;
 }
 
 .paper-showcase__figure-card {
-  flex: 1 1 0;
-  min-width: 170px;
   margin: 0;
-
-  @include breakpoint($medium) {
-    min-width: 0;
-  }
 }
 
 .paper-showcase__figure-card img {
   display: block;
   width: 100%;
-  height: 170px;
-  padding: 0.4rem;
+  height: 220px;
   object-fit: contain;
-  border-radius: 16px;
+  object-position: center;
+  border-radius: 14px;
   border: 1px solid rgba(15, 23, 42, 0.08);
-  background: rgba(248, 250, 252, 0.95);
+  background: rgba(248, 250, 252, 0.78);
 }
 
 .paper-showcase__figure-card figcaption {
-  margin-top: 0.55rem;
+  margin-top: 0.45rem;
   font-size: 0.9rem;
   color: var(--global-text-color-light);
 }

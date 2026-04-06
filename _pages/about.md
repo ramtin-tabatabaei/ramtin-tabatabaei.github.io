@@ -77,7 +77,7 @@ redirect_from:
           <li>A random forest classifier showed strong potential for detecting failures within a few seconds after they occur.</li>
         </ul>
         <div class="home-video">
-          <iframe src="https://www.youtube.com/embed/wHYsmDMllyY" title="Gaze-based robot failure detection video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe data-video-src="https://www.youtube.com/embed/wHYsmDMllyY" title="Gaze-based robot failure detection video" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
       </article>
 
@@ -91,7 +91,7 @@ redirect_from:
           <li>Failure awareness helps after serious failures, but it can reduce trust when the failure is minor or barely noticeable.</li>
         </ul>
         <div class="home-video">
-          <iframe src="https://www.youtube.com/embed/4mW9Y5JS5RM" title="Trust dynamics across robot failures video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe data-video-src="https://www.youtube.com/embed/4mW9Y5JS5RM" title="Trust dynamics across robot failures video" frameborder="0" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
       </article>
     </div>

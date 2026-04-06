@@ -5,14 +5,15 @@ collection: "publications"
 category: "conferences"
 permalink: "/publication/HRI2025-RobotFailure/"
 featured: true
-excerpt: "This study investigates how human gaze dynamics can signal robot failures and examines how different types of failures affect people's perception of robots in collaborative tasks."
-venue: "IEEE Conference on Human-Robot Interaction"
-subtitle: "Exploring Human-Robot Interaction through Gaze Dynamics and Robot Malfunction Responses"
+excerpt: "This study investigates how human gaze dynamics can indicate robot failures and affect perceptions in collaborative tasks."
+venue: "International Conference on Human-Robot Interaction (HRI) 2025"
+subtitle: "Exploring Human Gaze Dynamics During Robot Failures in Collaborative Environments"
 show_teaser: false
 teaser_alt: "Gazing at Failure: Investigating Human Gaze in Response to Robot Failure in Collaborative Tasks"
 demo_video: "/files/papers/hri2025-robotfailure/VideoforHRI.mp4"
-abstract: "Robots are prone to making errors, which can negatively impact their credibility as teammates during collaborative tasks with human users. Detecting and recovering from these failures is crucial for maintaining effective trust levels. This study investigates how human gaze dynamics can signal a robot's failure and examines how different types of failures affect people's perception of robots. A user study was conducted with 27 participants collaborating with a robotic mobile manipulator to solve tangram puzzles. The robot was programmed to experience executional and decisional failures, occurring either at the beginning or end of the task, with or without acknowledgement. Findings reveal that the type and timing of the robot's failure significantly affect gaze behaviour and perception. Executional failures led to more gaze shifts and increased focus on the robot, while decisional failures resulted in lower entropy in gaze transitions among areas of interest."
-citation: "Ramtin Tabatabaei, Vassilis Kostakos, Wafa Johal, \"Gazing at Failure: Investigating Human Gaze in Response to Robot Failure in Collaborative Tasks,\" IEEE Conference on Human-Robot Interaction."
+abstract: "Robots are prone to making errors, which can negatively impact their credibility as teammates during collaborative tasks with human users. Detecting and recovering from these failures is crucial for maintaining effective level of trust from users. However, robots may fail without being aware of it. One way to detect such failures could be by analysing humans’ non-verbal behaviours and reactions to failures. This study investigates how human gaze dynamics can signal a robot’s failure and examines how different types of failures affect people’s perception of robot. We conducted a user study with 27 participants collaborating with a robotic mobile manipulator to solve tangram puzzles. The robot was programmed to experience two types of failures: executional and decisional — occurring either at the beginning or end of the task, with or without acknowledgement of the failure. Our findings reveal that the type and timing of the robot’s failure significantly affect participants’ gaze behaviour and perception of the robot. Specifically, executional failures led to more gaze shifts and increased focus on the robot, while decisional failures resulted in lower entropy in gaze transitions among areas of interest, particularly when the failure occurred at the end of the task. These results highlight that gaze can serve as a reliable indicator of robot failures and their types, and could also be used to predict the appropriate recovery actions."
+citation: "R. Tabatabaei, V. Kostakos, and W. Johal, \"Gazing at Failure: Investigating Human Gaze in Response to Robot Failure in Collaborative Tasks,\" in Proceedings of the International Conference on Human-Robot Interaction, 2025."
+citation_bibtex: "@inproceedings{hri2025-robotfailure,\n  title={Gazing at Failure: Investigating Human Gaze in Response to Robot Failure in Collaborative Tasks},\n  author={Ramtin Tabatabaei and Vassilis Kostakos and Wafa Johal},\n  booktitle={International Conference on Human-Robot Interaction (HRI) 2025},\n  pages={},\n  year={2025},\n  organization={}\n}"
 authors:
   -
     name: "Ramtin Tabatabaei"
@@ -35,30 +36,29 @@ paperurl: "/files/papers/hri2025-robotfailure/HRI_2025___Gaze_failure__full pape
 
 <section class="paper-showcase__panel paper-showcase__panel--overview">
   <h2>Overview</h2>
-<p>The research focuses on assessing how human gaze patterns, during robotic failures in collaborative tasks, can serve as indicators of the type of failure and contribute to recovery strategies.</p>
+<p>Robots in collaborative settings often encounter failures that impact user trust and task performance. This research explores the use of human gaze as an indicator to predict and understand robot failures.</p>
 </section>
 
 <section class="paper-showcase__panel paper-showcase__panel--contributions">
   <h2>Key Contributions</h2>
   <ul>
-    <li>Identified human gaze dynamics as reliable indicators of robot failures.</li>
-    <li>Distinguished between executional and decisional robot failures and their effects on gaze.</li>
-    <li>Explored the impact of failure timing on human-robot interaction.</li>
-    <li>Highlighted the influence of failure acknowledgment on user perceptions.</li>
-    <li>Utilized a novel experimental setup involving Tangram puzzles for failure simulation.</li>
+    <li>Explored human gaze as an indicator of robot failures.</li>
+    <li>Analyzed executional and decisional robot failures&#x27; impact on gaze.</li>
+    <li>Investigated the influence of failure timing on user perceptions.</li>
+    <li>Conducted a user study with robust experimental design.</li>
   </ul>
 </section>
 
 <section class="paper-showcase__panel paper-showcase__panel--method">
   <h2>Method and System</h2>
-<p>The study utilized a within-between experimental design with 27 participants collaborating in solving Tangram puzzles, experiencing programmed robot failures of different types and timings.</p>
+<p>A user study with 27 participants was conducted involving collaborative Tangram puzzle-solving with a robot experiencing programmed failures. Gaze data was collected and analyzed to assess the impact of failure type and timing.</p>
 </section>
 
 <section class="paper-showcase__panel paper-showcase__panel--results">
   <h2>Results Overview</h2>
-<p>1. Executional failures caused increased gaze shifts and focus on the robot.
-2. Decisional failures led to lower entropy in gaze transitions.
-3. Timing of failures significantly influenced human perception and gaze dynamics.</p>
+<p>- Executional failures increased gaze shifts and focus on the robot.
+- Decisional failures resulted in lower entropy in gaze transitions.
+- Timing of failures influenced gaze behaviour and user perceptions.</p>
 </section>
 
 <section class="paper-showcase__panel paper-showcase__panel--results-alt">
@@ -74,17 +74,17 @@ paperurl: "/files/papers/hri2025-robotfailure/HRI_2025___Gaze_failure__full pape
 <section class="paper-showcase__panel paper-showcase__panel--discussion">
   <h2>Discussion</h2>
 <h3>Limitations</h3>
-<p>The study involved a controlled lab setting and a limited number of failure types. Future research could explore a broader range of failure scenarios and real-world settings.</p>
+<p>Research focused only on two types of failures and involved participants with no prior experience with robots. Future studies could involve diverse failure scenarios and participant backgrounds.</p>
 <h3>Future Work</h3>
-<p>Future studies could focus on expanding failure scenarios, implementing real-world experiments, and exploring additional social signals alongside gaze.</p>
+<p>Expanding research to include varied failure types and testing with participants from different demographics to further validate the findings.</p>
 </section>
 
 <section class="paper-showcase__panel paper-showcase__panel--gallery">
   <h2>Figure Highlights</h2>
   <div class="paper-showcase__figure-row paper-showcase__figure-row--single">
   <figure class="paper-showcase__figure-card">
-    <img src="/images/papers/hri2025-robotfailure/AoIs.jpg" alt="Different areas of interest in the experiment.">
-    <figcaption>Different areas of interest in the experiment.</figcaption>
+    <img src="/images/papers/hri2025-robotfailure/AoIs.jpg" alt="AoIs">
+    <figcaption>AoIs</figcaption>
   </figure>
   </div>
 </section>

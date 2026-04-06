@@ -259,6 +259,7 @@
 
 .paper-showcase__figure-card {
   margin: 0;
+  width: 100%;
 }
 
 .paper-showcase__figure-row--single {
@@ -281,7 +282,7 @@
   object-position: center;
   border-radius: 14px;
   border: 1px solid rgba(15, 23, 42, 0.08);
-  background: rgba(248, 250, 252, 0.78);
+  background: rgba(248, 250, 252, 0.6);
 }
 
 @include breakpoint(max-width $medium) {
@@ -297,4 +298,5 @@
   margin-top: 0.45rem;
   font-size: 0.9rem;
   color: var(--global-text-color-light);
+  text-align: left;
 }

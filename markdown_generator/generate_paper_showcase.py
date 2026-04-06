@@ -755,17 +755,15 @@ def build_figure_highlights(
 
     for item in page.get("figure_highlights", []):
         image_path = find_matching_asset(item.get("file_name", ""), gallery_images)
-        label = (item.get("label") or "").strip()
-        if image_path is None or not label or image_path in used_paths:
+        if image_path is None or image_path in used_paths:
             continue
-        highlights.append(FigureHighlight(path=image_path, label=label))
+        highlights.append(FigureHighlight(path=image_path, label=humanize_stem(image_path)))
         used_paths.add(image_path)
 
     for image_path in gallery_images:
         if image_path in used_paths:
             continue
-        label = figure_label_hints.get(normalize_asset_key(image_path.name)) or humanize_stem(image_path)
-        highlights.append(FigureHighlight(path=image_path, label=label))
+        highlights.append(FigureHighlight(path=image_path, label=humanize_stem(image_path)))
         used_paths.add(image_path)
 
     return highlights
@@ -980,6 +978,63 @@ def choose_paper_url(links: list[dict[str, str]]) -> str:
     return links[0]["url"] if links else ""
 
 
+def infer_year(extracted: dict[str, Any], publication_date: str) -> str:
+    if publication_date:
+        return publication_date[:4]
+
+    for key in ("venue", "citation", "citation_bibtex", "title", "subtitle"):
+        value = (extracted.get(key) or "").strip()
+        match = re.search(r"\b(19|20)\d{2}\b", value)
+        if match:
+            return match.group(0)
+
+    return ""
+
+
+def infer_organization(extracted: dict[str, Any]) -> str:
+    combined = " ".join(
+        (extracted.get(key) or "").strip()
+        for key in ("venue", "citation", "citation_bibtex")
+    ).lower()
+
+    if "acm/ieee" in combined:
+        return "ACM/IEEE"
+    if "acm" in combined:
+        return "ACM"
+    if "ieee" in combined:
+        return "IEEE"
+    return ""
+
+
+def format_bibtex(
+    slug: str,
+    extracted: dict[str, Any],
+    publication_date: str,
+) -> str:
+    title = (extracted.get("title") or "").strip()
+    authors = extracted.get("authors", [])
+    author_names = " and ".join(
+        (author.get("name") or "").strip()
+        for author in authors
+        if (author.get("name") or "").strip()
+    )
+    booktitle = (extracted.get("venue") or "").strip()
+    year = infer_year(extracted, publication_date)
+    organization = infer_organization(extracted)
+
+    lines = [
+        f"@inproceedings{{{slug},",
+        f"  title={{{title}}},",
+        f"  author={{{author_names}}},",
+        f"  booktitle={{{booktitle}}},",
+        "  pages={},",
+        f"  year={{{year}}},",
+        f"  organization={{{organization}}}",
+        "}",
+    ]
+    return "\n".join(lines)
+
+
 def normalize_page_data(
     extracted: dict[str, Any],
     slug: str,
@@ -1011,6 +1066,12 @@ def normalize_page_data(
     if publication_date and not re.match(r"^\d{4}-\d{2}-\d{2}$", publication_date):
         publication_date = ""
 
+    citation_bibtex = format_bibtex(
+        slug=slug,
+        extracted=extracted,
+        publication_date=publication_date,
+    )
+
     return {
         "title": title,
         "collection": "publications",
@@ -1028,7 +1089,7 @@ def normalize_page_data(
         "demo_video": local_video_url,
         "abstract": abstract,
         "citation": extracted.get("citation", "").strip(),
-        "citation_bibtex": extracted.get("citation_bibtex", "").strip(),
+        "citation_bibtex": citation_bibtex,
         "authors": extracted.get("authors", []),
         "awards": extracted.get("awards", []),
         "hero_links": hero_links,

@@ -10,6 +10,10 @@ layout: default
 {% elsif teaser_image %}
   {% assign teaser_image_url = teaser_image | prepend: base_path %}
 {% endif %}
+{% assign has_visible_teaser = false %}
+{% if teaser_image_url and page.show_teaser != false %}
+  {% assign has_visible_teaser = true %}
+{% endif %}
 
 {% assign demo_video = page.demo_video %}
 {% if demo_video and demo_video contains "://" %}
@@ -24,7 +28,7 @@ layout: default
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">{% endif %}
 
-    <header class="paper-showcase__hero">
+    <header class="paper-showcase__hero{% unless has_visible_teaser %} paper-showcase__hero--text-only{% endunless %}">
       <div class="paper-showcase__hero-copy">
         {% if page.venue %}
           <p class="paper-showcase__venue">{{ page.venue }}</p>
@@ -87,7 +91,7 @@ layout: default
         {% endif %}
       </div>
 
-      {% if teaser_image_url and page.show_teaser != false %}
+      {% if has_visible_teaser %}
         <figure class="paper-showcase__teaser">
           <img src="{{ teaser_image_url }}" alt="{{ page.teaser_alt | default: page.title }}">
           {% if page.teaser_caption %}

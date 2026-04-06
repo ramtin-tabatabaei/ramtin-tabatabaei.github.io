@@ -28,6 +28,10 @@
   }
 }
 
+.paper-showcase__hero--text-only {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .paper-showcase__venue {
   margin: 0;
   color: #0f766e;

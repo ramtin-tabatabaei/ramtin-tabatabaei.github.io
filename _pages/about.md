@@ -13,7 +13,10 @@ redirect_from:
   <section class="home-hero">
     <p class="home-hero__eyebrow">Ph.D. Candidate | University of Melbourne</p>
     <h1 class="home-hero__title">Human-Robot Interaction Researcher Building Reliable Robot Systems</h1>
-    <p class="home-hero__lead">I build and study robot behaviours that remain understandable, adaptive, and trustworthy when things go wrong. My work combines human-robot interaction, robotics engineering, perception, and behavioral data analysis.</p>
+    <div class="home-hero__copy">
+      <p class="home-hero__lead">I build and study robot behaviours that remain understandable, adaptive, and trustworthy when things go wrong. My work combines human-robot interaction, robotics engineering, perception, and behavioral data analysis.</p>
+      <p class="home-hero__lead home-hero__lead--secondary">Across controlled user studies, live robotics demonstrations, and real-time perception pipelines, I investigate how people notice robot failures, how trust changes after those failures, and how robots should communicate and recover. I work with ROS-based systems, gaze and eye-tracking data, collaborative task design, and social robot platforms to turn research questions into practical robotic systems.</p>
+    </div>
     <div class="home-hero__actions">
       <a class="btn" href="{{ base_path }}/cv/">View CV</a>
       <a class="btn btn--inverse" href="{{ base_path }}/publications/">Publications</a>
@@ -54,8 +57,14 @@ redirect_from:
       <p class="home-section__intro">My work challenges the assumption that robots and AI systems are flawless. I focus on failure detection, trust calibration, and recovery strategies for human-robot collaboration.</p>
     </div>
 
-    <div class="home-research-grid">
-      <article class="home-research-card">
+    <div class="home-research-carousel" data-home-research-carousel>
+      <div class="home-research-carousel__controls">
+        <button type="button" class="home-research-carousel__button" data-slide-direction="-1" aria-label="Show previous study">&#8592;</button>
+        <p class="home-research-carousel__status">Study <span data-current-slide>1</span> / <span data-total-slides>2</span></p>
+        <button type="button" class="home-research-carousel__button" data-slide-direction="1" aria-label="Show next study">&#8594;</button>
+      </div>
+
+      <article class="home-research-slide home-research-card is-active" data-home-research-slide>
         <p class="home-research-card__index">01</p>
         <h3>Gaze-Based Robot Failure Detection</h3>
         <p>For robots, detecting and predicting failures as early as possible is vital to prevent damage and negative user experiences. I studied user non-verbal behaviour, especially gaze patterns, to identify cues that indicate when a failure is about to occur.</p>
@@ -69,7 +78,7 @@ redirect_from:
         </div>
       </article>
 
-      <article class="home-research-card">
+      <article class="home-research-slide home-research-card" data-home-research-slide hidden>
         <p class="home-research-card__index">02</p>
         <h3>Trust Dynamics Across Multiple Robot Failures</h3>
         <p>Robot failures often happen more than once during collaboration, and their effects on user trust can accumulate. I examine how repeated failures change trust, perceived robot intelligence, and the value of showing failure awareness.</p>
@@ -94,19 +103,41 @@ redirect_from:
     <div class="home-strength-grid">
       <article class="home-mini-card">
         <h3>Robotics and HRI</h3>
-        <p>ROS, collaborative task design, social robotics, behavior design, user studies</p>
+        <ul class="home-mini-list">
+          <li>ROS</li>
+          <li>Collaborative task design</li>
+          <li>Social robotics</li>
+          <li>Behavior design</li>
+          <li>User studies</li>
+        </ul>
       </article>
       <article class="home-mini-card">
         <h3>Perception and Data</h3>
-        <p>Eye tracking, gaze analytics, computer vision, annotation workflows, statistical modeling</p>
+        <ul class="home-mini-list">
+          <li>Eye tracking</li>
+          <li>Gaze analytics</li>
+          <li>Computer vision</li>
+          <li>Annotation workflows</li>
+          <li>Statistical modeling</li>
+        </ul>
       </article>
       <article class="home-mini-card">
         <h3>Programming</h3>
-        <p>Python, machine learning workflows, data processing, API integration</p>
+        <ul class="home-mini-list">
+          <li>Python</li>
+          <li>Machine learning workflows</li>
+          <li>Data processing</li>
+          <li>API integration</li>
+        </ul>
       </article>
       <article class="home-mini-card">
         <h3>Prototyping and Simulation</h3>
-        <p>Unity, SolidWorks, interactive prototyping, experimental system design</p>
+        <ul class="home-mini-list">
+          <li>Unity</li>
+          <li>SolidWorks</li>
+          <li>Interactive prototyping</li>
+          <li>Experimental system design</li>
+        </ul>
       </article>
     </div>
   </section>

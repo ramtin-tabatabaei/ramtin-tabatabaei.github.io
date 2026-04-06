@@ -1,3 +1,7 @@
 <!-- start custom footer snippets -->
 <!-- <a href="/sitemap/">Sitemap</a> -->
+{% include base_path %}
+{% if page.url == "/" %}
+<script src="{{ base_path }}/assets/js/homepage.js"></script>
+{% endif %}
 <!-- end custom footer snippets -->

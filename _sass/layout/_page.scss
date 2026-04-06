@@ -313,25 +313,39 @@
 }
 
 .home-hero__title {
-  max-width: 12ch;
+  max-width: 30ch;
   margin: 0.4rem 0 0.8rem;
-  font-size: 2.4rem;
-  line-height: 1.02;
+  font-size: 2rem;
+  line-height: 1.08;
+  text-wrap: balance;
 
   @include breakpoint($medium) {
-    font-size: 3.4rem;
+    font-size: 3rem;
   }
 }
 
-.home-hero__lead {
-  max-width: 44rem;
+.home-hero__copy {
+  max-width: 54rem;
   margin-bottom: 1.35rem;
+}
+
+.home-hero__lead {
+  margin-bottom: 0;
   font-size: 1.05rem;
   color: var(--global-text-color-light);
 
   @include breakpoint($medium) {
     font-size: 1.12rem;
   }
+}
+
+.home-hero__lead + .home-hero__lead {
+  margin-top: 0.85rem;
+}
+
+.home-hero__lead--secondary {
+  max-width: 50rem;
+  color: var(--global-text-color);
 }
 
 .home-hero__actions {
@@ -379,7 +393,7 @@
 .home-summary-grid {
   margin-bottom: 2.4rem;
 
-  @include breakpoint($large) {
+  @include breakpoint($medium) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
@@ -435,12 +449,6 @@
   color: var(--global-text-color-light);
 }
 
-.home-research-grid {
-  @include breakpoint($large) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
 .home-strength-grid {
   @include breakpoint($large) {
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -449,6 +457,56 @@
 
 .home-research-card {
   padding: 1.5rem;
+}
+
+.home-research-carousel {
+  position: relative;
+}
+
+.home-research-carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.home-research-carousel__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #0f172a;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+
+  &:hover {
+    background: #ffffff;
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+    transform: translateY(-1px);
+  }
+}
+
+.home-research-carousel__status {
+  margin: 0;
+  color: var(--global-text-color-light);
+  font-family: $sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.home-research-slide {
+  display: none;
+}
+
+.home-research-slide.is-active {
+  display: block;
 }
 
 .home-research-card__index {
@@ -461,6 +519,15 @@
 }
 
 .home-list li:last-child {
+  margin-bottom: 0;
+}
+
+.home-mini-list {
+  margin: 0.8rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.home-mini-list li:last-child {
   margin-bottom: 0;
 }
 

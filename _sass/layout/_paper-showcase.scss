@@ -179,6 +179,9 @@
 
 .paper-showcase__media {
   overflow: hidden;
+  width: min(100%, 860px);
+  margin: 0 auto;
+  padding: 0.35rem;
   border-radius: 20px;
   background: #0f172a;
 }
@@ -190,6 +193,12 @@
   height: auto;
   aspect-ratio: 16 / 9;
   border: 0;
+}
+
+.paper-showcase__media video {
+  object-fit: contain;
+  background: #000;
+  border-radius: 14px;
 }
 
 .paper-showcase__panel--overview {

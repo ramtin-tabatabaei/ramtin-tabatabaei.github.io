@@ -7,7 +7,8 @@ author_profile: true
 
 {% include base_path %}
 
-{% assign featured_publications = site.publications | where: "featured", true %}
+{% assign visible_publications = site.publications | where_exp: "post", "post.hidden != true" %}
+{% assign featured_publications = visible_publications | where: "featured", true %}
 
 <div class="publications-page">
   <section class="publications-page__intro">
@@ -32,7 +33,7 @@ author_profile: true
   {% if site.publication_category %}
     {% for category in site.publication_category %}
       {% assign title_shown = false %}
-      {% for post in site.publications reversed %}
+      {% for post in visible_publications reversed %}
         {% if post.featured == true %}
           {% continue %}
         {% endif %}
@@ -49,7 +50,7 @@ author_profile: true
     {% endfor %}
 
     {% assign other_publications_shown = false %}
-    {% for post in site.publications reversed %}
+    {% for post in visible_publications reversed %}
       {% if post.featured == true %}
         {% continue %}
       {% endif %}
@@ -72,7 +73,7 @@ author_profile: true
       {% endunless %}
     {% endfor %}
   {% else %}
-    {% for post in site.publications reversed %}
+    {% for post in visible_publications reversed %}
       {% include archive-single.html %}
     {% endfor %}
   {% endif %}

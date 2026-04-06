@@ -68,8 +68,22 @@ SCHEMA: dict[str, Any] = {
         "future_work": {"type": "string"},
         "citation": {"type": "string"},
         "citation_bibtex": {"type": "string"},
+        "teaser_image_file": {"type": "string"},
+        "teaser_image_caption": {"type": "string"},
         "awards": {"type": "array", "items": {"type": "string"}},
         "key_contributions": {"type": "array", "items": {"type": "string"}},
+        "figure_highlights": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": False,
+                "properties": {
+                    "file_name": {"type": "string"},
+                    "label": {"type": "string"},
+                },
+                "required": ["file_name", "label"],
+            },
+        },
         "authors": {
             "type": "array",
             "items": {
@@ -110,8 +124,11 @@ SCHEMA: dict[str, Any] = {
         "future_work",
         "citation",
         "citation_bibtex",
+        "teaser_image_file",
+        "teaser_image_caption",
         "awards",
         "key_contributions",
+        "figure_highlights",
         "authors",
         "external_links",
     ],
@@ -139,6 +156,15 @@ SYSTEM_PROMPT = dedent(
       material or are obvious canonical paper links such as arXiv or DOI links.
     - For `key_contributions`, return 3 to 5 short bullet-ready points when
       enough evidence exists.
+    - For `teaser_image_file`, choose one of the provided image filenames when
+      there is a clear main figure for the hero image. Otherwise return an
+      empty string.
+    - For `teaser_image_caption`, use the human-readable figure title or
+      caption from the paper or Overleaf sources, not the raw filename.
+    - For `figure_highlights`, match `file_name` values to the provided local
+      image filenames and use `label` values based on the names or captions used
+      in the paper or Overleaf. Do not use raw filenames unless no better label
+      exists.
     """
 ).strip()
 
@@ -149,6 +175,12 @@ class AssetBundle:
     teaser_image: Path | None
     gallery_images: list[Path]
     demo_video: Path | None
+
+
+@dataclass
+class FigureHighlight:
+    path: Path
+    label: str
 
 
 def parse_args() -> argparse.Namespace:
@@ -421,7 +453,7 @@ def load_source_context(source_root: Path, max_chars: int) -> str:
     return "".join(chunks).strip()
 
 
-def build_asset_manifest(bundle: AssetBundle, root: Path) -> str:
+def build_asset_manifest(bundle: AssetBundle, root: Path, figure_label_hints: dict[str, str]) -> str:
     items: list[str] = []
     if bundle.pdf:
         items.append(f"PDF: {bundle.pdf.relative_to(root)}")
@@ -434,6 +466,19 @@ def build_asset_manifest(bundle: AssetBundle, root: Path) -> str:
         )
     if bundle.demo_video:
         items.append(f"Demo video: {bundle.demo_video.relative_to(root)}")
+    if figure_label_hints:
+        hint_lines: list[str] = []
+        for image_path in bundle.gallery_images:
+            label = figure_label_hints.get(normalize_asset_key(image_path.name))
+            if label:
+                hint_lines.append(f"{image_path.name}: {label}")
+        if bundle.teaser_image:
+            label = figure_label_hints.get(normalize_asset_key(bundle.teaser_image.name))
+            teaser_hint = f"{bundle.teaser_image.name}: {label}" if label else ""
+            if teaser_hint and teaser_hint not in hint_lines:
+                hint_lines.append(teaser_hint)
+        if hint_lines:
+            items.append("Figure caption hints:\n" + "\n".join(hint_lines))
     return "\n".join(items)
 
 
@@ -516,6 +561,85 @@ def humanize_stem(path: Path) -> str:
     return text[:1].upper() + text[1:] if text else path.name
 
 
+def normalize_asset_key(value: str) -> str:
+    name = Path(value).name
+    stem = Path(name).stem
+    return re.sub(r"[^a-z0-9]+", "", stem.lower())
+
+
+def clean_latex_text(value: str) -> str:
+    text = value.replace("\n", " ").replace("~", " ")
+    text = re.sub(r"%.*", "", text)
+    text = re.sub(r"\\label\{[^}]*\}", "", text)
+    text = re.sub(r"\\ref\{([^}]*)\}", r"\1", text)
+    text = re.sub(r"\\cite\{([^}]*)\}", "", text)
+
+    previous = None
+    while previous != text:
+        previous = text
+        text = re.sub(r"\\[a-zA-Z*]+\{([^{}]*)\}", r"\1", text)
+
+    text = re.sub(r"\\[a-zA-Z*]+(\[[^\]]*\])?", "", text)
+    text = text.replace("{", "").replace("}", "")
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
+
+
+def extract_balanced_brace_content(text: str, start_index: int) -> tuple[str, int] | None:
+    if start_index >= len(text) or text[start_index] != "{":
+        return None
+
+    depth = 0
+    content: list[str] = []
+    index = start_index
+    while index < len(text):
+        char = text[index]
+        if char == "{":
+            depth += 1
+            if depth > 1:
+                content.append(char)
+        elif char == "}":
+            depth -= 1
+            if depth == 0:
+                return "".join(content), index + 1
+            content.append(char)
+        else:
+            if depth >= 1:
+                content.append(char)
+        index += 1
+
+    return None
+
+
+def extract_tex_figure_labels(source_root: Path) -> dict[str, str]:
+    labels: dict[str, str] = {}
+
+    for path in sorted(source_root.rglob("*.tex")):
+        try:
+            content = path.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            continue
+
+        for block in re.findall(r"\\begin\{figure\*?\}(.*?)\\end\{figure\*?\}", content, re.DOTALL):
+            image_refs = re.findall(r"\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}", block)
+            caption_match = re.search(r"\\caption(?:\[[^\]]*\])?\{", block)
+            if not image_refs or not caption_match:
+                continue
+
+            extracted = extract_balanced_brace_content(block, caption_match.end() - 1)
+            if not extracted:
+                continue
+
+            caption = clean_latex_text(extracted[0])
+            if not caption:
+                continue
+
+            for image_ref in image_refs:
+                labels[normalize_asset_key(image_ref)] = caption
+
+    return labels
+
+
 def to_yaml_scalar(value: Any) -> str:
     if isinstance(value, bool):
         return "true" if value else "false"
@@ -586,13 +710,79 @@ def build_front_matter(data: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
-def build_gallery_section(slug: str, gallery_images: list[Path], teaser_name: str | None) -> str:
-    figure_blocks: list[str] = []
-    for image_path in gallery_images:
-        if teaser_name and image_path.name == teaser_name:
+def find_matching_asset(candidate: str, paths: list[Path]) -> Path | None:
+    normalized_candidate = normalize_asset_key(candidate)
+    for path in paths:
+        if normalize_asset_key(path.name) == normalized_candidate:
+            return path
+    return None
+
+
+def choose_teaser_image(
+    extracted: dict[str, Any],
+    bundle: AssetBundle,
+    figure_label_hints: dict[str, str],
+) -> Path | None:
+    candidate_images: list[Path] = []
+    if bundle.teaser_image:
+        candidate_images.append(bundle.teaser_image)
+    candidate_images.extend(path for path in bundle.gallery_images if path not in candidate_images)
+
+    preferred = (extracted.get("teaser_image_file") or "").strip()
+    if preferred:
+        matched = find_matching_asset(preferred, candidate_images)
+        if matched is not None:
+            return matched
+
+    if bundle.teaser_image is not None:
+        return bundle.teaser_image
+
+    for image_path in bundle.gallery_images:
+        if normalize_asset_key(image_path.name) in figure_label_hints:
+            return image_path
+
+    return bundle.gallery_images[0] if bundle.gallery_images else None
+
+
+def build_figure_highlights(
+    page: dict[str, Any],
+    gallery_images: list[Path],
+    figure_label_hints: dict[str, str],
+) -> list[FigureHighlight]:
+    highlights: list[FigureHighlight] = []
+    used_paths: set[Path] = set()
+
+    for item in page.get("figure_highlights", []):
+        image_path = find_matching_asset(item.get("file_name", ""), gallery_images)
+        label = (item.get("label") or "").strip()
+        if image_path is None or not label or image_path in used_paths:
             continue
+        highlights.append(FigureHighlight(path=image_path, label=label))
+        used_paths.add(image_path)
+
+    for image_path in gallery_images:
+        if image_path in used_paths:
+            continue
+        label = figure_label_hints.get(normalize_asset_key(image_path.name)) or humanize_stem(image_path)
+        highlights.append(FigureHighlight(path=image_path, label=label))
+        used_paths.add(image_path)
+
+    return highlights
+
+
+def build_gallery_section(
+    slug: str,
+    gallery_images: list[Path],
+    teaser_name: str | None,
+    page: dict[str, Any],
+    figure_label_hints: dict[str, str],
+) -> str:
+    figure_blocks: list[str] = []
+    visible_images = [path for path in gallery_images if not teaser_name or path.name != teaser_name]
+    for highlight in build_figure_highlights(page, visible_images, figure_label_hints):
+        image_path = highlight.path
         rel = f"/images/papers/{slug}/{image_path.name}"
-        label = escape(humanize_stem(image_path))
+        label = escape(highlight.label)
         figure_blocks.append(
             "\n".join(
                 [
@@ -648,7 +838,13 @@ def build_content_section(title: str, body_html: str, modifier: str = "") -> str
     )
 
 
-def build_markdown_body(page: dict[str, Any], slug: str, gallery_images: list[Path], teaser_name: str | None) -> str:
+def build_markdown_body(
+    page: dict[str, Any],
+    slug: str,
+    gallery_images: list[Path],
+    teaser_name: str | None,
+    figure_label_hints: dict[str, str],
+) -> str:
     sections: list[str] = []
 
     overview = page.get("overview") or ""
@@ -747,7 +943,7 @@ def build_markdown_body(page: dict[str, Any], slug: str, gallery_images: list[Pa
             )
         )
 
-    gallery = build_gallery_section(slug, gallery_images, teaser_name)
+    gallery = build_gallery_section(slug, gallery_images, teaser_name, page, figure_label_hints)
     if gallery:
         sections.append(gallery)
 
@@ -788,6 +984,7 @@ def normalize_page_data(
     local_pdf_url: str,
     local_video_url: str,
     teaser_image_url: str,
+    teaser_caption: str,
 ) -> dict[str, Any]:
     external_links = unique_links(extracted.get("external_links", []))
     hero_links = []
@@ -821,7 +1018,7 @@ def normalize_page_data(
         "subtitle": extracted.get("subtitle", "").strip(),
         "teaser_image": teaser_image_url,
         "teaser_alt": title,
-        "teaser_caption": "",
+        "teaser_caption": teaser_caption,
         "demo_video": local_video_url,
         "abstract": abstract,
         "citation": extracted.get("citation", "").strip(),
@@ -832,6 +1029,7 @@ def normalize_page_data(
         "paperurl": choose_paper_url(hero_links),
         "overview": extracted.get("overview", "").strip(),
         "key_contributions": extracted.get("key_contributions", []),
+        "figure_highlights": extracted.get("figure_highlights", []),
         "method": extracted.get("method", "").strip(),
         "findings": extracted.get("findings", "").strip(),
         "limitations": extracted.get("limitations", "").strip(),
@@ -862,6 +1060,7 @@ def main() -> int:
         preferred_pdf=explicit_pdf,
     )
     source_context = load_source_context(overleaf_dir, args.max_source_chars)
+    figure_label_hints = extract_tex_figure_labels(overleaf_dir)
 
     if not assets.pdf and not source_context:
         raise RuntimeError("No paper PDF or readable source files were found.")
@@ -869,7 +1068,7 @@ def main() -> int:
     client = require_openai_client()
 
     project_hint = f"Source directory name: {paper_dir.name}"
-    asset_manifest = build_asset_manifest(assets, paper_dir)
+    asset_manifest = build_asset_manifest(assets, paper_dir, figure_label_hints)
     extracted = extract_page_data(
         client=client,
         model=args.model,
@@ -892,9 +1091,13 @@ def main() -> int:
         permalink = normalize_permalink(args.permalink) if args.permalink else f"/publication/{slug}/"
         output_path = PUBLICATIONS_DIR / f"{slug}.md"
 
+    teaser_image = choose_teaser_image(extracted, assets, figure_label_hints)
     teaser_image_url = (
-        f"/images/papers/{slug}/{assets.teaser_image.name}" if assets.teaser_image else ""
+        f"/images/papers/{slug}/{teaser_image.name}" if teaser_image else ""
     )
+    teaser_caption = (extracted.get("teaser_image_caption") or "").strip()
+    if not teaser_caption and teaser_image is not None:
+        teaser_caption = figure_label_hints.get(normalize_asset_key(teaser_image.name), "")
     local_pdf_url = (
         f"/files/papers/{slug}/{assets.pdf.name}" if assets.pdf else ""
     )
@@ -911,6 +1114,7 @@ def main() -> int:
         local_pdf_url=local_pdf_url,
         local_video_url=local_video_url,
         teaser_image_url=teaser_image_url,
+        teaser_caption=teaser_caption,
     )
 
     front_matter = build_front_matter(page)
@@ -918,7 +1122,8 @@ def main() -> int:
         page=page,
         slug=slug,
         gallery_images=assets.gallery_images,
-        teaser_name=assets.teaser_image.name if assets.teaser_image else None,
+        teaser_name=teaser_image.name if teaser_image else None,
+        figure_label_hints=figure_label_hints,
     )
 
     content = front_matter + "\n\n" + body

@@ -5,6 +5,7 @@ collection: "publications"
 category: "conferences"
 permalink: "/publication/gazing-at-failure/"
 featured: true
+hidden: true
 excerpt: "This study examines how repeated robot failures and awareness levels impact user trust and perceived intelligence during human-robot collaboration."
 venue: "CHI Conference on Human Factors in Computing Systems (CHI '26)"
 date: "2026-04-13"

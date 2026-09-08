@@ -1,58 +1,43 @@
 ---
-layout: archive
+layout: academic
 title: "Projects"
 permalink: /projects/
-author_profile: true
+intro: "Research studies, software, and robotic systems for understanding and responding to robot failures."
 ---
 
-This page is for the projects, demos, and case studies that are most relevant to the roles you want. Replace the blank fields below with your strongest examples.
+<nav class="project-index" aria-label="Project categories">
+  <a href="#studies">Research studies</a>
+  <a href="#systems">Software &amp; robotic systems</a>
+</nav>
 
----
+<section class="academic-section" id="studies" aria-labelledby="studies-heading">
+  <div class="section-heading"><h2 id="studies-heading">Research studies</h2></div>
+  {% assign studies = site.research | sort: 'order' %}
+  {% for study in studies %}
+  <article class="project-row">
+    <a class="project-image" href="{{ study.url | relative_url }}" tabindex="-1" aria-hidden="true"><img src="{{ study.thumbnail | relative_url }}" alt="" width="250" height="175" loading="lazy"></a>
+    <div>
+      <p class="project-meta">{{ study.project_context }}</p>
+      <h3><a href="{{ study.url | relative_url }}">{{ study.title }}</a></h3>
+      <p>{{ study.short_summary }}</p>
+      <div class="text-links"><a href="{{ study.url | relative_url }}">Project details</a>{% for link in study.links %}<a href="{{ link.url | relative_url }}">{{ link.label }}</a>{% endfor %}</div>
+    </div>
+  </article>
+  {% endfor %}
+</section>
 
-## Featured Project 1
-
-- **Project title:** 
-- **One-sentence summary:** 
-- **Problem / context:** 
-- **Your role:** 
-- **Key contributions:** 
-- **Tools / stack:** 
-- **Outcome / impact:** 
-- **Links:** 
-
-<!-- Suggested evidence: GitHub, paper, video demo, screenshots, live deployment, or write-up. -->
-
----
-
-## Featured Project 2
-
-- **Project title:** 
-- **One-sentence summary:** 
-- **Problem / context:** 
-- **Your role:** 
-- **Key contributions:** 
-- **Tools / stack:** 
-- **Outcome / impact:** 
-- **Links:** 
-
----
-
-## Featured Project 3
-
-- **Project title:** 
-- **One-sentence summary:** 
-- **Problem / context:** 
-- **Your role:** 
-- **Key contributions:** 
-- **Tools / stack:** 
-- **Outcome / impact:** 
-- **Links:** 
-
----
-
-## Optional Additions
-
-- **Open-source contributions:** 
-- **Robotics platforms used:** 
-- **Datasets / benchmarks:** 
-- **Patents / awards / media:** 
+<section class="academic-section" id="systems" aria-labelledby="systems-heading">
+  <div class="section-heading"><h2 id="systems-heading">Software &amp; robotic systems</h2></div>
+  <article class="project-row project-row--text">
+    <h3>Failure detection &amp; recovery in simulation</h3>
+    <div><p class="project-meta">Ongoing research · NVIDIA Isaac · Vision–language models</p><p>Developing a simulation-based framework that combines behaviour trees with vision–language model reasoning to detect robot failures and select recovery strategies.</p></div>
+  </article>
+  <article class="project-row project-row--text">
+    <h3><a href="{{ '/publication/rosannotator/' | relative_url }}">ROSAnnotator</a></h3>
+    <div><p class="project-meta">Research software · HRI 2025</p><p>A web application for annotating and analysing ROSBag data in human–robot interaction. I supervised the master's project behind its development.</p><div class="text-links"><a href="{{ '/publication/rosannotator/' | relative_url }}">About the project</a></div></div>
+  </article>
+  <article class="project-row project-row--text">
+    <h3><a href="{{ '/publication/officemate/' | relative_url }}">OfficeMate</a></h3>
+    <div><p class="project-meta">Office assistant robot · Tiago · HRI 2025</p><p>A pilot evaluation of an office assistant robot. My related demonstration work on Tiago combines autonomous navigation and interaction in an office setting.</p><div class="text-links"><a href="{{ '/publication/officemate/' | relative_url }}">About the project</a></div></div>
+  </article>
+</section>

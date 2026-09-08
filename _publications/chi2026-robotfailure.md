@@ -64,16 +64,6 @@ paperurl: "/files/papers/chi2026-robotfailure/chi26-73 (2).pdf"
 <p>The level of failure awareness significantly influences user trust and perceived intelligence. Homogeneous failure sequences result in smaller trust declines than heterogeneous sequences. Robot awareness, especially for grasping and planning failures, positively affects user ratings.</p>
 </section>
 
-<section class="paper-showcase__panel paper-showcase__panel--results-alt">
-  <h2>Quantitative Results</h2>
-<p>Add quantitative results here, such as participant counts, statistical tests, effect sizes, or comparisons between conditions.</p>
-</section>
-
-<section class="paper-showcase__panel paper-showcase__panel--results-soft">
-  <h2>Qualitative Insights</h2>
-<p>Add qualitative observations here, such as participant feedback, notable behaviors, or themes that explain the quantitative results.</p>
-</section>
-
 <section class="paper-showcase__panel paper-showcase__panel--discussion">
   <h2>Discussion</h2>
 <h3>Limitations</h3>

@@ -1,34 +1,22 @@
 ---
+layout: academic
 title: "OfficeMate: Pilot Evaluation of an Office Assistant Robot"
 collection: publications
 category: conferences
 permalink: /publication/officemate/
-excerpt: 'A pilot evaluation of an office assistant robot.'
-venue: 'ACM/IEEE HRI 2025'
+paper_year: 2025
+author_text: "Pan, Schömbs, Zhang, Ramtin Tabatabaei, Bilal, and Wafa Johal"
+excerpt: "A pilot evaluation of an office assistant robot."
+venue: "ACM/IEEE HRI"
 ---
 
-## Overview
+<p class="detail-back"><a href="{{ '/publications/' | relative_url }}">← Publications</a></p>
+<p class="publication-venue">Pan, Schömbs, Zhang, Ramtin Tabatabaei, Bilal, and Wafa Johal · ACM/IEEE HRI 2025</p>
 
-Add a short overview of the paper here.
-
-## Abstract
-
-Add the abstract here.
-
-## Key Contributions
-
-- Add contribution 1.
-- Add contribution 2.
-- Add contribution 3.
-
-## My Contribution
-
-- Add your role in the paper here.
-
-## Media and Figures
-
-Add figures, screenshots, or an embedded video here.
-
-## Notes
-
-Add extra context, links to code, slides, datasets, or follow-up work here.
+<section class="academic-section">
+  <h2>About the project</h2>
+  <p>OfficeMate investigates the use of an office assistant robot through a pilot evaluation.</p>
+  <h2>Related demonstration work</h2>
+  <p>I demonstrated an office assistant robot on Tiago, with autonomous navigation and interaction, during a post-HRI academic visit in March 2025.</p>
+</section>
+<p><a href="{{ '/projects/#systems' | relative_url }}">← Software &amp; robotic systems</a></p>

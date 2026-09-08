@@ -28,6 +28,7 @@ layout: default
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">{% endif %}
 
+    <p class="detail-back"><a href="{{ base_path }}/publications/">&#8592; Publications</a></p>
     <header class="paper-showcase__hero{% unless has_visible_teaser %} paper-showcase__hero--text-only{% endunless %}">
       <div class="paper-showcase__hero-copy">
         {% if page.venue %}
@@ -80,9 +81,6 @@ layout: default
         {% if page.hero_links %}
           <div class="paper-showcase__links">
             {% for link in page.hero_links %}
-              {% if link.label == "Paper PDF" or link.url == page.paperurl %}
-                {% continue %}
-              {% endif %}
               {% if link.url contains "://" %}
                 {% assign hero_link_url = link.url %}
               {% else %}

@@ -1,7 +1,7 @@
-<!-- start custom footer snippets -->
-<!-- <a href="/sitemap/">Sitemap</a> -->
 {% include base_path %}
-{% if page.url == "/" %}
-<script src="{{ base_path }}/assets/js/homepage.js"></script>
-{% endif %}
-<!-- end custom footer snippets -->
+<div class="academic-footer">
+  <p>{{ site.name }} <span>· Melbourne, Australia</span></p>
+  <a href="mailto:{{ site.author.email }}">Email</a>
+  <a href="{{ site.author.googlescholar }}">Google Scholar</a>
+  <a href="{{ base_path }}/cv/">CV</a>
+</div>

@@ -63,16 +63,6 @@ paperurl: "/files/papers/hri2025-robotfailure/HRI_2025___Gaze_failure__full pape
 - Gaze reliably indicates different types of robot failures.</p>
 </section>
 
-<section class="paper-showcase__panel paper-showcase__panel--results-alt">
-  <h2>Quantitative Results</h2>
-<p>Add quantitative results here, such as participant counts, statistical tests, effect sizes, or comparisons between conditions.</p>
-</section>
-
-<section class="paper-showcase__panel paper-showcase__panel--results-soft">
-  <h2>Qualitative Insights</h2>
-<p>Add qualitative observations here, such as participant feedback, notable behaviors, or themes that explain the quantitative results.</p>
-</section>
-
 <section class="paper-showcase__panel paper-showcase__panel--discussion">
   <h2>Discussion</h2>
 <h3>Limitations</h3>

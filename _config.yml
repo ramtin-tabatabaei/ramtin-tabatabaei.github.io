@@ -12,7 +12,7 @@ site_theme               : "default"
 title                    : "Ramtin Tabatabaei"
 title_separator          : "-"
 name                     : &name "Ramtin Tabatabaei"
-description              : &description "Human-robot interaction researcher and robotics engineer seeking roles in robotics, embodied AI, and computer vision."
+description              : &description "Ramtin Tabatabaei is a Ph.D. candidate at the University of Melbourne researching human–robot interaction, robot failure, trust, and recovery."
 url                      : https://ramtin-tabatabaei.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "ramtin-tabatabaei/ramtin-tabatabaei.github.io"
@@ -22,7 +22,7 @@ repository               : "ramtin-tabatabaei/ramtin-tabatabaei.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "biophoto.jpg"
+  avatar           : "Me.png"
   name             : "Ramtin Tabatabaei"
   pronouns         : # example: "she/her"  
   bio              : "Human-robot interaction researcher and robotics engineer building reliable collaborative robot systems."
@@ -223,6 +223,9 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
+  research:
+    output: true
+    permalink: /:collection/:path/
 
 
 # These settings control how pages and collections are included in the site
@@ -280,6 +283,13 @@ defaults:
       layout: talk
       author_profile: true
       share: true
+  # _research
+  - scope:
+      path: ""
+      type: research
+    values:
+      layout: research
+      author_profile: true
 
 
 # Sass/SCSS

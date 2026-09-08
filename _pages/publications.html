@@ -1,37 +1,16 @@
 ---
-layout: archive
+layout: academic
 title: "Publications"
 permalink: /publications/
-author_profile: true
+intro: "Papers on human–robot interaction, robot failures, and collaborative robotic systems."
 ---
 
-{% include base_path %}
-
-{% assign visible_publications = site.publications | where_exp: "post", "post.hidden != true" %}
-{% assign featured_publications = visible_publications | where: "featured", true %}
-{% assign featured_manual = featured_publications | where_exp: "post", "post.main_order != nil" | sort: "main_order" %}
-{% assign featured_auto = featured_publications | where_exp: "post", "post.main_order == nil" | sort: "paper_year" | reverse %}
-
-<div class="publications-page">
-  <section class="publications-page__intro">
-    <p class="publications-page__eyebrow">Research Output</p>
-    <p class="publications-page__lead">This page is structured as a publications landing page. Each paper title opens a dedicated page where you can add the abstract, figures, videos, links, and notes for that specific paper.</p>
-    {% if site.author.googlescholar %}
-      <p class="publications-page__external">You can also browse the full list on my <a href="{{site.author.googlescholar}}">Google Scholar</a>.</p>
-    {% endif %}
-  </section>
-
-  {% if featured_publications.size > 0 %}
-    <section class="publications-page__section">
-      <h2 id="main-papers">Main Papers</h2>
-      <p class="publications-page__section-note">Highlighted papers that open into dedicated paper pages.</p>
-      <hr />
-      {% for post in featured_manual %}
-        {% include archive-single.html %}
-      {% endfor %}
-      {% for post in featured_auto %}
-        {% include archive-single.html %}
-      {% endfor %}
-    </section>
-  {% endif %}
-</div>
+<p class="publication-scholar">See also <a href="{{ site.author.googlescholar }}">Google Scholar</a>.</p>
+{% assign papers = site.publications | where_exp: 'paper', 'paper.hidden != true' | where_exp: 'paper', 'paper.paper_year != nil' | sort: 'paper_year' | reverse %}
+{% assign years = papers | group_by: 'paper_year' %}
+{% for year in years %}
+<section class="publication-year" aria-labelledby="year-{{ year.name }}">
+  <h2 id="year-{{ year.name }}">{{ year.name }}</h2>
+  <div>{% for paper in year.items %}{% include publication-entry.html paper=paper %}{% endfor %}</div>
+</section>
+{% endfor %}

@@ -48,5 +48,6 @@ redirect_from:
 
 <section class="academic-section" aria-labelledby="teaching-heading">
   <div class="section-heading"><h2 id="teaching-heading">Teaching &amp; supervision</h2><a href="{{ '/cv/#teaching' | relative_url }}">Teaching history <span aria-hidden="true">↗</span></a></div>
-  <p>At the University of Melbourne, I tutor <em>Elements of Data Processing</em> and <em>Machine Learning</em>. I have also supervised a master's project developing a web application for annotating ROSBag data.</p>
+  <p>In Semester 2, 2026, I am a lab tutor for <em>Intelligent Robotics (ECE4078)</em> at Monash University and a marker for <em>Usability Evaluation Methods (INFO20004)</em> at the University of Melbourne. Previously, I tutored <em>Elements of Data Processing</em> (Semester 2, 2025 and Semester 1, 2026) and <em>Machine Learning</em> (Semester 1, 2026) at Melbourne.</p>
+  <p>I also supervised a master's project developing a web application for annotating ROSBag data from March to July 2024.</p>
 </section>

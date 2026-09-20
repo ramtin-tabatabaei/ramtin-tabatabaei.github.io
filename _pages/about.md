@@ -13,7 +13,8 @@ redirect_from:
     <p class="academic-kicker">Human–robot interaction</p>
     <h1 id="intro-name">Ramtin Tabatabaei</h1>
     <p class="academic-affiliation">Ph.D. candidate · University of Melbourne</p>
-    <p>I study what happens when robots make mistakes: how people respond, how trust changes, and how robots can recognise and recover from failure.</p>
+    <p class="academic-lead">My research sits at the intersection of artificial intelligence, robotics, and human–robot interaction. I study what happens when robots make mistakes: how people respond, how trust changes, and how robots can recognise and recover from failure.</p>
+    <p class="academic-lead">I explore how machine learning, vision–language models, and robot reasoning can help robots understand their actions, detect when things go wrong, and adapt to unexpected situations.</p>
     <p>I am a Ph.D. candidate in the School of Computing and Information Systems, supervised by <a href="https://wafa.johal.org/">Wafa Johal</a> and Vassilis Kostakos. My work is part of the Human-Computer Interaction Group and the <a href="https://chri-lab.github.io/">Human-Robot Interaction Lab</a>.</p>
     <div class="text-links intro-links" aria-label="Contact and academic profiles">
       <a href="mailto:{{ site.author.email }}">Email</a>
@@ -23,14 +24,13 @@ redirect_from:
     </div>
   </div>
   <figure class="academic-portrait">
-    <img src="{{ '/images/Me.png' | relative_url }}" alt="Ramtin Tabatabaei" width="230" height="280" fetchpriority="high">
-    <figcaption>Melbourne, Australia</figcaption>
+    <img src="{{ '/images/ME.JPG' | relative_url }}" alt="Ramtin Tabatabaei" width="230" height="280" fetchpriority="high">
   </figure>
 </section>
 
 <section class="academic-section" id="research" aria-labelledby="research-heading">
   <div class="section-heading"><h2 id="research-heading">Research</h2><a href="{{ '/projects/' | relative_url }}">Explore projects <span aria-hidden="true">↗</span></a></div>
-  <p>My research combines real-robot experiments, eye tracking, and controlled user studies. I use human behavioural signals to investigate robot failures, and develop vision–language model reasoning for failure detection and recovery.</p>
+  <p>I combine real-robot experiments, eye tracking, and controlled user studies to understand how people notice, interpret, and respond to robot mistakes. Alongside this, I develop AI methods that combine vision–language models with robot-state monitoring to detect failures and guide recovery. My work connects human behaviour with robot intelligence to make human–robot collaboration more reliable.</p>
   <dl class="research-directions">
     <div><dt>Behavioural signals</dt><dd>Using gaze and interaction patterns to detect when something goes wrong.</dd></div>
     <div><dt>Trust &amp; recovery</dt><dd>Understanding how repeated failures and robot awareness shape collaboration.</dd></div>

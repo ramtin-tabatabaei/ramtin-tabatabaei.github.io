@@ -88,10 +88,7 @@
 <!-- For all browsers -->
 <link rel="stylesheet" href="http://localhost:4001/assets/css/main.css">
 
-<!-- Inter font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="http://localhost:4001/assets/css/academic.css">
 
 <meta http-equiv="cleartype" content="on">
     
@@ -117,198 +114,113 @@
 
   </head>
 
-  <body>
+  <body class="academic-site">
+    <a class="skip-link" href="#main">Skip to content</a>
 
     <!--[if lt IE 9]>
 <div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
 <![endif]-->
     
-
-<div class="masthead">
-  <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        <button><div class="navicon"></div></button>
-        <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg"><a href="http://localhost:4001/">Ramtin Tabatabaei</a></li>
-          
-            
-            <li class="masthead__menu-item"><a href="http://localhost:4001/publications/">Publications</a></li>
-          
-            
-            <li class="masthead__menu-item"><a href="http://localhost:4001/cv/">CV</a></li>
-          
-        </ul>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
-    </div>
-  </div>
-</div>
-
-    
-
-
-
-<div id="main" role="main">
-  
-
-
-  <div class="sidebar sticky">
-  
-
-
-
-<div itemscope itemtype="http://schema.org/Person">
-
-  <div class="author__avatar">
-    
-    	<img src="http://localhost:4001/images/Me.png" class="author__avatar" alt="Ramtin Tabatabaei">
-    
-  </div>
-
-  <div class="author__content">
-    <h3 class="author__name">Ramtin Tabatabaei</h3>
-    
-    <p class="author__bio">Human-robot interaction researcher and robotics engineer building reliable collaborative robot systems.</p>
-  </div>
-
-  <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">Follow</button>
-    <ul class="author__urls social-icons">
-      <!-- Font Awesome icons / Biographic information  -->
-      
-        <li class="author__desktop"><i class="fa-solid fa-location-dot icon-pad-right" aria-hidden="true"></i>Melbourne, Australia</li>
-      
-      
-        <li class="author__desktop"><i class="fas fa-fw fa-building-columns icon-pad-right" aria-hidden="true"></i>University of Melbourne</li>
-      
-      
-      
-        <li><a href="mailto:stabatabaeim@student.unimelb.edu.au"><i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>Email</a></li>
-      
-
-      <!-- Font Awesome and Academicons icons / Academic websites -->
-            
-      
-        <li><a href="https://scholar.google.com.au/citations?user=5YHIHDAAAAAJ&hl=en&oi=sra"><i class="ai ai-google-scholar icon-pad-right"></i>Google Scholar</a></li>
+<header class="academic-header">
+  <a class="academic-wordmark" href="http://localhost:4001/">Ramtin Tabatabaei</a>
+  <nav aria-label="Main navigation">
+    <ul>
       
       
       
       
-                              
+      
+      <li><a href="http://localhost:4001/">About</a></li>
       
       
-
-      <!-- Font Awesome icons / Repositories and software development -->
-      
-            
-            
-      
-            
-            
-
-      <!-- Font Awesome icons / Social media -->
       
       
-            
       
-                  
-                  
-      
-            
-            
-      
-        <li><a href="https://www.linkedin.com/in/ramtin-tabatabaei"><i class="fab fa-fw fa-linkedin icon-pad-right" aria-hidden="true"></i>LinkedIn</a></li>
-            
-      
-            
-                  
-            
-      
-            
-            
-      
-              
-      
-                      
+      <li><a href="http://localhost:4001/projects/" aria-current="page">Projects</a></li>
       
       
-            
+      
+      
+      
+      <li><a href="http://localhost:4001/publications/">Publications</a></li>
+      
+      
+      
+      
+      
+      <li><a href="http://localhost:4001/cv/">CV</a></li>
+      
     </ul>
-  </div>
-</div>
+  </nav>
+</header>
 
+
+    <main id="main" class="academic-main" tabindex="-1">
   
-  </div>
+  <header class="academic-page-heading">
+    <h1>Projects</h1>
+    <p>Research studies, software, and robotic systems for understanding and responding to robot failures.</p>
+  </header>
+  
+  <nav class="project-index" aria-label="Project categories">
+  <a href="#studies">Research studies</a>
+  <a href="#systems">Software &amp; robotic systems</a>
+</nav>
 
+<section class="academic-section" id="studies" aria-labelledby="studies-heading">
+  <div class="section-heading"><h2 id="studies-heading">Research studies</h2></div>
+  
+  
+  <article class="project-row">
+    <a class="project-image" href="/research/gaze-based-failure-detection/" tabindex="-1" aria-hidden="true"><img src="/images/papers/hri2025-robotfailure/Areas%20Of%20Interest.jpg" alt="" width="250" height="175" loading="lazy"></a>
+    <div>
+      <p class="project-meta">Gaze & behavioural sensing · HRI 2025</p>
+      <h3><a href="/research/gaze-based-failure-detection/">Gaze-Based Robot Failure Detection</a></h3>
+      <p>Investigating how gaze changes when a robot makes a mistake, and whether those changes can support early failure detection during collaborative tasks.</p>
+      <div class="text-links"><a href="/research/gaze-based-failure-detection/">Project details</a><a href="/publication/HRI2025-RobotFailure/">Related paper</a></div>
+    </div>
+  </article>
+  
+  <article class="project-row">
+    <a class="project-image" href="/research/trust-dynamics-robot-failures/" tabindex="-1" aria-hidden="true"><img src="/images/papers/chi2026-robotfailure/Planning_Failure.png" alt="" width="250" height="175" loading="lazy"></a>
+    <div>
+      <p class="project-meta">Trust & failure awareness · CHI 2026</p>
+      <h3><a href="/research/trust-dynamics-robot-failures/">Trust Dynamics Across Multiple Robot Failures</a></h3>
+      <p>Examining how repeated robot failures affect trust, and when a robot's awareness of its mistakes helps people continue working with it.</p>
+      <div class="text-links"><a href="/research/trust-dynamics-robot-failures/">Project details</a><a href="/publication/CHI2026-RobotFailure/">Related paper</a></div>
+    </div>
+  </article>
+  
+</section>
 
-  <div class="archive">
-    
-      <h1 class="page__title">Projects</h1>
-    
-    This page is for the projects, demos, and case studies that are most relevant to the roles you want. Replace the blank fields below with your strongest examples.
+<section class="academic-section" id="systems" aria-labelledby="systems-heading">
+  <div class="section-heading"><h2 id="systems-heading">Software &amp; robotic systems</h2></div>
+  <article class="project-row project-row--text">
+    <h3>Failure detection &amp; recovery in simulation</h3>
+    <div><p class="project-meta">Ongoing research · NVIDIA Isaac · Vision–language models</p><p>Developing a simulation-based framework that combines behaviour trees with vision–language model reasoning to detect robot failures and select recovery strategies.</p></div>
+  </article>
+  <article class="project-row project-row--text">
+    <h3><a href="/publication/rosannotator/">ROSAnnotator</a></h3>
+    <div><p class="project-meta">Research software · HRI 2025</p><p>A web application for annotating and analysing ROSBag data in human–robot interaction. I supervised the master's project behind its development.</p><div class="text-links"><a href="/publication/rosannotator/">About the project</a></div></div>
+  </article>
+  <article class="project-row project-row--text">
+    <h3><a href="/publication/officemate/">OfficeMate</a></h3>
+    <div><p class="project-meta">Office assistant robot · TIAGo / ROS · HRI 2025</p><p>A social office assistant combining conversation, person-following, autonomous navigation, and activities such as snack handovers and breathing exercises. A seven-participant office pilot explored its potential to support well-being, alongside concerns about privacy, noise, communication, and interaction timing.</p><div class="text-links"><a href="/publication/officemate/">About the project</a><a href="https://chri-lab.github.io/files/papers/pan2025officemate.pdf">Paper</a><a href="https://github.com/CHRI-Lab/woa_tiago">Code</a></div></div>
+  </article>
+</section>
 
----
-
-## Featured Project 1
-
-- **Project title:** 
-- **One-sentence summary:** 
-- **Problem / context:** 
-- **Your role:** 
-- **Key contributions:** 
-- **Tools / stack:** 
-- **Outcome / impact:** 
-- **Links:** 
-
-<!-- Suggested evidence: GitHub, paper, video demo, screenshots, live deployment, or write-up. -->
-
----
-
-## Featured Project 2
-
-- **Project title:** 
-- **One-sentence summary:** 
-- **Problem / context:** 
-- **Your role:** 
-- **Key contributions:** 
-- **Tools / stack:** 
-- **Outcome / impact:** 
-- **Links:** 
-
----
-
-## Featured Project 3
-
-- **Project title:** 
-- **One-sentence summary:** 
-- **Problem / context:** 
-- **Your role:** 
-- **Key contributions:** 
-- **Tools / stack:** 
-- **Outcome / impact:** 
-- **Links:** 
-
----
-
-## Optional Additions
-
-- **Open-source contributions:** 
-- **Robotics platforms used:** 
-- **Datasets / benchmarks:** 
-- **Patents / awards / media:** 
-
-  </div>
-</div>
+</main>
 
 
     <div class="page__footer">
       <footer>
-        <!-- start custom footer snippets -->
-<!-- <a href="/sitemap/">Sitemap</a> -->
-
-
-<!-- end custom footer snippets -->
+        
+<div class="academic-footer">
+  <p>Ramtin Tabatabaei <span>· Melbourne, Australia</span></p>
+  <a href="mailto:stabatabaeim@student.unimelb.edu.au">Email</a>
+  <a href="https://scholar.google.com.au/citations?user=5YHIHDAAAAAJ&hl=en&oi=sra">Google Scholar</a>
+  <a href="http://localhost:4001/cv/">CV</a>
+</div>
 
         <!-- 
 
@@ -316,14 +228,13 @@
 
 <!-- <div class="page__footer-copyright">
   &copy; 2026 Ramtin Tabatabaei, Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br />
-  Site last updated 2026-06-06
+  Site last updated 2026-09-20
 </div> -->
 
       </footer>
     </div>
 
-    <script src="http://localhost:4001/assets/js/main.min.js"></script>
-
+    
 
 
 

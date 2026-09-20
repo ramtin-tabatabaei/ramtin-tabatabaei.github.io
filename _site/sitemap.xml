@@ -38,6 +38,9 @@
 <loc>http://localhost:4001/publication/officemate/</loc>
 </url>
 <url>
+<loc>http://localhost:4001/publication/real-time-gaze-failure-detection/</loc>
+</url>
+<url>
 <loc>http://localhost:4001/publication/rosannotator/</loc>
 </url>
 <url>

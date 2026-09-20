@@ -55,7 +55,11 @@ redirect_from:
   <h2>Teaching &amp; supervision</h2>
   <div class="cv-entry">
     <p class="cv-date">2024 – Present</p>
-    <div><h3>University of Melbourne</h3><ul><li><strong>Elements of Data Processing</strong> — Tutor, Semester 2, 2025 and Semester 1, 2026.</li><li><strong>Machine Learning</strong> — Tutor, Semester 1, 2026.</li><li><strong>Master's project supervision</strong> — March–July 2024. Supervised development of a web application for annotating ROSBag data.</li></ul></div>
+    <div><h3>University of Melbourne</h3><ul><li><strong>Usability Evaluation Methods (INFO20004)</strong> — Marker, Semester 2, 2026.</li><li><strong>Elements of Data Processing</strong> — Tutor, Semester 2, 2025 and Semester 1, 2026.</li><li><strong>Machine Learning</strong> — Tutor, Semester 1, 2026.</li><li><strong>Master's project supervision</strong> — March–July 2024. Supervised development of a web application for annotating ROSBag data.</li></ul></div>
+  </div>
+  <div class="cv-entry">
+    <p class="cv-date">2026</p>
+    <div><h3>Monash University</h3><ul><li><strong>Intelligent Robotics (ECE4078)</strong> — Lab tutor, Semester 2, 2026.</li></ul></div>
   </div>
   <div class="cv-entry">
     <p class="cv-date">2022 – 2023</p>

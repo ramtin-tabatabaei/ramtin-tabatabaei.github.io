@@ -90,10 +90,7 @@
 <!-- For all browsers -->
 <link rel="stylesheet" href="http://localhost:4001/assets/css/main.css">
 
-<!-- Inter font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="http://localhost:4001/assets/css/academic.css">
 
 <meta http-equiv="cleartype" content="on">
     
@@ -119,33 +116,46 @@
 
   </head>
 
-  <body>
+  <body class="academic-site">
+    <a class="skip-link" href="#main">Skip to content</a>
 
     <!--[if lt IE 9]>
 <div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
 <![endif]-->
     
+<header class="academic-header">
+  <a class="academic-wordmark" href="http://localhost:4001/">Ramtin Tabatabaei</a>
+  <nav aria-label="Main navigation">
+    <ul>
+      
+      
+      
+      
+      
+      <li><a href="http://localhost:4001/">About</a></li>
+      
+      
+      
+      
+      
+      <li><a href="http://localhost:4001/projects/">Projects</a></li>
+      
+      
+      
+      
+      
+      <li><a href="http://localhost:4001/publications/" aria-current="page">Publications</a></li>
+      
+      
+      
+      
+      
+      <li><a href="http://localhost:4001/cv/">CV</a></li>
+      
+    </ul>
+  </nav>
+</header>
 
-<div class="masthead">
-  <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        <button><div class="navicon"></div></button>
-        <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg"><a href="http://localhost:4001/">Ramtin Tabatabaei</a></li>
-          
-            
-            <li class="masthead__menu-item"><a href="http://localhost:4001/publications/">Publications</a></li>
-          
-            
-            <li class="masthead__menu-item"><a href="http://localhost:4001/cv/">CV</a></li>
-          
-        </ul>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
-    </div>
-  </div>
-</div>
 
     
 
@@ -163,6 +173,7 @@
     <meta itemprop="description" content="This study examines how human gaze patterns can indicate robot failures and influence perceptions in collaborative tasks.">
     
 
+    <p class="detail-back"><a href="http://localhost:4001/publications/">&#8592; Publications</a></p>
     <header class="paper-showcase__hero paper-showcase__hero--text-only">
       <div class="paper-showcase__hero-copy">
         
@@ -229,8 +240,8 @@
           <div class="paper-showcase__links">
             
               
-                
-              
+              <a class="btn paper-showcase__link" href="http://localhost:4001/files/papers/hri2025-robotfailure/HRI_2025___Gaze_failure__full paper.pdf">Paper PDF</a>
+            
               
               <a class="btn paper-showcase__link" href="http://localhost:4001/files/papers/hri2025-robotfailure/VideoforHRI.mp4">Demo Video</a>
             
@@ -292,16 +303,6 @@
 - Gaze reliably indicates different types of robot failures.</p>
 </section>
 
-<section class="paper-showcase__panel paper-showcase__panel--results-alt">
-  <h2>Quantitative Results</h2>
-<p>Add quantitative results here, such as participant counts, statistical tests, effect sizes, or comparisons between conditions.</p>
-</section>
-
-<section class="paper-showcase__panel paper-showcase__panel--results-soft">
-  <h2>Qualitative Insights</h2>
-<p>Add qualitative observations here, such as participant feedback, notable behaviors, or themes that explain the quantitative results.</p>
-</section>
-
 <section class="paper-showcase__panel paper-showcase__panel--discussion">
   <h2>Discussion</h2>
 <h3>Limitations</h3>
@@ -342,11 +343,13 @@
 
     <div class="page__footer">
       <footer>
-        <!-- start custom footer snippets -->
-<!-- <a href="/sitemap/">Sitemap</a> -->
-
-
-<!-- end custom footer snippets -->
+        
+<div class="academic-footer">
+  <p>Ramtin Tabatabaei <span>· Melbourne, Australia</span></p>
+  <a href="mailto:stabatabaeim@student.unimelb.edu.au">Email</a>
+  <a href="https://scholar.google.com.au/citations?user=5YHIHDAAAAAJ&hl=en&oi=sra">Google Scholar</a>
+  <a href="http://localhost:4001/cv/">CV</a>
+</div>
 
         <!-- 
 
@@ -354,14 +357,13 @@
 
 <!-- <div class="page__footer-copyright">
   &copy; 2026 Ramtin Tabatabaei, Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br />
-  Site last updated 2026-06-06
+  Site last updated 2026-09-20
 </div> -->
 
       </footer>
     </div>
 
-    <script src="http://localhost:4001/assets/js/main.min.js"></script>
-
+    
 
 
 

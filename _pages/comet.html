@@ -1,0 +1,82 @@
+---
+layout: academic
+title: "CoMET"
+permalink: /research/comet/
+intro: "Condition-Based Monitoring of Execution with Behaviour Trees for Failure Detection in Robotic Manipulation"
+description: "CoMET converts a successful demonstration into a behaviour-tree monitoring plan, combining visual condition checks with robot-state detectors across 78 RLBench tasks."
+---
+
+<div class="comet-project">
+  <p class="academic-kicker">Ongoing research · Robotic manipulation · 2026</p>
+  <p class="comet-lead">A robot can complete a movement and still fail the task. CoMET monitors what should be true before, during, and after each action, combining vision–language reasoning with evidence from the robot itself.</p>
+  <nav class="text-links" aria-label="CoMET project sections">
+    <a href="#demo">Watch the research video</a>
+    <a href="#method">How it works</a>
+    <a href="#evaluation">Evaluation</a>
+  </nav>
+
+  <section class="academic-section" id="demo" aria-labelledby="demo-heading">
+    <div class="section-heading"><h2 id="demo-heading">From demonstration to monitoring</h2></div>
+    <figure class="comet-media">
+      <video controls playsinline preload="none" poster="{{ '/images/comet/poster.jpg' | relative_url }}" aria-label="CoMET research overview" aria-describedby="comet-video-caption">
+        <source src="{{ '/files/comet/research-overview.mp4' | relative_url }}" type="video/mp4">
+        <track kind="captions" src="{{ '/files/comet/captions-en.vtt' | relative_url }}" srclang="en" label="English">
+        <p><a href="{{ '/files/comet/research-overview.mp4' | relative_url }}">Download the CoMET research video</a>.</p>
+      </video>
+      <figcaption id="comet-video-caption">3 min 42 sec · Narrated overview with English subtitles. Basketball into a hoop illustrates how a demonstration becomes a monitoring plan. Simulator recordings are accompanied by explanatory graphics; the video does not demonstrate closed-loop recovery. <a href="{{ '/files/comet/transcript.txt' | relative_url }}">Read the transcript</a>.</figcaption>
+    </figure>
+    <details class="comet-credits">
+      <summary>Video credits</summary>
+      <p>Original simulator recordings and explanatory graphics. AI-generated narration uses <a href="https://github.com/OHF-Voice/piper1-gpl">Piper</a> and the <a href="https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/ryan/high">en_US-ryan-high voice</a>, based on <a href="https://www.kaggle.com/datasets/roholazandie/ryanspeech">RyanSpeech by roholazandie</a>. The supplied model card lists the dataset under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>.</p>
+    </details>
+  </section>
+
+  <section class="academic-section" id="method" aria-labelledby="method-heading">
+    <div class="section-heading"><h2 id="method-heading">How it works</h2></div>
+    <p>CoMET starts with a single successful demonstration. Multi-view images, waypoint poses, gripper state, and held-object information describe the task and its expected intermediate states. A generator–reviewer pipeline turns this description into a behaviour tree with conditions for each waypoint.</p>
+    <ol class="comet-workflow">
+      <li><strong>Define expected conditions.</strong> A reusable catalogue supplies task-specific preconditions, hold conditions, and postconditions: what must be true before, during, and after an action.</li>
+      <li><strong>Monitor physical execution.</strong> Lightweight detectors check collision and grasp-loss signals during motion, and position and orientation at waypoint completion. Collision and grasp-loss candidates receive selective visual confirmation.</li>
+      <li><strong>Verify the task state.</strong> At checkpoints, a vision–language model checks the active semantic conditions against side, front, and wrist camera views. This can reveal unmet requirements even when the motion itself appears normal.</li>
+      <li><strong>Explain deviations.</strong> The active tree stage, violated conditions, and supporting evidence help localise a failure. Mapping rules assign benchmark failure categories; detecting a violation does not always reveal its initiating cause.</li>
+    </ol>
+    <figure class="comet-media comet-framework">
+      <a href="{{ '/files/comet/framework.pdf' | relative_url }}"><img src="{{ '/images/comet/framework.png' | relative_url }}" alt="CoMET flowchart: a successful demonstration becomes task and waypoint descriptions, then a condition-annotated behaviour tree through generation, review, and user checks. Tree execution supplies robot sensors and images to detector-triggered monitoring and condition-grounded visual monitoring." width="2800" height="1155" loading="lazy"></a>
+      <figcaption>Task modelling, behaviour-tree generation, execution, and the two complementary monitoring mechanisms. <a href="{{ '/files/comet/framework.pdf' | relative_url }}">Open the full-size flowchart (PDF)</a>.</figcaption>
+    </figure>
+  </section>
+
+  <section class="academic-section" id="evaluation" aria-labelledby="evaluation-heading">
+    <div class="section-heading"><h2 id="evaluation-heading">Evaluation</h2></div>
+    <p>The study evaluates 78 simulated manipulation tasks adapted from AHA/RLBench with a Franka Panda arm. Seven failure types cover grasp loss, collision, position and orientation deviations, incorrect object selection, omitted grasps, and sequence violations. CoMET requires no failure-specific vision–language model fine-tuning.</p>
+    <dl class="comet-metrics">
+      <div><dt>Tasks</dt><dd>78</dd></div>
+      <div><dt>Failure types</dt><dd>7</dd></div>
+      <div><dt>Waypoint accuracy</dt><dd>88.9%</dd></div>
+      <div><dt>Binary F1</dt><dd>83.3%</dd></div>
+    </dl>
+    <div class="comet-results">
+      <table>
+        <caption>Reported waypoint-level results (%)</caption>
+        <thead><tr><th scope="col">Method</th><th scope="col">Binary F1</th><th scope="col">Macro F1 (8 classes)</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">AHA-GPT: direct failure prompting</th><td>54.4</td><td>22.0</td></tr>
+          <tr><th scope="row">Guardian</th><td>18.2</td><td>10.4</td></tr>
+          <tr><th scope="row">FailSafe</th><td>42.3</td><td>13.0</td></tr>
+          <tr><th scope="row">AHA-GPT + detectors and confirmation</th><td>82.8</td><td>52.3</td></tr>
+          <tr><th scope="row">Guardian + detectors and confirmation</th><td>72.1</td><td>48.7</td></tr>
+          <tr><th scope="row">FailSafe + detectors and confirmation</th><td>65.8</td><td>42.1</td></tr>
+          <tr><th scope="row">CoMET</th><td><strong>83.3</strong></td><td><strong>56.0</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="comet-note">Binary F1 measures failure detection; macro F1 averages classification F1 across seven failure types and success. Augmented baselines use the same robot-state detectors and selective confirmation as CoMET. Results are from the current research manuscript.</p>
+    <p>Visual checks and robot-state signals provide complementary evidence. In the component ablations, condition verification achieves 43.5% binary F1 and detector monitoring achieves 75.4%, compared with 83.3% for CoMET. Its binary F1 is close to the strongest augmented baseline. Exact failure diagnosis remains harder than detecting that a required condition has been violated.</p>
+  </section>
+
+  <section class="academic-section" aria-labelledby="outlook-heading">
+    <div class="section-heading"><h2 id="outlook-heading">Current scope and next steps</h2></div>
+    <p>The evaluation uses procedurally injected failures in simulation. Collision diagnosis and sequence violations remain challenging, and visual confirmation adds inference cost and latency. Physical-robot validation, stronger temporal reasoning, and closed-loop recovery are future work. The stage and violated condition provide a starting point for deciding what needs to be restored before execution continues.</p>
+  </section>
+  <p class="comet-back"><a href="{{ '/projects/' | relative_url }}">← Back to projects</a></p>
+</div>

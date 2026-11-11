@@ -158,6 +158,40 @@ body.academic-site {
 }
 @media print { .cv-entry { break-inside: avoid; } }
 
+/* CoMET project: retain the portfolio typography and provide readable research media. */
+.comet-project .academic-kicker { margin-bottom: 18px; }
+.comet-lead { max-width: 820px; font-size: 1.25rem; line-height: 1.7; }
+.comet-project .academic-section > p, .comet-workflow { max-width: 900px; }
+.comet-media { margin: 0; }
+.comet-media video, .comet-media img { display: block; width: 100%; height: auto; border-radius: 4px; }
+.comet-media video { aspect-ratio: 16 / 9; background: #14243c; }
+.comet-media figcaption, .comet-credits, .comet-note { color: var(--muted); font-size: .875rem; line-height: 1.65; }
+.comet-media figcaption { margin-top: 16px; max-width: 900px; }
+.comet-credits { margin-top: 18px; }
+.comet-credits summary { cursor: pointer; color: var(--accent); }
+.comet-credits p { margin-top: 12px; }
+.comet-workflow { padding-left: 24px; }
+.comet-workflow li { padding-left: 6px; margin-bottom: 18px; }
+.comet-framework { margin-top: 32px; }
+.comet-framework img { background: white; border: 1px solid var(--line); }
+.comet-metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; padding: 24px 0; margin: 28px 0; border-block: 1px solid var(--line); }
+.comet-metrics dt { font-size: .8125rem; color: var(--muted); font-weight: 400; }
+.comet-metrics dd { margin: 5px 0 0; font-size: 2rem; color: var(--ink); font-family: Georgia, serif; }
+.comet-results { overflow-x: auto; margin-bottom: 16px; }
+.comet-results table { width: 100%; margin: 0; font-size: .9375rem; border-collapse: collapse; }
+.comet-results caption { text-align: left; font-weight: 600; margin-bottom: 12px; color: var(--ink); }
+.comet-results th, .comet-results td { padding: 14px 12px; border-bottom: 1px solid var(--line); text-align: right; vertical-align: top; }
+.comet-results th:first-child { text-align: left; padding-left: 0; }
+.comet-results tbody th { font-weight: 400; }
+.comet-results tbody tr:last-child { background: #edf3ff; }
+.comet-back { margin-top: 44px; }
+@media (max-width: 600px) {
+  .comet-lead { font-size: 1.125rem; }
+  .comet-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px; }
+  .comet-results table { font-size: .8125rem; }
+  .comet-results th, .comet-results td { padding: 12px 8px; }
+}
+
 /* Visual identity: oversized editorial type, a restrained portrait, and blue details. */
 @media screen {
   .academic-header { width: min(100% - 80px, 1120px); padding: 30px 0; }

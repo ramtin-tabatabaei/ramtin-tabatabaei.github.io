@@ -1,7 +1,5 @@
 ---
 layout: academic
-venue_short: "HRI 2025"
-thumb_icon: "code"
 title: "ROSAnnotator: A Web Application for ROSBag Data Analysis in Human-Robot Interaction"
 collection: publications
 category: conferences

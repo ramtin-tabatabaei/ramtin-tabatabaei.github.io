@@ -1,7 +1,5 @@
 ---
 layout: academic
-venue_short: "HRI 2025"
-thumb_icon: "robot"
 title: "OfficeMate: Pilot Evaluation of an Office Assistant Robot"
 collection: publications
 category: conferences

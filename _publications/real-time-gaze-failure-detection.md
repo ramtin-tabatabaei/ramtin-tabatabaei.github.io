@@ -1,7 +1,5 @@
 ---
 layout: academic
-venue_short: "HRI 2025"
-thumb: "/images/papers/hri2025-robotfailure/AoIs.jpg"
 title: "Real-Time Detection of Robot Failures Using Gaze Dynamics in Collaborative Tasks"
 collection: publications
 category: conferences

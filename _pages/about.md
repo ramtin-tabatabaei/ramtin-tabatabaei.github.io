@@ -51,9 +51,9 @@ redirect_from:
   <p>I combine real-robot experiments, eye tracking, and controlled user studies to understand how people notice, interpret, and respond to robot mistakes. I also develop machine learning methods that combine vision-language models with robot-state monitoring to detect failures and guide recovery. My work connects human behaviour with robot intelligence to make human-robot collaboration more reliable.</p>
   <p>I am supervised by <a href="https://wafa.johal.org/">Wafa Johal</a> and Vassilis Kostakos. My work is part of the Human-Computer Interaction Group and the <a href="https://chri-lab.github.io/">Human-Robot Interaction Lab</a>.</p>
   <dl class="research-directions">
-    <div><dt><span class="direction-icon">{% include icon.html name="eye" %}</span>Behavioural signals</dt><dd>Using gaze and interaction patterns to detect when something goes wrong.</dd></div>
-    <div><dt><span class="direction-icon">{% include icon.html name="trust" %}</span>Trust &amp; recovery</dt><dd>Understanding how repeated failures and robot awareness shape collaboration.</dd></div>
-    <div><dt><span class="direction-icon">{% include icon.html name="robot" %}</span>Robotic systems</dt><dd>Building and evaluating detection and recovery methods on real robots and in simulation.</dd></div>
+    <div><dt>Behavioural signals</dt><dd>Using gaze and interaction patterns to detect when something goes wrong.</dd></div>
+    <div><dt>Trust &amp; recovery</dt><dd>Understanding how repeated failures and robot awareness shape collaboration.</dd></div>
+    <div><dt>Robotic systems</dt><dd>Building and evaluating detection and recovery methods on real robots and in simulation.</dd></div>
   </dl>
 </section>
 

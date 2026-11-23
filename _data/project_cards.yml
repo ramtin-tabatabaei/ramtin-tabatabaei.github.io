@@ -5,6 +5,7 @@
   featured_project: true
   video: true
   thumbnail: "/images/projects/comet.jpg"
+  preview: "/files/comet/preview.mp4"
   project_context: "Robot manipulation · Execution monitoring"
   short_summary: "CoMET converts a successful demonstration into a behaviour-tree monitoring plan, combining visual condition checks with robot-state detectors across 78 RLBench tasks."
   links:

@@ -1,5 +1,7 @@
 ---
 layout: "paper-showcase"
+venue_short: "CHI 2026"
+thumb: "/images/projects/trust-dynamics.jpg"
 title: "Oops, I Did It Again (But I Know It): Robot Failure Consistency and Awareness in Human-Robot Collaboration"
 collection: "publications"
 category: "conferences"

@@ -1,5 +1,7 @@
 ---
 layout: "paper-showcase"
+venue_short: "HRI 2025"
+thumb: "/images/projects/gaze-failure-detection.jpg"
 title: "Gazing at Failure: Investigating Human Gaze in Response to Robot Failure in Collaborative Tasks"
 collection: "publications"
 category: "conferences"

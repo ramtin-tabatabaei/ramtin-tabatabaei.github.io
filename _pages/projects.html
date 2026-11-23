@@ -16,8 +16,7 @@ intro: "Research projects, software, and robotic systems for understanding and r
     <p class="section-note">Execution monitoring in simulation and human–robot interaction studies on real robots.</p>
   </div>
   <div class="project-grid">
-    {% assign studies = site.research | sort: 'order' %}
-    {% for study in studies %}{% include project-card.html study=study %}{% endfor %}
+    {% include research-cards.html %}
   </div>
 </section>
 

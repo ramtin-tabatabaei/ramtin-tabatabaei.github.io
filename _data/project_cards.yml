@@ -1,0 +1,12 @@
+# Project cards for pages that live outside the _research collection.
+# They are listed before the _research items on the homepage and the Projects page.
+- title: "CoMET"
+  url: "/research/comet/"
+  featured_project: true
+  video: true
+  thumbnail: "/images/projects/comet.jpg"
+  project_context: "Robot manipulation · Execution monitoring"
+  short_summary: "CoMET converts a successful demonstration into a behaviour-tree monitoring plan, combining visual condition checks with robot-state detectors across 78 RLBench tasks."
+  links:
+    - label: "Code on GitHub"
+      url: "https://github.com/ramtin-tabatabaei/CoMET"

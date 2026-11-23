@@ -1,0 +1,50 @@
+What should be true?
+A robot can complete a movement and still fail the task. CoMET monitors what should be true, before, during, and after each action.
+
+From one demonstration to online monitoring
+The flow starts with one successful demonstration. It becomes a structured description, then a condition-annotated behaviour tree, which coordinates online monitoring.
+
+Basketball into a hoop
+Here, the robot moves towards the basketball, grasps it, transports it, and releases it into the hoop. These are this task’s stages.
+
+Describe the successful task
+Side, front, and wrist views are combined with gripper state, held-object identity, and pose information. The model produces a goal, named objects, and ordered waypoint descriptions.
+
+A shared vocabulary. Task-specific checks.
+A reusable catalogue defines conditions such as held, released, inside, and aligned with. The six available primitives are move, grasp, transport, place, release, and push.
+
+Different tasks use different primitive sequences
+Tasks do not all use the same primitives, or the same number of stages. Basketball uses move, grasp, transport, and release. A pushing task can use move and push, while shelf placement can also include place. Primitives may repeat; objects, conditions, and goals change with the task.
+
+Generate, ground, and review
+The generator assigns one primitive per waypoint and grounds its conditions in task-specific objects. A reviewer checks completeness and consistency; fixed rules attach the applicable detectors.
+
+Inside the basketball behaviour tree
+Each stage follows the same monitoring structure: check preconditions, execute with applicable monitors, then check postconditions. During transport, the basketball must already be held and remain held.
+
+M2 / Check the expected task state
+At checkpoints, a vision-language model evaluates the active conditions using three camera views. One call combines the previous stage’s postconditions with the next stage’s preconditions.
+
+M1 / Monitor physical execution
+Robot-state detectors watch for collisions during motion, and grasp loss during transport and place. Position and orientation are checked at waypoint completion. A push stage does not require maintaining a grasp.
+
+The basketball was held. Then it was lost.
+In this disturbed basketball recording, the grasp succeeds, but the ball is lost during transport. The task fails before the intended release.
+
+Candidate event → selective visual confirmation
+A grasp-loss or collision candidate triggers a targeted visual check. The model receives before-and-after views and recent detector signals to confirm or reject the event. Pose deviations are checked directly.
+
+Some failures are about the task, not the motion
+If the robot never grasps the ball, there may be no grasp-loss signal. The visual condition check can still flag that the required object is not held.
+
+A stage, a condition, and supporting evidence
+CoMET reports the stage, violated condition, and supporting explanation. Detecting a violation is distinct from naming its cause; benchmark failure labels use mapping rules.
+
+Reported evaluation across 78 tasks
+Across seventy-eight tasks, the supplied study reports eighty-three point three percent binary F1 for CoMET. Direct prompting reaches fifty-four point four; adding the same detectors and confirmation reaches eighty-two point eight. CoMET also improves macro F1.
+
+Detection and diagnosis are different goals
+Failure detection is stronger than exact diagnosis. Collision types and sequence violations remain challenging, and detector-triggered visual confirmation adds computational cost.
+
+One framework. A task-specific monitoring plan.
+The idea is reusable, but the monitoring plan is task-specific. Demonstrate success. Define what must hold. Monitor execution. Explain deviations.

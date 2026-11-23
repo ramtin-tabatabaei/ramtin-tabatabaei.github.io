@@ -36,8 +36,7 @@ redirect_from:
     <a href="{{ '/projects/' | relative_url }}">All projects <span aria-hidden="true">→</span></a>
   </div>
   <div class="project-grid">
-    {% assign studies = site.research | sort: 'order' %}
-    {% for study in studies %}{% include project-card.html study=study %}{% endfor %}
+    {% include research-cards.html %}
   </div>
 </section>
 

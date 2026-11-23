@@ -1,0 +1,3 @@
+{% for card in site.data.project_cards %}{% include project-card.html study=card %}{% endfor %}
+{% assign studies = site.research | sort: 'order' %}
+{% for study in studies %}{% include project-card.html study=study %}{% endfor %}

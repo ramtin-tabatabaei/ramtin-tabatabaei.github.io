@@ -1,0 +1,232 @@
+WEBVTT
+
+00:01.399 --> 00:04.433
+This is what one participant
+saw, through their own eyes.
+
+00:04.963 --> 00:09.611
+The robot has picked up a piece, and stopped.
+It's still holding it. Nothing moves.
+
+00:10.241 --> 00:12.638
+The robot has no idea anything is wrong.
+
+00:13.168 --> 00:16.593
+But follow the glowing dot. That's
+where the person is looking.
+
+00:16.623 --> 00:19.280
+Their eyes have already
+started asking questions.
+
+00:19.910 --> 00:21.728
+So what if the robot could read that?
+
+00:27.358 --> 00:32.018
+Robots that pick and place objects rely
+on sensing, planning, and movement.
+
+00:32.048 --> 00:35.708
+When any one of them fails,
+the robot often doesn't notice.
+
+00:36.238 --> 00:40.922
+In our study, the robot failed in three
+ways. It froze in the middle of a move.
+
+00:40.952 --> 00:42.952
+It put a piece in the wrong place.
+
+00:42.982 --> 00:46.473
+Or it closed its gripper on
+nothing, and carried on anyway.
+
+00:47.003 --> 00:52.112
+When you're working side by side with a robot,
+a missed failure doesn't just stall the task.
+
+00:52.142 --> 00:55.072
+It breaks the rhythm between
+you, and it costs trust.
+
+00:56.302 --> 01:02.504
+Fifty-one people solved six Tangram puzzles with
+a TIAGo robot, taking turns to place the pieces.
+
+01:02.934 --> 01:07.777
+They wore eye-tracking glasses that recorded
+where they looked, two hundred times a second.
+
+01:08.207 --> 01:13.000
+In total, we captured one thousand, one
+hundred and eighty-two robot actions.
+
+01:13.030 --> 01:16.069
+One hundred and forty-nine
+of them were failures.
+
+01:17.499 --> 01:19.671
+We divided the scene into six regions:
+
+01:19.701 --> 01:24.015
+the board, the gripper, the robot's
+head and body, and the two piece trays.
+
+01:24.445 --> 01:28.889
+Then we turned looking into numbers.
+How long people dwelled on each region.
+
+01:28.919 --> 01:33.362
+How often they switched between them.
+How unpredictable those switches were.
+
+01:33.392 --> 01:35.834
+And how many long, fixed stares they made.
+
+01:36.264 --> 01:39.811
+Each number is also compared
+with that person's own history.
+
+01:39.841 --> 01:44.879
+A long look at the gripper is routine for
+some people, and a warning sign for others.
+
+01:45.409 --> 01:50.884
+Here's a normal move. And here's the freeze.
+Same person, same robot. Very different eyes.
+
+01:55.114 --> 02:00.133
+Lightweight classifiers read these patterns
+at three checkpoints in every action:
+
+02:00.163 --> 02:03.998
+after transport, after placement,
+and after the robot returns.
+
+02:05.028 --> 02:09.187
+But eyes wander for many reasons.
+Getting ready for your own turn.
+
+02:09.217 --> 02:14.392
+Surprise at a move that was actually fine.
+Or simply glancing at the robot's face.
+
+02:14.822 --> 02:21.004
+Tuned to catch ninety percent of failures, gaze
+alone raised more than four hundred and fifty alerts.
+
+02:21.034 --> 02:23.279
+Seven in every ten were false alarms.
+
+02:24.709 --> 02:26.988
+Vision-language models work differently.
+
+02:27.018 --> 02:33.743
+Show one a sequence of images, and it can reason about
+whether something went wrong, and what kind of failure it was.
+
+02:34.173 --> 02:37.063
+But every question costs
+computation and time.
+
+02:37.093 --> 02:41.824
+Checking every action means one thousand,
+one hundred and eighty-two calls.
+
+02:41.854 --> 02:45.316
+Checking at every stage means
+more than three thousand.
+
+02:46.746 --> 02:48.731
+So we let each one do what it does best.
+
+02:49.161 --> 02:53.607
+Gaze is the lookout. It watches
+continuously, and costs almost nothing.
+
+02:54.037 --> 02:57.484
+Only when gaze raises an alert
+do we call in the expert:
+
+02:57.514 --> 03:02.326
+the vision-language model inspects the
+visual evidence, and gives its verdict.
+
+03:03.156 --> 03:10.793
+For the freeze, it saw the robot holding the triangle at the
+pickup point, with no visible progress for more than eight seconds.
+
+03:10.823 --> 03:12.350
+Verdict: freezing failure.
+
+03:13.780 --> 03:20.496
+That freeze was flagged by gaze during transport, and confirmed
+straight away, well before the action would have finished.
+
+03:21.526 --> 03:23.559
+The wrong placement was trickier.
+
+03:23.589 --> 03:29.248
+Gaze flagged it during transport, but the
+mistake wasn't visible yet, so the model said no.
+
+03:29.278 --> 03:33.687
+At placement, gaze flagged it again.
+This time, the evidence was there.
+
+03:34.717 --> 03:37.914
+The empty grasp stayed quiet
+until the robot returned.
+
+03:37.944 --> 03:41.141
+Gaze caught it late, but the
+model still confirmed it.
+
+03:42.771 --> 03:49.050
+Across all the robot's actions, the vision-language
+model filtered out almost every false gaze alert.
+
+03:49.080 --> 03:53.172
+Of three hundred and twenty-two
+false alarms, only three survived.
+
+03:54.002 --> 03:57.711
+Precision jumped from under thirty
+percent, to ninety-seven and a half.
+
+03:58.541 --> 04:07.202
+And it needed sixty-one percent fewer model calls than checking every
+action, with an F1 score of point eight eight, compared with point nine two.
+
+04:08.132 --> 04:10.710
+Checking stage by stage, the savings grow:
+
+04:10.740 --> 04:18.286
+seventy-five percent fewer calls, with more than two thirds
+of all failures caught before the robot had finished its move.
+
+04:19.216 --> 04:20.190
+There is a price.
+
+04:20.220 --> 04:25.035
+Some real failures slipped past the gaze
+screen, and the model turned down others.
+
+04:25.065 --> 04:27.516
+Recall fell from ninety percent to eighty.
+
+04:28.846 --> 04:33.495
+So what gave the failures away? Long,
+fixed stares at the gripper and the board.
+
+04:33.525 --> 04:37.531
+And looking at the board more, or
+less, than that person usually did.
+
+04:38.761 --> 04:44.516
+Next, we're testing whether this carries over to
+unseen puzzles, and to an entirely different task.
+
+04:45.146 --> 04:49.777
+Because a robot doesn't need to watch everything.
+It just needs to know where we looked.

@@ -10,9 +10,9 @@ excerpt: "This study examines how repeated robot failures and awareness levels i
 venue: "CHI Conference on Human Factors in Computing Systems (CHI '26)"
 date: "2026-04-13"
 subtitle: "Exploring the Impact of Robot Failure Patterns on Trust and Perceived Intelligence"
-teaser_image: "/images/papers/gazing-at-failure/Freezing_Failure.png"
+teaser_image: "/images/papers/chi2026-robotfailure/Freezing_Failure.png"
 teaser_alt: "Oops, I Did It Again (But I Know It): Robot Failure Consistency and Awareness in Human-Robot Collaboration"
-demo_video: "/files/papers/gazing-at-failure/Copy of Copy of Ramtin Video (1).mp4"
+demo_video: "/files/papers/chi2026-robotfailure/Copy of Copy of Ramtin Video (1).mp4"
 abstract: "In human–robot collaboration, repeated failures are inevitable and can critically impact user trust and perceptions of robot intelligence. This study investigates how different failure types — Freezing, Planning, and Grasping — and the robot’s awareness of these failures influence users across repeated interactions. Using a collaborative Tangram puzzle task, we conducted a mixed-design experiment with 54 participants, manipulating both the failure sequence type (homogeneous vs. heterogeneous) and the robot’s level of failure awareness (none, partial, full). The results reveal that user trust and perceived intelligence are affected by both the current and previous failure, with homogeneous sequences generally causing less trust decline than heterogeneous ones. Robots that demonstrated awareness — either full or partial — were rated significantly higher in trust and perceived intelligence than those showing no awareness, particularly for grasping and planning failures. Qualitative findings further underscore the importance of failure severity and the robot’s recovery behaviour in shaping user perceptions. These insights offer design implications for creating more resilient and trustworthy human–robot interactions amid inevitable errors."
 citation: "Tabatabaei, R., Kostakos, V., & Johal, W. (2026). Oops, I Did It Again (But I Know It): Robot Failure Consistency and Awareness in Human-Robot Collaboration. In CHI Conference on Human Factors in Computing Systems (CHI '26)."
 citation_bibtex: "@inproceedings{tabatabaei2026robotfailure, \n title={Oops, I Did It Again (But I Know It): Robot Failure Consistency and Awareness in Human-Robot Collaboration}, \n author={Tabatabaei, Ramtin and Kostakos, Vassilis and Johal, Wafa}, \n booktitle={CHI Conference on Human Factors in Computing Systems}, \n year={2026} \n}"
@@ -29,14 +29,14 @@ authors:
 hero_links:
   -
     label: "Paper PDF"
-    url: "/files/papers/gazing-at-failure/chi26-73 (2).pdf"
+    url: "/files/papers/chi2026-robotfailure/chi26-73 (2).pdf"
   -
     label: "Demo Video"
-    url: "/files/papers/gazing-at-failure/Copy of Copy of Ramtin Video (1).mp4"
+    url: "/files/papers/chi2026-robotfailure/Copy of Copy of Ramtin Video (1).mp4"
   -
     label: "Access Full Paper"
     url: "https://doi.org/10.1145/3772318.3790336"
-paperurl: "/files/papers/gazing-at-failure/chi26-73 (2).pdf"
+paperurl: "/files/papers/chi2026-robotfailure/chi26-73 (2).pdf"
 ---
 
 <section class="paper-showcase__panel paper-showcase__panel--overview">
@@ -85,15 +85,15 @@ paperurl: "/files/papers/gazing-at-failure/chi26-73 (2).pdf"
   <h2>Figure Highlights</h2>
   <div class="paper-showcase__figure-row">
     <figure class="paper-showcase__figure-card">
-      <img src="/images/papers/gazing-at-failure/Grasping_Failure.png" alt="Grasping Failure">
+      <img src="/images/papers/chi2026-robotfailure/Grasping_Failure.png" alt="Grasping Failure">
       <figcaption>Grasping Failure</figcaption>
     </figure>
     <figure class="paper-showcase__figure-card">
-      <img src="/images/papers/gazing-at-failure/Planning_Failure.png" alt="Planning Failure">
+      <img src="/images/papers/chi2026-robotfailure/Planning_Failure.png" alt="Planning Failure">
       <figcaption>Planning Failure</figcaption>
     </figure>
     <figure class="paper-showcase__figure-card">
-      <img src="/images/papers/gazing-at-failure/Freezing_Failure_2.png" alt="Freezing Failure 2">
+      <img src="/images/papers/chi2026-robotfailure/Freezing_Failure_2.png" alt="Freezing Failure 2">
       <figcaption>Freezing Failure 2</figcaption>
     </figure>
   </div>

@@ -1,11 +1,12 @@
 ---
-thumbnail: "/images/papers/hri2025-robotfailure/Areas Of Interest.jpg"
+thumbnail: "/images/projects/gaze-failure-detection.jpg"
 project_context: "Gaze & behavioural sensing · HRI 2025"
 short_summary: "Investigating how gaze changes when a robot makes a mistake, and whether those changes can support early failure detection during collaborative tasks."
 title: "Gaze-Based Robot Failure Detection"
 subtitle: "Reading human non-verbal behaviour to detect and anticipate robot failures"
 permalink: /research/gaze-based-failure-detection/
 research_index: "01"
+tags: ["Eye tracking", "ROS", "Random forest", "27 participants"]
 order: 1
 summary: "For robots, detecting and predicting failures as early as possible is vital to prevent damage and negative user experiences. I study human non-verbal behaviour — especially gaze patterns — to identify cues that signal when a robot failure is about to occur or has just occurred."
 video: "https://www.youtube.com/embed/wHYsmDMllyY"

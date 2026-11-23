@@ -44,6 +44,9 @@
 <loc>http://localhost:4001/publication/rosannotator/</loc>
 </url>
 <url>
+<loc>http://localhost:4001/research/comet/</loc>
+</url>
+<url>
 <loc>http://localhost:4001/research/gaze-based-failure-detection/</loc>
 </url>
 <url>

@@ -54,6 +54,15 @@
 
 
 
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "http://localhost:4001",
+      "logo": "http://localhost:4001/images/ramtin-portrait.jpg"
+    }
+  </script>
+
 
 
   <script type="application/ld+json">
@@ -102,7 +111,11 @@
 <link rel="icon" type="image/png" href="http://localhost:4001/images/favicon-192x192.png" sizes="192x192"/>
 <link rel="manifest" href="http://localhost:4001/images/manifest.json"/>
 <link rel="icon" href="/images/favicon.ico"/>
-<meta name="theme-color" content="#ffffff"/>
+<meta name="theme-color" content="#faf9f5"/>
+<!-- Web fonts: Source Serif 4 for display headings, Inter for body text -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..650&family=Inter:wght@400;500;600;700&display=swap"/>
 <link rel="stylesheet" href="http://localhost:4001/assets/css/academicons.css"/>
 
 
@@ -122,36 +135,38 @@
 <![endif]-->
     
 <header class="academic-header">
-  <a class="academic-wordmark" href="http://localhost:4001/">Ramtin Tabatabaei</a>
-  <nav aria-label="Main navigation">
-    <ul>
-      
-      
-      
-      
-      
-      <li><a href="http://localhost:4001/" aria-current="page">About</a></li>
-      
-      
-      
-      
-      
-      <li><a href="http://localhost:4001/projects/">Projects</a></li>
-      
-      
-      
-      
-      
-      <li><a href="http://localhost:4001/publications/">Publications</a></li>
-      
-      
-      
-      
-      
-      <li><a href="http://localhost:4001/cv/">CV</a></li>
-      
-    </ul>
-  </nav>
+  <div class="academic-header__inner">
+    <a class="academic-wordmark" href="http://localhost:4001/"><span class="academic-monogram" aria-hidden="true">RT</span>Ramtin Tabatabaei</a>
+    <nav aria-label="Main navigation">
+      <ul>
+        
+        
+        
+        
+        
+        <li><a href="http://localhost:4001/" aria-current="page">About</a></li>
+        
+        
+        
+        
+        
+        <li><a href="http://localhost:4001/projects/">Projects</a></li>
+        
+        
+        
+        
+        
+        <li><a href="http://localhost:4001/publications/">Publications</a></li>
+        
+        
+        
+        
+        
+        <li><a href="http://localhost:4001/cv/">CV</a></li>
+        
+      </ul>
+    </nav>
+  </div>
 </header>
 
 
@@ -160,35 +175,83 @@
   <section class="academic-intro" aria-labelledby="intro-name">
   <div class="academic-intro__copy">
     <p class="academic-kicker">Human–robot interaction</p>
-    <h1 id="intro-name">Ramtin Tabatabaei</h1>
-    <p class="academic-affiliation">Ph.D. candidate · University of Melbourne</p>
-    <p class="academic-lead">My research sits at the intersection of artificial intelligence, robotics, and human–robot interaction. I study what happens when robots make mistakes: how people respond, how trust changes, and how robots can recognise and recover from failure.</p>
-    <p class="academic-lead">I explore how machine learning, vision–language models, and robot reasoning can help robots understand their actions, detect when things go wrong, and adapt to unexpected situations.</p>
-    <p>I am a Ph.D. candidate in the School of Computing and Information Systems, supervised by <a href="https://wafa.johal.org/">Wafa Johal</a> and Vassilis Kostakos. My work is part of the Human-Computer Interaction Group and the <a href="https://chri-lab.github.io/">Human-Robot Interaction Lab</a>.</p>
-    <div class="text-links intro-links" aria-label="Contact and academic profiles">
-      <a href="mailto:stabatabaeim@student.unimelb.edu.au">Email</a>
-      <a href="https://scholar.google.com.au/citations?user=5YHIHDAAAAAJ&amp;hl=en&amp;oi=sra">Google Scholar</a>
-      <a href="https://www.linkedin.com/in/ramtin-tabatabaei/">LinkedIn</a>
-      <a href="/cv/">Curriculum vitae</a>
+    <h1 id="intro-name">Ramtin <span>Tabatabaei</span></h1>
+    <p class="academic-affiliation">Ph.D. candidate, University of Melbourne<br /><span>School of Computing and Information Systems</span></p>
+    <p class="academic-lead">I study what happens when robots make mistakes. How do people respond, how does trust change, and how can robots recognise and recover from failure?</p>
+    <div class="intro-links" aria-label="Contact and academic profiles">
+      <a class="btn-link btn-link--primary" href="mailto:stabatabaeim@student.unimelb.edu.au"><i class="far fa-envelope" aria-hidden="true"></i> Email me</a>
+      <a class="btn-link" href="https://scholar.google.com/citations?hl=en&amp;user=lOo2ZH8AAAAJ">Google Scholar <span aria-hidden="true">↗</span></a>
+      <a class="btn-link" href="https://www.linkedin.com/in/ramtin-tabatabaei/">LinkedIn <span aria-hidden="true">↗</span></a>
+      <a class="btn-link btn-link--ghost" href="/cv/">CV</a>
     </div>
   </div>
   <figure class="academic-portrait">
-    <img src="/images/ME.JPG" alt="Ramtin Tabatabaei" width="230" height="280" fetchpriority="high" />
+    <picture>
+      <source srcset="/images/ramtin-portrait.webp" type="image/webp" />
+      <img src="/images/ramtin-portrait.jpg" alt="Ramtin Tabatabaei standing beside a Pepper robot in the robotics lab" width="1000" height="1250" fetchpriority="high" />
+    </picture>
+    <figcaption>With Pepper in the robotics lab</figcaption>
   </figure>
 </section>
 
-<section class="academic-section" id="research" aria-labelledby="research-heading">
-  <div class="section-heading"><h2 id="research-heading">Research</h2><a href="/projects/">Explore projects <span aria-hidden="true">↗</span></a></div>
-  <p>I combine real-robot experiments, eye tracking, and controlled user studies to understand how people notice, interpret, and respond to robot mistakes. Alongside this, I develop AI methods that combine vision–language models with robot-state monitoring to detect failures and guide recovery. My work connects human behaviour with robot intelligence to make human–robot collaboration more reliable.</p>
-  <dl class="research-directions">
-    <div><dt>Behavioural signals</dt><dd>Using gaze and interaction patterns to detect when something goes wrong.</dd></div>
-    <div><dt>Trust &amp; recovery</dt><dd>Understanding how repeated failures and robot awareness shape collaboration.</dd></div>
-    <div><dt>Robotic systems</dt><dd>Building and evaluating detection and recovery methods on real robots and in simulation.</dd></div>
-  </dl>
+<section class="academic-section academic-section--projects" id="projects" aria-labelledby="projects-heading">
+  <div class="section-heading">
+    <h2 id="projects-heading">Selected research</h2>
+    <a href="/projects/">All projects <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="project-grid">
+    
+    <article class="project-card project-card--featured">
+  <a class="project-card__media" href="/research/comet/" tabindex="-1" aria-hidden="true">
+    <img src="/images/projects/comet.jpg" alt="" width="1400" height="875" loading="lazy" />
+  </a>
+  <div class="project-card__body">
+    <p class="project-card__kicker">Robot manipulation · Execution monitoring</p>
+    <h3 class="project-card__title"><a href="/research/comet/">CoMET</a></h3>
+    <p class="project-card__summary">Did the robot actually grasp the ball? CoMET checks what should be true at each stage of a manipulation task. I use AHA’s FailGen to test how the monitor responds when an action goes wrong.</p>
+    <ul class="project-tags" aria-label="Methods and tools"></ul>
+    <div class="project-card__links">
+      <a class="btn-link btn-link--primary" href="/research/comet/">Project and video <span aria-hidden="true">→</span></a>
+      <a class="btn-link" href="https://github.com/ramtin-tabatabaei/CoMET">Code on GitHub</a>
+    </div>
+  </div>
+</article>
+<article class="project-card">
+  <a class="project-card__media" href="/research/gaze-based-failure-detection/" tabindex="-1" aria-hidden="true">
+    <img src="/images/projects/gaze-failure-detection.jpg" alt="" width="1400" height="875" loading="lazy" />
+  </a>
+  <div class="project-card__body">
+    <p class="project-card__kicker">Gaze &amp; behavioural sensing · HRI 2025</p>
+    <h3 class="project-card__title"><a href="/research/gaze-based-failure-detection/">Gaze-Based Robot Failure Detection</a></h3>
+    <p class="project-card__summary">Investigating how gaze changes when a robot makes a mistake, and whether those changes can support early failure detection during collaborative tasks.</p>
+    <ul class="project-tags" aria-label="Methods and tools"><li>Eye tracking</li><li>ROS</li><li>Random forest</li><li>27 participants</li></ul>
+    <div class="project-card__links">
+      <a class="btn-link btn-link--primary" href="/research/gaze-based-failure-detection/">Project details <span aria-hidden="true">→</span></a>
+      <a class="btn-link" href="/publication/HRI2025-RobotFailure/">Related paper</a>
+    </div>
+  </div>
+</article>
+<article class="project-card">
+  <a class="project-card__media" href="/research/trust-dynamics-robot-failures/" tabindex="-1" aria-hidden="true">
+    <img src="/images/projects/trust-dynamics.jpg" alt="" width="1400" height="875" loading="lazy" />
+  </a>
+  <div class="project-card__body">
+    <p class="project-card__kicker">Trust &amp; failure awareness · CHI 2026</p>
+    <h3 class="project-card__title"><a href="/research/trust-dynamics-robot-failures/">Trust Dynamics Across Multiple Robot Failures</a></h3>
+    <p class="project-card__summary">Examining how repeated robot failures affect trust, and when a robot's awareness of its mistakes helps people continue working with it.</p>
+    <ul class="project-tags" aria-label="Methods and tools"><li>Mixed-design study</li><li>Failure awareness</li><li>54 participants</li></ul>
+    <div class="project-card__links">
+      <a class="btn-link btn-link--primary" href="/research/trust-dynamics-robot-failures/">Project details <span aria-hidden="true">→</span></a>
+      <a class="btn-link" href="/publication/CHI2026-RobotFailure/">Related paper</a>
+    </div>
+  </div>
+</article>
+
+  </div>
 </section>
 
 <section class="academic-section" aria-labelledby="selected-heading">
-  <div class="section-heading"><h2 id="selected-heading">Selected publications</h2><a href="/publications/">All publications <span aria-hidden="true">↗</span></a></div>
+  <div class="section-heading"><h2 id="selected-heading">Selected publications</h2><a href="/publications/">All publications <span aria-hidden="true">→</span></a></div>
   
   
     <article class="publication-entry">
@@ -217,8 +280,19 @@
   
 </section>
 
+<section class="academic-section" id="research" aria-labelledby="research-heading">
+  <div class="section-heading"><h2 id="research-heading">Research focus</h2><a href="/publications/">Publications <span aria-hidden="true">→</span></a></div>
+  <p>I combine real-robot experiments, eye tracking, and controlled user studies to understand how people notice, interpret, and respond to robot mistakes. I also develop machine learning methods that combine vision–language models with robot-state monitoring to detect failures and guide recovery. My work connects human behaviour with robot intelligence to make human–robot collaboration more reliable.</p>
+  <p>I am supervised by <a href="https://wafa.johal.org/">Wafa Johal</a> and Vassilis Kostakos. My work is part of the Human-Computer Interaction Group and the <a href="https://chri-lab.github.io/">Human-Robot Interaction Lab</a>.</p>
+  <dl class="research-directions">
+    <div><dt>Behavioural signals</dt><dd>Using gaze and interaction patterns to detect when something goes wrong.</dd></div>
+    <div><dt>Trust &amp; recovery</dt><dd>Understanding how repeated failures and robot awareness shape collaboration.</dd></div>
+    <div><dt>Robotic systems</dt><dd>Building and evaluating detection and recovery methods on real robots and in simulation.</dd></div>
+  </dl>
+</section>
+
 <section class="academic-section" aria-labelledby="teaching-heading">
-  <div class="section-heading"><h2 id="teaching-heading">Teaching &amp; supervision</h2><a href="/cv/#teaching">Teaching history <span aria-hidden="true">↗</span></a></div>
+  <div class="section-heading"><h2 id="teaching-heading">Teaching &amp; supervision</h2><a href="/cv/#teaching">Teaching history <span aria-hidden="true">→</span></a></div>
   <p>In Semester 2, 2026, I am a lab tutor for <em>Intelligent Robotics (ECE4078)</em> at Monash University and a marker for <em>Usability Evaluation Methods (INFO20004)</em> at the University of Melbourne. Previously, I tutored <em>Elements of Data Processing</em> (Semester 2, 2025 and Semester 1, 2026) and <em>Machine Learning</em> (Semester 1, 2026) at Melbourne.</p>
   <p>I also supervised a master's project developing a web application for annotating ROSBag data from March to July 2024.</p>
 </section>
@@ -232,7 +306,7 @@
 <div class="academic-footer">
   <p>Ramtin Tabatabaei <span>· Melbourne, Australia</span></p>
   <a href="mailto:stabatabaeim@student.unimelb.edu.au">Email</a>
-  <a href="https://scholar.google.com.au/citations?user=5YHIHDAAAAAJ&hl=en&oi=sra">Google Scholar</a>
+  <a href="https://scholar.google.com/citations?hl=en&user=lOo2ZH8AAAAJ">Google Scholar</a>
   <a href="http://localhost:4001/cv/">CV</a>
 </div>
 
@@ -242,7 +316,7 @@
 
 <!-- <div class="page__footer-copyright">
   &copy; 2026 Ramtin Tabatabaei, Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br />
-  Site last updated 2026-09-20
+  Site last updated 2026-11-18
 </div> -->
 
       </footer>

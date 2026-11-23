@@ -39,7 +39,7 @@ redirect_from:
       <ul>
         <li>Built ROS-based collaborative tasks on Tiago with diverse failure conditions and conducted controlled user studies with more than 50 participants.</li>
         <li>Developed pipelines integrating eye tracking, ROS synchronisation, and real-time gaze feature extraction for human-centred failure detection.</li>
-        <li>Designed a simulation-based failure detection framework in NVIDIA Isaac using behaviour trees and vision–language model reasoning for autonomous detection and recovery.</li>
+        <li>Designed a simulation-based failure detection framework in CoppeliaSim using behaviour trees and vision–language model reasoning for autonomous detection and recovery.</li>
         <li>Developed emotional expressions on Furhat using facial action units, with VLM- and user-based evaluation.</li>
         <li>Contributed to live robotics demonstrations for academic and public audiences.</li>
       </ul>
@@ -76,7 +76,7 @@ redirect_from:
 <section class="academic-section" id="skills">
   <h2>Technical skills</h2>
   <dl class="cv-skills">
-    <div><dt>Robotics</dt><dd>ROS, Tiago, Furhat, Nao, Opo, collaborative task design, interaction behaviours, NVIDIA Isaac, behaviour trees.</dd></div>
+    <div><dt>Robotics</dt><dd>ROS, Tiago, Furhat, Nao, Opo, collaborative task design, interaction behaviours, CoppeliaSim, behaviour trees.</dd></div>
     <div><dt>Perception &amp; programming</dt><dd>Python, OpenCV, Pupil Labs, eye tracking, computer vision, LLM/VLM reasoning, OpenAI APIs, API integration.</dd></div>
     <div><dt>Research methods</dt><dd>Experimental design, controlled user studies, trust measurement, multimodal behavioural analysis, annotation workflows, linear mixed-effects and cumulative link mixed models.</dd></div>
     <div><dt>Modelling</dt><dd>Unity and SolidWorks.</dd></div>

@@ -59,6 +59,15 @@
 
 
 
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "http://localhost:4001",
+      "logo": "http://localhost:4001/images/ramtin-portrait.jpg"
+    }
+  </script>
+
 
 
   <script type="application/ld+json">
@@ -107,7 +116,11 @@
 <link rel="icon" type="image/png" href="http://localhost:4001/images/favicon-192x192.png" sizes="192x192"/>
 <link rel="manifest" href="http://localhost:4001/images/manifest.json"/>
 <link rel="icon" href="/images/favicon.ico"/>
-<meta name="theme-color" content="#ffffff"/>
+<meta name="theme-color" content="#faf9f5"/>
+<!-- Web fonts: Source Serif 4 for display headings, Inter for body text -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400..650&family=Inter:wght@400;500;600;700&display=swap"/>
 <link rel="stylesheet" href="http://localhost:4001/assets/css/academicons.css"/>
 
 
@@ -127,36 +140,38 @@
 <![endif]-->
     
 <header class="academic-header">
-  <a class="academic-wordmark" href="http://localhost:4001/">Ramtin Tabatabaei</a>
-  <nav aria-label="Main navigation">
-    <ul>
-      
-      
-      
-      
-      
-      <li><a href="http://localhost:4001/">About</a></li>
-      
-      
-      
-      
-      
-      <li><a href="http://localhost:4001/projects/">Projects</a></li>
-      
-      
-      
-      
-      
-      <li><a href="http://localhost:4001/publications/" aria-current="page">Publications</a></li>
-      
-      
-      
-      
-      
-      <li><a href="http://localhost:4001/cv/">CV</a></li>
-      
-    </ul>
-  </nav>
+  <div class="academic-header__inner">
+    <a class="academic-wordmark" href="http://localhost:4001/"><span class="academic-monogram" aria-hidden="true">RT</span>Ramtin Tabatabaei</a>
+    <nav aria-label="Main navigation">
+      <ul>
+        
+        
+        
+        
+        
+        <li><a href="http://localhost:4001/">About</a></li>
+        
+        
+        
+        
+        
+        <li><a href="http://localhost:4001/projects/">Projects</a></li>
+        
+        
+        
+        
+        
+        <li><a href="http://localhost:4001/publications/" aria-current="page">Publications</a></li>
+        
+        
+        
+        
+        
+        <li><a href="http://localhost:4001/cv/">CV</a></li>
+        
+      </ul>
+    </nav>
+  </div>
 </header>
 
 
@@ -243,10 +258,10 @@
           <div class="paper-showcase__links">
             
               
-              <a class="btn paper-showcase__link" href="http://localhost:4001/files/papers/gazing-at-failure/chi26-73 (2).pdf">Paper PDF</a>
+              <a class="btn paper-showcase__link" href="http://localhost:4001/files/papers/chi2026-robotfailure/chi26-73 (2).pdf">Paper PDF</a>
             
               
-              <a class="btn paper-showcase__link" href="http://localhost:4001/files/papers/gazing-at-failure/Copy of Copy of Ramtin Video (1).mp4">Demo Video</a>
+              <a class="btn paper-showcase__link" href="http://localhost:4001/files/papers/chi2026-robotfailure/Copy of Copy of Ramtin Video (1).mp4">Demo Video</a>
             
               
               <a class="btn paper-showcase__link" href="https://doi.org/10.1145/3772318.3790336">Access Full Paper</a>
@@ -257,7 +272,7 @@
 
       
         <figure class="paper-showcase__teaser">
-          <img src="http://localhost:4001/images/papers/gazing-at-failure/Freezing_Failure.png" alt="Oops, I Did It Again (But I Know It): Robot Failure Consistency and Awareness in Human-Robot Collaboration">
+          <img src="http://localhost:4001/images/papers/chi2026-robotfailure/Freezing_Failure.png" alt="Oops, I Did It Again (But I Know It): Robot Failure Consistency and Awareness in Human-Robot Collaboration">
           
         </figure>
       
@@ -277,7 +292,7 @@
           <div class="paper-showcase__media">
             
               <video controls preload="metadata">
-                <source src="http://localhost:4001/files/papers/gazing-at-failure/Copy of Copy of Ramtin Video (1).mp4">
+                <source src="http://localhost:4001/files/papers/chi2026-robotfailure/Copy of Copy of Ramtin Video (1).mp4">
                 Your browser does not support the video tag.
               </video>
             
@@ -332,15 +347,15 @@
   <h2>Figure Highlights</h2>
   <div class="paper-showcase__figure-row">
     <figure class="paper-showcase__figure-card">
-      <img src="/images/papers/gazing-at-failure/Grasping_Failure.png" alt="Grasping Failure" />
+      <img src="/images/papers/chi2026-robotfailure/Grasping_Failure.png" alt="Grasping Failure" />
       <figcaption>Grasping Failure</figcaption>
     </figure>
     <figure class="paper-showcase__figure-card">
-      <img src="/images/papers/gazing-at-failure/Planning_Failure.png" alt="Planning Failure" />
+      <img src="/images/papers/chi2026-robotfailure/Planning_Failure.png" alt="Planning Failure" />
       <figcaption>Planning Failure</figcaption>
     </figure>
     <figure class="paper-showcase__figure-card">
-      <img src="/images/papers/gazing-at-failure/Freezing_Failure_2.png" alt="Freezing Failure 2" />
+      <img src="/images/papers/chi2026-robotfailure/Freezing_Failure_2.png" alt="Freezing Failure 2" />
       <figcaption>Freezing Failure 2</figcaption>
     </figure>
   </div>
@@ -370,7 +385,7 @@
 <div class="academic-footer">
   <p>Ramtin Tabatabaei <span>· Melbourne, Australia</span></p>
   <a href="mailto:stabatabaeim@student.unimelb.edu.au">Email</a>
-  <a href="https://scholar.google.com.au/citations?user=5YHIHDAAAAAJ&hl=en&oi=sra">Google Scholar</a>
+  <a href="https://scholar.google.com/citations?hl=en&user=lOo2ZH8AAAAJ">Google Scholar</a>
   <a href="http://localhost:4001/cv/">CV</a>
 </div>
 
@@ -380,7 +395,7 @@
 
 <!-- <div class="page__footer-copyright">
   &copy; 2026 Ramtin Tabatabaei, Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br />
-  Site last updated 2026-09-20
+  Site last updated 2026-11-18
 </div> -->
 
       </footer>

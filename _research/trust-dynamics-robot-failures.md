@@ -1,11 +1,12 @@
 ---
-thumbnail: "/images/papers/chi2026-robotfailure/Planning_Failure.png"
+thumbnail: "/images/projects/trust-dynamics.jpg"
 project_context: "Trust & failure awareness · CHI 2026"
 short_summary: "Examining how repeated robot failures affect trust, and when a robot's awareness of its mistakes helps people continue working with it."
 title: "Trust Dynamics Across Multiple Robot Failures"
 subtitle: "How repeated failures and failure awareness shape user trust over time"
 permalink: /research/trust-dynamics-robot-failures/
 research_index: "02"
+tags: ["Mixed-design study", "Failure awareness", "54 participants"]
 order: 2
 summary: "Robot failures often happen more than once during collaboration, and their effects on user trust can accumulate. I examine how repeated failures change trust, perceived robot intelligence, and how much it helps for a robot to show awareness of its own failures."
 video: "https://www.youtube.com/embed/4mW9Y5JS5RM"

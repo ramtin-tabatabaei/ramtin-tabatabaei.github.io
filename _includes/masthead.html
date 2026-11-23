@@ -1,15 +1,17 @@
 {% include base_path %}
 <header class="academic-header">
-  <a class="academic-wordmark" href="{{ base_path }}/">{{ site.title }}</a>
-  <nav aria-label="Main navigation">
-    <ul>
-      {% for link in site.data.navigation.main %}
-      {% assign active = false %}
-      {% if page.url == link.url %}{% assign active = true %}{% endif %}
-      {% if link.url == '/projects/' and page.collection == 'research' %}{% assign active = true %}{% endif %}
-      {% if link.url == '/publications/' and page.collection == 'publications' %}{% assign active = true %}{% endif %}
-      <li><a href="{{ base_path }}{{ link.url }}"{% if active %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
-      {% endfor %}
-    </ul>
-  </nav>
+  <div class="academic-header__inner">
+    <a class="academic-wordmark" href="{{ base_path }}/"><span class="academic-monogram" aria-hidden="true">RT</span>{{ site.title }}</a>
+    <nav aria-label="Main navigation">
+      <ul>
+        {% for link in site.data.navigation.main %}
+        {% assign active = false %}
+        {% if page.url == link.url %}{% assign active = true %}{% endif %}
+        {% if link.url == '/projects/' and page.collection == 'research' %}{% assign active = true %}{% endif %}
+        {% if link.url == '/publications/' and page.collection == 'publications' %}{% assign active = true %}{% endif %}
+        <li><a href="{{ base_path }}{{ link.url }}"{% if active %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
 </header>

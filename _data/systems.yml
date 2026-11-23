@@ -1,0 +1,24 @@
+# Software & robotic systems shown on the Projects page and the homepage.
+- title: "Failure detection & recovery in simulation"
+  meta: "Ongoing research"
+  tags: ["CoppeliaSim", "Vision–language models", "Behaviour trees"]
+  summary: "A simulation-based framework that combines behaviour trees with vision–language model reasoning so a robot can detect its own failures and choose a recovery strategy."
+  icon: "sim"
+  status: "In progress"
+- title: "OfficeMate"
+  meta: "Office assistant robot · HRI 2025"
+  tags: ["TIAGo", "ROS", "GPT-4"]
+  summary: "A social office assistant that talks, follows people, navigates autonomously, and runs activities such as snack handovers and breathing exercises. Piloted with seven participants in a real office."
+  icon: "robot"
+  url: "/publication/officemate/"
+  links:
+    - label: "Paper"
+      url: "https://chri-lab.github.io/files/papers/pan2025officemate.pdf"
+    - label: "Code"
+      url: "https://github.com/CHRI-Lab/woa_tiago"
+- title: "ROSAnnotator"
+  meta: "Research software · HRI 2025"
+  tags: ["ROSBag", "Web app", "Annotation"]
+  summary: "A web application for annotating and analysing ROSBag data in human–robot interaction studies. I supervised the master's project behind its development."
+  icon: "code"
+  url: "/publication/rosannotator/"

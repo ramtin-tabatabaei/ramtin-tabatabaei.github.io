@@ -1,0 +1,15 @@
+<article class="project-card{% if include.study.featured_project %} project-card--featured{% endif %}">
+  <a class="project-card__media" href="{{ include.study.url | relative_url }}" tabindex="-1" aria-hidden="true">
+    <img src="{{ include.study.thumbnail | relative_url }}" alt="" width="1400" height="875" loading="lazy">
+  </a>
+  <div class="project-card__body">
+    <p class="project-card__kicker">{{ include.study.project_context }}</p>
+    <h3 class="project-card__title"><a href="{{ include.study.url | relative_url }}">{{ include.study.title }}</a></h3>
+    <p class="project-card__summary">{{ include.study.short_summary }}</p>
+    {% if include.study.tags %}<ul class="project-tags" aria-label="Methods and tools">{% for tag in include.study.tags %}<li>{{ tag }}</li>{% endfor %}</ul>{% endif %}
+    <div class="project-card__links">
+      <a class="btn-link btn-link--primary" href="{{ include.study.url | relative_url }}">{% if include.study.featured_project and include.study.video %}Project and video{% else %}Project details{% endif %} <span aria-hidden="true">→</span></a>
+      {% for link in include.study.links %}<a class="btn-link" href="{{ link.url | relative_url }}">{{ link.label }}</a>{% endfor %}
+    </div>
+  </div>
+</article>

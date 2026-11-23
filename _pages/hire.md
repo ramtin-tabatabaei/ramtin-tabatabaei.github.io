@@ -27,7 +27,7 @@ author_profile: false
       <li>Python</li>
       <li>LLMs / VLMs</li>
       <li>Computer Vision</li>
-      <li>NVIDIA Isaac</li>
+      <li>CoppeliaSim</li>
       <li>Behavior Trees</li>
       <li>Unity</li>
       <li>Statistical Modeling</li>
@@ -76,7 +76,7 @@ author_profile: false
     <article class="hire-card" data-reveal>
       <div class="hire-card__icon" aria-hidden="true">🧠</div>
       <h3>AI reasoning</h3>
-      <p>LLM- and VLM-based reasoning via OpenAI APIs, integrated with behavior trees in NVIDIA Isaac for autonomous failure detection and recovery. Python throughout.</p>
+      <p>LLM- and VLM-based reasoning via OpenAI APIs, integrated with behavior trees in CoppeliaSim for autonomous failure detection and recovery. Python throughout.</p>
     </article>
     <article class="hire-card" data-reveal>
       <div class="hire-card__icon" aria-hidden="true">📊</div>
@@ -105,9 +105,9 @@ author_profile: false
     <article class="hire-project" data-reveal>
       <span class="hire-project__tag">Autonomy · VLM</span>
       <h3>Autonomous failure recovery</h3>
-      <p>A simulation-based failure detection framework in NVIDIA Isaac combining behavior trees with VLM-based reasoning, enabling a robot to autonomously detect and recover from errors.</p>
+      <p>A simulation-based failure detection framework in CoppeliaSim combining behavior trees with VLM-based reasoning, enabling a robot to autonomously detect and recover from errors.</p>
       <ul class="hire-project__stack">
-        <li>NVIDIA Isaac</li><li>Behavior Trees</li><li>VLM</li><li>Python</li>
+        <li>CoppeliaSim</li><li>Behavior Trees</li><li>VLM</li><li>Python</li>
       </ul>
     </article>
     <article class="hire-project" data-reveal>
@@ -162,7 +162,7 @@ author_profile: false
         <ul>
           <li>Built ROS-based collaborative tasks with diverse failure conditions and ran controlled studies with <strong>50+ participants</strong> on real robots.</li>
           <li>Developed pipelines integrating eye tracking, ROS synchronization, and real-time gaze feature extraction.</li>
-          <li>Designed a simulation-based failure detection framework in NVIDIA Isaac using behavior trees and VLM-based reasoning.</li>
+          <li>Designed a simulation-based failure detection framework in CoppeliaSim using behavior trees and VLM-based reasoning.</li>
           <li>Delivered live robotics showcases and public demos.</li>
         </ul>
       </div>

@@ -1,0 +1,15 @@
+{%- comment -%} Software / robotic system card. Usage: {% include system-card.html system=system %} {%- endcomment -%}
+{%- assign s = include.system -%}
+<article class="system-card">
+  {% if s.status %}<span class="system-card__status">{{ s.status }}</span>{% endif %}
+  <p class="project-card__kicker">{{ s.meta }}</p>
+  <h3>{% if s.url %}<a href="{{ s.url | relative_url }}">{{ s.title }}</a>{% else %}{{ s.title }}{% endif %}</h3>
+  <p>{{ s.summary }}</p>
+  {% if s.tags %}<ul class="project-tags" aria-label="Technologies">{% for tag in s.tags %}<li>{{ tag }}</li>{% endfor %}</ul>{% endif %}
+  {% if s.url or s.links %}
+  <div class="project-card__links">
+    {% if s.url %}<a class="btn-link" href="{{ s.url | relative_url }}">About the project <span aria-hidden="true">→</span></a>{% endif %}
+    {% for link in s.links %}<a class="btn-link btn-link--ghost" href="{{ link.url }}">{{ link.label }}</a>{% endfor %}
+  </div>
+  {% endif %}
+</article>

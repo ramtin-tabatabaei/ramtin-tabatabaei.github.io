@@ -2,42 +2,31 @@
 layout: academic
 title: "Projects"
 permalink: /projects/
-intro: "Research studies, software, and robotic systems for understanding and responding to robot failures."
+intro: "Research projects, software, and robotic systems for understanding and responding to robot failures."
 ---
 
 <nav class="project-index" aria-label="Project categories">
-  <a href="#studies">Research studies</a>
+  <a href="#studies">Research projects</a>
   <a href="#systems">Software &amp; robotic systems</a>
 </nav>
 
 <section class="academic-section" id="studies" aria-labelledby="studies-heading">
-  <div class="section-heading"><h2 id="studies-heading">Research studies</h2></div>
-  {% assign studies = site.research | sort: 'order' %}
-  {% for study in studies %}
-  <article class="project-row">
-    <a class="project-image" href="{{ study.url | relative_url }}" tabindex="-1" aria-hidden="true"><img src="{{ study.thumbnail | relative_url }}" alt="" width="250" height="175" loading="lazy"></a>
-    <div>
-      <p class="project-meta">{{ study.project_context }}</p>
-      <h3><a href="{{ study.url | relative_url }}">{{ study.title }}</a></h3>
-      <p>{{ study.short_summary }}</p>
-      <div class="text-links"><a href="{{ study.url | relative_url }}">Project details</a>{% for link in study.links %}<a href="{{ link.url | relative_url }}">{{ link.label }}</a>{% endfor %}</div>
-    </div>
-  </article>
-  {% endfor %}
+  <div class="section-heading">
+    <h2 id="studies-heading">Research projects</h2>
+    <p class="section-note">Execution monitoring in simulation and human–robot interaction studies on real robots.</p>
+  </div>
+  <div class="project-grid">
+    {% assign studies = site.research | sort: 'order' %}
+    {% for study in studies %}{% include project-card.html study=study %}{% endfor %}
+  </div>
 </section>
 
 <section class="academic-section" id="systems" aria-labelledby="systems-heading">
-  <div class="section-heading"><h2 id="systems-heading">Software &amp; robotic systems</h2></div>
-  <article class="project-row project-row--text">
-    <h3>Failure detection &amp; recovery in simulation</h3>
-    <div><p class="project-meta">Ongoing research · NVIDIA Isaac · Vision–language models</p><p>Developing a simulation-based framework that combines behaviour trees with vision–language model reasoning to detect robot failures and select recovery strategies.</p></div>
-  </article>
-  <article class="project-row project-row--text">
-    <h3><a href="{{ '/publication/rosannotator/' | relative_url }}">ROSAnnotator</a></h3>
-    <div><p class="project-meta">Research software · HRI 2025</p><p>A web application for annotating and analysing ROSBag data in human–robot interaction. I supervised the master's project behind its development.</p><div class="text-links"><a href="{{ '/publication/rosannotator/' | relative_url }}">About the project</a></div></div>
-  </article>
-  <article class="project-row project-row--text">
-    <h3><a href="{{ '/publication/officemate/' | relative_url }}">OfficeMate</a></h3>
-    <div><p class="project-meta">Office assistant robot · TIAGo / ROS · HRI 2025</p><p>A social office assistant combining conversation, person-following, autonomous navigation, and activities such as snack handovers and breathing exercises. A seven-participant office pilot explored its potential to support well-being, alongside concerns about privacy, noise, communication, and interaction timing.</p><div class="text-links"><a href="{{ '/publication/officemate/' | relative_url }}">About the project</a><a href="https://chri-lab.github.io/files/papers/pan2025officemate.pdf">Paper</a><a href="https://github.com/CHRI-Lab/woa_tiago">Code</a></div></div>
-  </article>
+  <div class="section-heading">
+    <h2 id="systems-heading">Software &amp; robotic systems</h2>
+    <p class="section-note">Frameworks, tools, and robots I have built or helped build.</p>
+  </div>
+  <div class="system-grid">
+    {% for system in site.data.systems %}{% include system-card.html system=system %}{% endfor %}
+  </div>
 </section>

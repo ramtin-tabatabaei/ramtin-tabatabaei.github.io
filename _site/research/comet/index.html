@@ -136,7 +136,7 @@
     
 <header class="academic-header">
   <div class="academic-header__inner">
-    <a class="academic-wordmark" href="https://ramtin-tabatabaei.github.io/"><span class="academic-monogram" aria-hidden="true">RT</span>Ramtin Tabatabaei</a>
+    <a class="academic-wordmark" href="https://ramtin-tabatabaei.github.io/">Ramtin Tabatabaei</a>
     <nav aria-label="Main navigation">
       <ul>
         
@@ -179,7 +179,7 @@
   
   <div class="comet-project">
   <p class="academic-kicker">Ongoing research · Robotic manipulation · 2026</p>
-  <p class="comet-lead">A robot can complete a movement and still fail the task. CoMET monitors what should be true before, during, and after each action, combining vision–language reasoning with evidence from the robot itself.</p>
+  <p class="comet-lead">A robot can complete a movement and still fail the task. CoMET monitors what should be true before, during, and after each action, combining vision-language reasoning with evidence from the robot itself.</p>
   <nav class="text-links" aria-label="CoMET project sections">
     <a href="#demo">Watch the research video</a>
     <a href="#method">How it works</a>
@@ -204,11 +204,11 @@
 
   <section class="academic-section" id="method" aria-labelledby="method-heading">
     <div class="section-heading"><h2 id="method-heading">How it works</h2></div>
-    <p>CoMET starts with a single successful demonstration. Multi-view images, waypoint poses, gripper state, and held-object information describe the task and its expected intermediate states. A generator–reviewer pipeline turns this description into a behaviour tree with conditions for each waypoint.</p>
+    <p>CoMET starts with a single successful demonstration. Multi-view images, waypoint poses, gripper state, and held-object information describe the task and its expected intermediate states. A generator-reviewer pipeline turns this description into a behaviour tree with conditions for each waypoint.</p>
     <ol class="comet-workflow">
       <li><strong>Define expected conditions.</strong> A reusable catalogue supplies task-specific preconditions, hold conditions, and postconditions: what must be true before, during, and after an action.</li>
       <li><strong>Monitor physical execution.</strong> Lightweight detectors check collision and grasp-loss signals during motion, and position and orientation at waypoint completion. Collision and grasp-loss candidates receive selective visual confirmation.</li>
-      <li><strong>Verify the task state.</strong> At checkpoints, a vision–language model checks the active semantic conditions against side, front, and wrist camera views. This can reveal unmet requirements even when the motion itself appears normal.</li>
+      <li><strong>Verify the task state.</strong> At checkpoints, a vision-language model checks the active semantic conditions against side, front, and wrist camera views. This can reveal unmet requirements even when the motion itself appears normal.</li>
       <li><strong>Explain deviations.</strong> The active tree stage, violated conditions, and supporting evidence help localise a failure. Mapping rules assign benchmark failure categories; detecting a violation does not always reveal its initiating cause.</li>
     </ol>
     <figure class="comet-media comet-framework">
@@ -219,7 +219,7 @@
 
   <section class="academic-section" id="evaluation" aria-labelledby="evaluation-heading">
     <div class="section-heading"><h2 id="evaluation-heading">Evaluation</h2></div>
-    <p>The study evaluates 78 simulated manipulation tasks adapted from AHA/RLBench with a Franka Panda arm. Seven failure types cover grasp loss, collision, position and orientation deviations, incorrect object selection, omitted grasps, and sequence violations. CoMET requires no failure-specific vision–language model fine-tuning.</p>
+    <p>The study evaluates 78 simulated manipulation tasks adapted from AHA/RLBench with a Franka Panda arm. Seven failure types cover grasp loss, collision, position and orientation deviations, incorrect object selection, omitted grasps, and sequence violations. CoMET requires no failure-specific vision-language model fine-tuning.</p>
     <dl class="comet-metrics">
       <div><dt>Tasks</dt><dd>78</dd></div>
       <div><dt>Failure types</dt><dd>7</dd></div>

@@ -1,8 +1,9 @@
 ---
 title: "Where Did You Look?"
-subtitle: "Gaze-guided vision-language verification of robot failures in human–robot collaboration"
+subtitle: "Gaze-guided vision-language verification of robot failures in human-robot collaboration"
 permalink: /research/where-did-you-look/
 order: 0.5
+featured_project: true
 video_heading: "Video"
 thumbnail: "/images/projects/where-did-you-look.jpg"
 project_context: "Gaze + vision-language models · Failure detection"
@@ -11,7 +12,7 @@ summary: "Robots that pick and place objects often fail without noticing. People
 video: "/files/projects/where-did-you-look/where-did-you-look.mp4"
 video_poster: "/images/projects/where-did-you-look-poster.jpg"
 video_captions: "/files/projects/where-did-you-look/where-did-you-look.vtt"
-tags: ["Eye tracking", "Vision-language models", "TIAGo robot", "51 participants", "1,182 robot actions"]
+tags: ["Eye tracking", "Vision-language models", "51 participants", "1,182 robot actions"]
 takeaways:
   - "Gaze alone catches most failures but is noisy: tuned to catch 90% of failures, it raised 456 alerts, and about 7 in 10 were false alarms."
   - "Letting a VLM verify gaze alerts removed almost every false alarm: of 322, only 3 survived, and precision rose from 29.5% to 97.5%."

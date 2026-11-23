@@ -37,10 +37,10 @@ related_publications:
 
 <section class="paper-showcase__panel paper-showcase__panel--results">
   <h2>What I Found</h2>
-  <p>User trust and perceived intelligence are affected by both the current and the previous failure, with homogeneous sequences generally causing a smaller trust decline than heterogeneous ones. Robots that demonstrated awareness — full or partial — were rated significantly higher in trust and perceived intelligence than those showing no awareness, particularly for grasping and planning failures.</p>
+  <p>User trust and perceived intelligence are affected by both the current and the previous failure, with homogeneous sequences generally causing a smaller trust decline than heterogeneous ones. Robots that demonstrated awareness, full or partial, were rated significantly higher in trust and perceived intelligence than those showing no awareness, particularly for grasping and planning failures.</p>
 </section>
 
 <section class="paper-showcase__panel paper-showcase__panel--discussion">
   <h2>Why It Matters</h2>
-  <p>These insights offer design implications for building more resilient and trustworthy human-robot interactions amid inevitable errors. Knowing <em>when</em> failure awareness helps — and when it backfires — lets us design adaptive trust-repair strategies rather than one-size-fits-all apologies.</p>
+  <p>These insights offer design implications for building more resilient and trustworthy human-robot interactions amid inevitable errors. Knowing <em>when</em> failure awareness helps, and when it backfires, lets us design adaptive trust-repair strategies rather than one-size-fits-all apologies.</p>
 </section>

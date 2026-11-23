@@ -10,7 +10,6 @@ redirect_from:
 
 <section class="academic-intro" aria-labelledby="intro-name">
   <div class="academic-intro__copy">
-    <p class="academic-kicker">Human–robot interaction</p>
     <h1 id="intro-name">Ramtin <span>Tabatabaei</span></h1>
     <p class="academic-affiliation">Ph.D. candidate, University of Melbourne<br><span>School of Computing and Information Systems</span></p>
     <p class="academic-lead">I study what happens when robots make mistakes. How do people respond, how does trust change, and how can robots recognise and recover from failure?</p>
@@ -24,9 +23,8 @@ redirect_from:
   <figure class="academic-portrait">
     <picture>
       <source srcset="{{ '/images/ramtin-portrait.webp' | relative_url }}" type="image/webp">
-      <img src="{{ '/images/ramtin-portrait.jpg' | relative_url }}" alt="Ramtin Tabatabaei standing beside a Pepper robot in the robotics lab" width="1000" height="1250" fetchpriority="high">
+      <img src="{{ '/images/ramtin-portrait.jpg' | relative_url }}" alt="Ramtin Tabatabaei in the robotics lab" width="1000" height="1250" fetchpriority="high">
     </picture>
-    <figcaption>With Pepper in the robotics lab</figcaption>
   </figure>
 </section>
 
@@ -50,7 +48,7 @@ redirect_from:
 
 <section class="academic-section" id="research" aria-labelledby="research-heading">
   <div class="section-heading"><h2 id="research-heading">Research focus</h2><a href="{{ '/publications/' | relative_url }}">Publications <span aria-hidden="true">→</span></a></div>
-  <p>I combine real-robot experiments, eye tracking, and controlled user studies to understand how people notice, interpret, and respond to robot mistakes. I also develop machine learning methods that combine vision–language models with robot-state monitoring to detect failures and guide recovery. My work connects human behaviour with robot intelligence to make human–robot collaboration more reliable.</p>
+  <p>I combine real-robot experiments, eye tracking, and controlled user studies to understand how people notice, interpret, and respond to robot mistakes. I also develop machine learning methods that combine vision-language models with robot-state monitoring to detect failures and guide recovery. My work connects human behaviour with robot intelligence to make human-robot collaboration more reliable.</p>
   <p>I am supervised by <a href="https://wafa.johal.org/">Wafa Johal</a> and Vassilis Kostakos. My work is part of the Human-Computer Interaction Group and the <a href="https://chri-lab.github.io/">Human-Robot Interaction Lab</a>.</p>
   <dl class="research-directions">
     <div><dt>Behavioural signals</dt><dd>Using gaze and interaction patterns to detect when something goes wrong.</dd></div>

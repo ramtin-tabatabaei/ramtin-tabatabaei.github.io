@@ -8,7 +8,7 @@ permalink: /research/gaze-based-failure-detection/
 research_index: "01"
 tags: ["Eye tracking", "ROS", "Random forest", "27 participants"]
 order: 1
-summary: "For robots, detecting and predicting failures as early as possible is vital to prevent damage and negative user experiences. I study human non-verbal behaviour — especially gaze patterns — to identify cues that signal when a robot failure is about to occur or has just occurred."
+summary: "For robots, detecting and predicting failures as early as possible is vital to prevent damage and negative user experiences. I study human non-verbal behaviour, especially gaze patterns, to identify cues that signal when a robot failure is about to occur or has just occurred."
 video: "https://www.youtube.com/embed/wHYsmDMllyY"
 takeaways:
   - "User gaze behaviour can signal the onset of a robot failure."
@@ -41,7 +41,7 @@ related_publications:
 
 <section class="paper-showcase__panel paper-showcase__panel--results">
   <h2>What I Found</h2>
-  <p>Executional failures led to increased gaze shifts toward the robot, while decisional failures resulted in less variability in gaze transitions — especially when occurring at the end of a task. These differences make gaze a reliable indicator of <em>whether</em> a failure occurred and <em>what kind</em> of failure it was, which in turn can inform appropriate recovery actions.</p>
+  <p>Executional failures led to increased gaze shifts toward the robot, while decisional failures resulted in less variability in gaze transitions, especially when occurring at the end of a task. These differences make gaze a reliable indicator of <em>whether</em> a failure occurred and <em>what kind</em> of failure it was, which in turn can inform appropriate recovery actions.</p>
 </section>
 
 <section class="paper-showcase__panel paper-showcase__panel--discussion">

@@ -1,8 +1,8 @@
 # Software & robotic systems shown on the Projects page and the homepage.
 - title: "Failure detection & recovery in simulation"
   meta: "Ongoing research"
-  tags: ["CoppeliaSim", "Vision–language models", "Behaviour trees"]
-  summary: "A simulation-based framework that combines behaviour trees with vision–language model reasoning so a robot can detect its own failures and choose a recovery strategy."
+  tags: ["CoppeliaSim", "Vision-language models", "Behaviour trees"]
+  summary: "A simulation-based framework that combines behaviour trees with vision-language model reasoning so a robot can detect its own failures and choose a recovery strategy."
   icon: "sim"
   status: "In progress"
 - title: "OfficeMate"
@@ -19,6 +19,6 @@
 - title: "ROSAnnotator"
   meta: "Research software · HRI 2025"
   tags: ["ROSBag", "Web app", "Annotation"]
-  summary: "A web application for annotating and analysing ROSBag data in human–robot interaction studies. I supervised the master's project behind its development."
+  summary: "A web application for annotating and analysing ROSBag data in human-robot interaction studies. I supervised the master's project behind its development."
   icon: "code"
   url: "/publication/rosannotator/"

@@ -44,7 +44,7 @@ layout: default
     <section class="paper-showcase__content" itemprop="text">
       {% if page.summary %}
         <section class="paper-showcase__section">
-          <p class="research-showcase__lead">{{ page.summary }}</p>
+          <p{% unless page.summary_style == "body" %} class="research-showcase__lead"{% endunless %}>{{ page.summary }}</p>
         </section>
       {% endif %}
 

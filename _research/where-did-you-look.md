@@ -8,6 +8,7 @@ video_heading: "Video"
 thumbnail: "/images/projects/where-did-you-look.jpg"
 project_context: "Gaze + vision-language models · Failure detection"
 short_summary: "Human gaze acts as a cheap, always-on lookout for robot failures. Only when gaze raises an alert does a vision-language model inspect the scene and decide whether something really went wrong."
+summary_style: body
 summary: "Robots that pick and place objects often fail without noticing. People working alongside them usually notice first, and their eyes show it. In this project, gaze acts as a lightweight screen that watches every robot action, and a vision-language model (VLM) is called only when gaze raises an alert. The VLM then checks the visual evidence and names the failure."
 video: "/files/projects/where-did-you-look/where-did-you-look.mp4"
 video_poster: "/images/projects/where-did-you-look-poster.jpg"
